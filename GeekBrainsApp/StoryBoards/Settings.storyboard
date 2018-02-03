@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3UG-nI-L96">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings Nav Controller-->
+        <scene sceneID="DGV-YA-JtT">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKG-NC-ojl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="SettingsNC" id="3UG-nI-L96" customClass="SettingsNavController" customModule="GeekBrainsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BUr-xf-JlM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vcM-5e-KxT" kind="relationship" relationship="rootViewController" id="7hq-ee-5oq"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-710" y="99"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="6Kr-Zm-OVr">
+            <objects>
+                <viewController id="vcM-5e-KxT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ua-5I-o7y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oQV-uB-8nz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oQV-uB-8nz" firstAttribute="trailing" secondItem="aGb-1O-ndR" secondAttribute="trailing" id="6C8-fj-vIP"/>
+                            <constraint firstItem="oQV-uB-8nz" firstAttribute="top" secondItem="aGb-1O-ndR" secondAttribute="top" id="bsR-Ya-v83"/>
+                            <constraint firstItem="oQV-uB-8nz" firstAttribute="leading" secondItem="4Ua-5I-o7y" secondAttribute="leading" id="kH1-tU-55b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aGb-1O-ndR"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" selectedImage="settings" id="BuS-pd-zqT"/>
+                    <navigationItem key="navigationItem" id="3EN-Oi-yYk">
+                        <barButtonItem key="rightBarButtonItem" title="Exit" image="exit" id="pue-lc-6y3"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIk-K1-GpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="381.60000000000002" y="98.50074962518741"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="exit" width="24" height="24"/>
+        <image name="settings" width="25" height="25"/>
+    </resources>
+</document>
