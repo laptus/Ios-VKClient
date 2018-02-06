@@ -52,6 +52,8 @@ class GroupsListVC: UITableViewController {
             case .error(let error):
                 fatalError("\(error)")
             }
+            let tabsVC = self?.navigationController?.tabBarController as! TabsVCProtocol
+            FireVaseAcessor.addGroup(user: tabsVC.token, groups: Array((self?.groupsList)!))
         }
     }
     

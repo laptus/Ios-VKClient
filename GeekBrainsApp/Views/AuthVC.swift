@@ -8,9 +8,10 @@
 
 import UIKit
 import WebKit
+import RealmSwift
 
 class AuthVC: UIViewController {
-    @IBOutlet weak var vkWebView: WKWebView!{
+    @IBOutlet weak var vkWebView: WKWebView! {
         didSet{
             vkWebView.navigationDelegate = self
         }
@@ -37,6 +38,8 @@ class AuthVC: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toApp", let tabsVC = segue.destination as? TabsVC {
+//            let config = Realm.Configuration(fileURL: Bundle.main.url(forResource: "MyBundledData", withExtension: "realm"), readOnly: true)
+//            let realm = try! Realm(configuration: config)
             tabsVC.token = token
         }
     }
@@ -68,6 +71,7 @@ extension AuthVC: WKNavigationDelegate {
         self.token = token
 
         decisionHandler(.cancel)
+        FireVaseAcessor.adduser(token)
         performSegue(withIdentifier: "toApp", sender: nil)
     }
 

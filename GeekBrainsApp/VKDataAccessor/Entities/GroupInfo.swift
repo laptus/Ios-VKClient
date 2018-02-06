@@ -29,4 +29,10 @@ class GroupInfo : Object{
     override static func primaryKey() -> String? {
         return String("id")
     }
+    
+    var toAnyObject: Any{
+        return [
+            "name": name
+        ]
+    }
 }

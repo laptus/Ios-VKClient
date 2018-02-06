@@ -10,7 +10,6 @@ import Foundation
 
 struct KeychainPasswordItem {
     // MARK: Types
-    
     enum KeychainError: Error {
         case noPassword
         case unexpectedPasswordData
@@ -27,7 +26,6 @@ struct KeychainPasswordItem {
     let accessGroup: String?
 
     // MARK: Intialization
-    
     init(service: String, account: String, accessGroup: String? = nil) {
         self.service = service
         self.account = account
@@ -35,7 +33,6 @@ struct KeychainPasswordItem {
     }
     
     // MARK: Keychain access
-    
     func readPassword() throws -> String  {
         /*
             Build a query to find the item that matches the service, account and
