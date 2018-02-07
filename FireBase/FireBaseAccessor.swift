@@ -20,6 +20,6 @@ class FireVaseAcessor{
     
     static func addGroup(user:String, groups: [GroupInfo]){
         let dbLink = Database.database().reference()
-        dbLink.child("UsersData").updateChildValues(["user":user,"groups":groups.map{$0.toAnyObject}])
+        dbLink.child("UsersData").child(user).updateChildValues(["groups":groups.map{$0.toAnyObject}])
     }
 }
