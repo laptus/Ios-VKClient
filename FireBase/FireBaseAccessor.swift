@@ -14,12 +14,16 @@ class FireVaseAcessor{
     
     static func adduser(_ user: String){
         let dbLink = Database.database().reference()
-        dbLink.child("UsersData").setValue(["user": user])
+        dbLink.child("UsersData/user").observeSingleEvent(of: .value, with:{(snapshot) in
+            if !snapshot.hasChild(user){
+                dbLink.child("UsersData").updateChildValues(["user": user])
+            }
+        })
         
     }
     
     static func addGroup(user:String, groups: [GroupInfo]){
         let dbLink = Database.database().reference()
-        dbLink.child("UsersData").child(user).updateChildValues(["groups":groups.map{$0.toAnyObject}])
+        dbLink.child("UsersData/user").child(user).updateChildValues(["groups":groups.map{$0.toAnyObject}])
     }
 }

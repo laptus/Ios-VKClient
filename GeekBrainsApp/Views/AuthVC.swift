@@ -67,11 +67,17 @@ extension AuthVC: WKNavigationDelegate {
             print("токен не обнаружен")
             return
         }
+        
+        guard let userId = params["user_id"] else {
+            print("токен не обнаружен")
+            return
+        }
 
         self.token = token
 
         decisionHandler(.cancel)
-        FireVaseAcessor.adduser(token)
+        UserDefaults.standard.set(userId, forKey: "userId")
+        FireVaseAcessor.adduser(userId)
         performSegue(withIdentifier: "toApp", sender: nil)
     }
 
