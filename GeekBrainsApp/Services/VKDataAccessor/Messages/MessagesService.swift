@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+extension VKAccessor.Messages{
+    struct MessagesService{
+        func getChats(){
+            
+        }
+        
+        func getMessages(){
+            
+        }
+        
+        func postMessage(){
+            
+        }
+    }
+}

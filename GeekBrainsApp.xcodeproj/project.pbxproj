@@ -19,6 +19,7 @@
 		DB1D3BDA202627B300F26B72 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1D3BD9202627B300F26B72 /* NewsView.swift */; };
 		DB23935D1FD4B0EC006FCFE5 /* GroupsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB23935C1FD4B0EC006FCFE5 /* GroupsListVC.swift */; };
 		DB3E8F601FCF4E3100CA82D9 /* tabsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E8F5F1FCF4E3100CA82D9 /* tabsVC.swift */; };
+		DB42672E203878B800E685B5 /* BGService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42672D203878B800E685B5 /* BGService.swift */; };
 		DB509A681FDD249900EACD15 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB509A671FDD249800EACD15 /* KeychainPasswordItem.swift */; };
 		DB560B131FD4A44E0076B350 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB560B121FD4A44E0076B350 /* PhotoCollectionVC.swift */; };
 		DB560B151FD4A4720076B350 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB560B141FD4A4720076B350 /* PhotoCell.swift */; };
@@ -92,6 +93,7 @@
 		DB1D3BD9202627B300F26B72 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		DB23935C1FD4B0EC006FCFE5 /* GroupsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListVC.swift; sourceTree = "<group>"; };
 		DB3E8F5F1FCF4E3100CA82D9 /* tabsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabsVC.swift; sourceTree = "<group>"; };
+		DB42672D203878B800E685B5 /* BGService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGService.swift; sourceTree = "<group>"; };
 		DB509A671FDD249800EACD15 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		DB560B121FD4A44E0076B350 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionVC.swift; sourceTree = "<group>"; };
 		DB560B141FD4A4720076B350 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -223,6 +225,14 @@
 				DB5EC5CF20383C1800920B8F /* MapsVC.swift */,
 			);
 			path = NewsFeed;
+			sourceTree = "<group>";
+		};
+		DB42672C203878A400E685B5 /* BackGround */ = {
+			isa = PBXGroup;
+			children = (
+				DB42672D203878B800E685B5 /* BGService.swift */,
+			);
+			path = BackGround;
 			sourceTree = "<group>";
 		};
 		DB509A691FDD2C4600EACD15 /* PhotoGroup */ = {
@@ -400,6 +410,7 @@
 		DBCD54252030A81800F169FA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DB42672C203878A400E685B5 /* BackGround */,
 				DB6177192034B095004AA4E7 /* AlamofireImage */,
 				DB596030202A2D4D00BF5943 /* FireBase */,
 				DBC132EB1FDD4D94004BB41A /* VKDataAccessor */,
@@ -482,6 +493,11 @@
 					DBB1739E1FCACAF100FC0479 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -636,10 +652,11 @@
 				DB92D4D71FE1CAD6008AE7B5 /* GroupService.swift in Sources */,
 				DBAFD47B1FD4B2E000807D63 /* GroupInfoCell.swift in Sources */,
 				DBAFD4791FD4B2CA00807D63 /* GroupCell.swift in Sources */,
+				DB5EC5C6203836D900920B8F /* Messages.swift in Sources */,
 				DB5EC5C8203836E600920B8F /* MessagesService.swift in Sources */,
+				DB5EC5CA203836F400920B8F /* MessagesRequests.swift in Sources */,
 				DB23935D1FD4B0EC006FCFE5 /* GroupsListVC.swift in Sources */,
 				DB560B151FD4A4720076B350 /* PhotoCell.swift in Sources */,
-				DB5EC5CA203836F400920B8F /* MessagesRequests.swift in Sources */,
 				DBAABF471FDF232200A2088B /* GroupInfo.swift in Sources */,
 				DBCD54292030AAC500F169FA /* Friends.swift in Sources */,
 				DB6177342034C90E004AA4E7 /* NewsFeedRequests.swift in Sources */,
@@ -652,6 +669,7 @@
 				DBAABF3F1FDF112700A2088B /* GroupsRouter.swift in Sources */,
 				DB6177322034C8FD004AA4E7 /* NewsFeedService.swift in Sources */,
 				DB75B3381FD48FC6005B724C /* FriendsTablveVC.swift in Sources */,
+				DB42672E203878B800E685B5 /* BGService.swift in Sources */,
 				DB74CA081FE063D20001EFD6 /* UserService.swift in Sources */,
 				DB596032202A2D8000BF5943 /* FireBaseAccessor.swift in Sources */,
 				DB5EC5D020383C1800920B8F /* MapsVC.swift in Sources */,
@@ -662,7 +680,6 @@
 				DB61771F2034BD81004AA4E7 /* Photos.swift in Sources */,
 				DB5EC5CC2038370300920B8F /* MessagesParser.swift in Sources */,
 				DB75B33A1FD49054005B724C /* UserCell.swift in Sources */,
-				DB5EC5C6203836D900920B8F /* Messages.swift in Sources */,
 				DBAABF451FDF22AA00A2088B /* UserInfo.swift in Sources */,
 				DBCD542B2030AB0700F169FA /* VKAccessor.swift in Sources */,
 				DBCD54342033678400F169FA /* FriendsParser.swift in Sources */,
