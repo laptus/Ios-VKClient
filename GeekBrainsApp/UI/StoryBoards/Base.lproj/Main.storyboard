@@ -55,11 +55,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="DtZ-dc-aka" kind="relationship" relationship="viewControllers" id="EW2-j3-Kcp"/>
                         <segue destination="bba-k4-2vO" kind="relationship" relationship="viewControllers" id="YxK-9q-Qxg"/>
+                        <segue destination="DtZ-dc-aka" kind="relationship" relationship="viewControllers" id="EW2-j3-Kcp"/>
+                        <segue destination="qoR-94-lzY" kind="relationship" relationship="viewControllers" id="E69-FW-o5Q"/>
                         <segue destination="R2K-hf-wJb" kind="relationship" relationship="viewControllers" id="gCw-oR-POR"/>
                         <segue destination="BEW-2S-HHJ" kind="relationship" relationship="viewControllers" id="czj-0J-dA9"/>
-                        <segue destination="qoR-94-lzY" kind="relationship" relationship="viewControllers" id="E69-FW-o5Q"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7e-JZ-ShW" userLabel="First Responder" sceneMemberID="firstResponder"/>

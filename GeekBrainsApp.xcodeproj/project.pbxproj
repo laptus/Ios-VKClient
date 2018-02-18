@@ -24,8 +24,6 @@
 		DB4267332038B1B000E685B5 /* AlbumsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4267322038B1B000E685B5 /* AlbumsCollectionVC.swift */; };
 		DB4267352038B4B600E685B5 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4267342038B4B600E685B5 /* AlbumInfo.swift */; };
 		DB4267372038C16A00E685B5 /* AlbumCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4267362038C16A00E685B5 /* AlbumCellVC.swift */; };
-		DB42673A2038C8D500E685B5 /* PostCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4267382038C8D500E685B5 /* PostCellVC.swift */; };
-		DB42673B2038C8D500E685B5 /* PostCellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB4267392038C8D500E685B5 /* PostCellVC.xib */; };
 		DB509A681FDD249900EACD15 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB509A671FDD249800EACD15 /* KeychainPasswordItem.swift */; };
 		DB560B131FD4A44E0076B350 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB560B121FD4A44E0076B350 /* PhotoCollectionVC.swift */; };
 		DB560B151FD4A4720076B350 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB560B141FD4A4720076B350 /* PhotoCell.swift */; };
@@ -73,6 +71,8 @@
 		DBB86C872039A3CE008F062C /* ChatTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB86C862039A3CE008F062C /* ChatTableVC.swift */; };
 		DBB86C892039A3E7008F062C /* ChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB86C882039A3E7008F062C /* ChatViewCell.swift */; };
 		DBB86C8B2039A4AC008F062C /* ChatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB86C8A2039A4AC008F062C /* ChatInfo.swift */; };
+		DBB86C8D2039BA07008F062C /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB86C8C2039BA07008F062C /* NewPostVC.swift */; };
+		DBB86C8F2039D920008F062C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB86C8E2039D920008F062C /* MapKit.framework */; };
 		DBC132ED1FDD4DE8004BB41A /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC132EC1FDD4DE8004BB41A /* Enviroment.swift */; };
 		DBC8358B1FE69E64001FC8E5 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8358A1FE69E64001FC8E5 /* RealmExtension.swift */; };
 		DBCD54292030AAC500F169FA /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD54282030AAC500F169FA /* Friends.swift */; };
@@ -101,8 +101,6 @@
 		DB4267322038B1B000E685B5 /* AlbumsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionVC.swift; sourceTree = "<group>"; };
 		DB4267342038B4B600E685B5 /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 		DB4267362038C16A00E685B5 /* AlbumCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellVC.swift; sourceTree = "<group>"; };
-		DB4267382038C8D500E685B5 /* PostCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellVC.swift; sourceTree = "<group>"; };
-		DB4267392038C8D500E685B5 /* PostCellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCellVC.xib; sourceTree = "<group>"; };
 		DB509A671FDD249800EACD15 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		DB560B121FD4A44E0076B350 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionVC.swift; sourceTree = "<group>"; };
 		DB560B141FD4A4720076B350 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -152,6 +150,8 @@
 		DBB86C862039A3CE008F062C /* ChatTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableVC.swift; sourceTree = "<group>"; };
 		DBB86C882039A3E7008F062C /* ChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewCell.swift; sourceTree = "<group>"; };
 		DBB86C8A2039A4AC008F062C /* ChatInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInfo.swift; sourceTree = "<group>"; };
+		DBB86C8C2039BA07008F062C /* NewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
+		DBB86C8E2039D920008F062C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DBC132EC1FDD4DE8004BB41A /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 		DBC8358A1FE69E64001FC8E5 /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		DBCD54282030AAC500F169FA /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
@@ -167,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBB86C8F2039D920008F062C /* MapKit.framework in Frameworks */,
 				73A89219DE465B74596D217C /* Pods_GeekBrainsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +178,7 @@
 		4E36FAD68BBC2291B62DF066 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBB86C8E2039D920008F062C /* MapKit.framework */,
 				ED9DB3167C5E48453AF031E6 /* Pods_GeekBrainsApp.framework */,
 			);
 			name = Frameworks;
@@ -230,8 +232,7 @@
 				DB1D3BD9202627B300F26B72 /* NewsView.swift */,
 				DB5EC5CD20383AC800920B8F /* NewsFeedTableVC.swift */,
 				DB5EC5CF20383C1800920B8F /* MapsVC.swift */,
-				DB4267382038C8D500E685B5 /* PostCellVC.swift */,
-				DB4267392038C8D500E685B5 /* PostCellVC.xib */,
+				DBB86C8C2039BA07008F062C /* NewPostVC.swift */,
 			);
 			path = NewsFeed;
 			sourceTree = "<group>";
@@ -457,9 +458,9 @@
 		DBCD54272030A8B300F169FA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DB05DB221FFE805700FBAAA1 /* StoryBoards */,
 				DB42672F20389BCC00E685B5 /* MainVIew */,
 				DBAABF361FDD7EF500A2088B /* AuthVC.swift */,
-				DB05DB221FFE805700FBAAA1 /* StoryBoards */,
 				DB1D3BD6202626B500F26B72 /* NewsFeed */,
 				DBB86C812039A1C2008F062C /* Chat */,
 				DB05DB211FFE7F8800FBAAA1 /* UserInfo */,
@@ -522,6 +523,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -561,7 +565,6 @@
 				DBB173A81FCACAF200FC0479 /* Main.storyboard in Resources */,
 				DB1D3BD32026204500F26B72 /* PhotoAlbum.storyboard in Resources */,
 				DB5EC5D220383EAB00920B8F /* Map.storyboard in Resources */,
-				DB42673B2038C8D500E685B5 /* PostCellVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +665,7 @@
 				DB61771B2034B0B6004AA4E7 /* ImageService.swift in Sources */,
 				DBB173A31FCACAF100FC0479 /* AppDelegate.swift in Sources */,
 				DB509A681FDD249900EACD15 /* KeychainPasswordItem.swift in Sources */,
+				DBB86C8D2039BA07008F062C /* NewPostVC.swift in Sources */,
 				DB4267372038C16A00E685B5 /* AlbumCellVC.swift in Sources */,
 				DB5EC5CE20383AC800920B8F /* NewsFeedTableVC.swift in Sources */,
 				DB92D4DB1FE1D554008AE7B5 /* UserRouter.swift in Sources */,
@@ -673,7 +677,6 @@
 				DBAABF391FDD8D8000A2088B /* AuthRouter.swift in Sources */,
 				DB6177212034BD91004AA4E7 /* PhotosService.swift in Sources */,
 				DB92D4D91FE1D40F008AE7B5 /* PhotoInfo.swift in Sources */,
-				DB42673A2038C8D500E685B5 /* PostCellVC.swift in Sources */,
 				DB560B131FD4A44E0076B350 /* PhotoCollectionVC.swift in Sources */,
 				DB92D4D71FE1CAD6008AE7B5 /* GroupService.swift in Sources */,
 				DBAFD47B1FD4B2E000807D63 /* GroupInfoCell.swift in Sources */,

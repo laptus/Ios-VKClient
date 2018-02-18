@@ -6,12 +6,8 @@ extension VKAccessor{
         
         static func getDialogs(){
             queue.async {
-                MessagesService().getDialogs()
+                MessagesService.getDialogs()
             }
-        }
-        
-        static func getNewMessages(competion: @escaping ()-> Void) -> URLRequest?{
-            return nil
         }
         
         static func getMessages(){

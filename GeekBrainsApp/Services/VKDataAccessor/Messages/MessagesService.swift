@@ -12,7 +12,7 @@ import SwiftyJSON
 
 extension VKAccessor.Messages{
     struct MessagesService{
-        func getDialogs(){
+        static func getDialogs(){
             let token = VKAccessor.CurrentUser.instance.token
             let env = VKAccessor.EnvironmentImp.VKEnvironment()
             let request = MessagesRequests.getDialogs(environment: env, token: token)
@@ -25,8 +25,17 @@ extension VKAccessor.Messages{
             }
         }
         
-        func getMessages(){
-            
+        static func getUnreadDialogsCount(completion: @escaping (_ count: Int)-> Void) -> Request{
+            let token = VKAccessor.CurrentUser.instance.token
+            let env = VKAccessor.EnvironmentImp.VKEnvironment()
+            let request = MessagesRequests.getDialogs(environment: env, token: token)
+            return Alamofire.request(request).responseData(queue: DispatchQueue.global()){response in
+                guard let data = response.value else { return }
+                let json = try! JSON(data:data)
+                let unreadDialogsCount = json["response"]["unread_dialogs"].intValue
+                print(json)
+                completion(unreadDialogsCount)
+            }
         }
         
         func postMessage(){

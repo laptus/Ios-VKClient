@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
+        print("Call bitch")
+        let bgService = BGService()
+        bgService.updateAppInfo(application, performFetchWithCompletionHandler: completionHandler)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -32,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-
+        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

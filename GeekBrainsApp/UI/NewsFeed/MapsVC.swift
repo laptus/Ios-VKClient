@@ -10,10 +10,15 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol CoordinateUserDelegete: class {
+    func printCoordinates(coordinates: String)-> Void
+}
+
 class MapsVC: UIViewController, UIGestureRecognizerDelegate{
     var pin =  MKPointAnnotation()
     let locationManager = CLLocationManager()
     @IBOutlet weak var map: MKMapView!
+    weak var coordUserDelegate: CoordinateUserDelegete?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +53,9 @@ class MapsVC: UIViewController, UIGestureRecognizerDelegate{
     }
     
     @IBAction func close(_ sender: Any) {
+        var resultString = ""
+        resultString.append(String(format: "latitude:  %.2f,longitude : %.2f", pin.coordinate.latitude,pin.coordinate.longitude))
+        coordUserDelegate?.printCoordinates(coordinates: resultString)
         dismiss(animated: true)
     }
     

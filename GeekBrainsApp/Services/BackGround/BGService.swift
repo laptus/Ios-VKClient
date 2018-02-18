@@ -19,17 +19,21 @@ class BGService{
         }
     }
     
-    func updateAppInfo(performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
+    func updateAppInfo(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
+        print("Call")
         if lastUpdate != nil, abs(lastUpdate!.timeIntervalSinceNow ) < 30{
             completionHandler(.noData)
         }
-        //var request = VKAccessor.Messages.{
-        lastUpdate = Date()
+        let request = VKAccessor.Messages.MessagesService.getUnreadDialogsCount { result in
+            UIApplication.shared.applicationIconBadgeNumber = result
+            self.lastUpdate = Date()
+        }
+        
         let timer  =  DispatchSource.makeTimerSource(queue: DispatchQueue.main)
         timer.schedule(deadline: .now() + 29, leeway:  .seconds(1) )
         timer.setEventHandler {
             print ( " Говорим системе, что не смогли загрузить данные")
-            //request.suspend()
+            request.suspend()
             completionHandler(.failed)
             return }
         timer.resume()
