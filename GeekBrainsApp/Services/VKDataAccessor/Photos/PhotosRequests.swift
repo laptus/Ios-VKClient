@@ -14,15 +14,16 @@ extension VKAccessor  {
         static func getAlbums(environment: Environment, token: String, ownerId: String)-> URLRequestConvertible{
             let methodPath = "/method/photos.getAlbums"
             let additionalParams = ["owner_id": ownerId,
-                                    "access_token":token,
+//                                    "access_token":token,
                                     "v": environment.apiVersion,
-                                    "need_covers":"1"]
+                                    "need_covers":"1",
+                                    "need_system":"1"]
             return VKRequest.init(environment: environment, token: token, path: methodPath, additionalParams: additionalParams, httpMethod: HTTPMethod.get)
         }
         
         static func getPhotos(environment: Environment, token: String, ownerId: String)-> URLRequestConvertible{
             let methodPath = "/method/photos.getAll"
-            let additionalParams = ["owner_id": "-"+ownerId,
+            let additionalParams = ["owner_id": ownerId,
                                     "access_token":token,
                                     "v": environment.apiVersion,
                                     "fields":"nickname,domain,photo_50"]
@@ -30,12 +31,11 @@ extension VKAccessor  {
         }
         
         static func getPhotos(environment: Environment, token: String, ownerId: String,albumId: String)-> URLRequestConvertible{
-            let methodPath = "/method/photos.getAlbums"
+            let methodPath = "/method/photos.get"
             let additionalParams = ["owner_id": ownerId,
                                     "album_id": albumId,
                                     "access_token":token,
-                                    "v": environment.apiVersion,
-                                    "need_covers":"1"]
+                                    "v": environment.apiVersion]
             return VKRequest.init(environment: environment, token: token, path: methodPath, additionalParams: additionalParams, httpMethod: HTTPMethod.get)
         }
     }

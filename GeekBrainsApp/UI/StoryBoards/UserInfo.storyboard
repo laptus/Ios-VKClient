@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--User InfoVC-->
         <scene sceneID="ckh-jJ-TGh">
             <objects>
-                <viewController id="CXz-Kh-vMW" sceneMemberID="viewController">
+                <viewController id="CXz-Kh-vMW" customClass="UserInfoVC" customModule="GeekBrainsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sy7-gD-Npu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,19 +30,23 @@
                                 <rect key="frame" x="10" y="90" width="355" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4W-F6-h5j">
-                                        <rect key="frame" x="0.0" y="0.0" width="118.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="89" height="30"/>
                                         <state key="normal" title="Friends"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJ3-0N-bp2">
-                                        <rect key="frame" x="118.5" y="0.0" width="118" height="30"/>
+                                        <rect key="frame" x="89" y="0.0" width="88.5" height="30"/>
                                         <state key="normal" title="Groups"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpr-65-mKy">
-                                        <rect key="frame" x="236.5" y="0.0" width="118.5" height="30"/>
-                                        <state key="normal" title="Photos"/>
+                                        <rect key="frame" x="177.5" y="0.0" width="89" height="30"/>
+                                        <state key="normal" title="Albums"/>
                                         <connections>
-                                            <segue destination="g8Q-fR-uyQ" kind="show" id="y74-65-lBT"/>
+                                            <segue destination="g8Q-fR-uyQ" kind="show" identifier="toAlbumsCollection" id="H0c-ie-avB"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-mX-sBr">
+                                        <rect key="frame" x="266.5" y="0.0" width="88.5" height="30"/>
+                                        <state key="normal" title="Button"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -183,6 +187,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wdE-4N-7Ay"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5kI-3K-Rij">
+                        <barButtonItem key="rightBarButtonItem" title="exit" id="xDr-l9-wKg">
+                            <connections>
+                                <action selector="close:" destination="CXz-Kh-vMW" id="mbj-iA-Lkr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="avatarImageView" destination="Gyp-Xr-tNM" id="rXt-VO-dX1"/>
+                        <outlet property="firstNameLabel" destination="sAM-t3-Jcf" id="Psv-aE-fbe"/>
+                        <outlet property="lastNameLabel" destination="T5T-FK-qpN" id="bQY-Hi-u8U"/>
+                        <outlet property="postTableView" destination="xca-bL-zuY" id="Rus-bV-akU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OUE-dN-GNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="039-UA-yTW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xQ7-Uc-Aet">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Albums-->
         <scene sceneID="h2Z-CN-UVo">
             <objects>
-                <collectionViewController id="xQ7-Uc-Aet" sceneMemberID="viewController">
+                <collectionViewController id="xQ7-Uc-Aet" customClass="AlbumsCollectionVC" customModule="GeekBrainsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="es4-fn-18v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iUb-hE-P9Y">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCellVC" id="iUb-hE-P9Y" customClass="AlbumCellVC" customModule="GeekBrainsApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -59,6 +59,8 @@
                                 </constraints>
                                 <size key="customSize" width="100" height="100"/>
                                 <connections>
+                                    <outlet property="coverImageView" destination="xpK-bB-O7l" id="bQj-sv-9Zq"/>
+                                    <outlet property="nameLabel" destination="eqr-cD-pXf" id="8gH-mZ-UGL"/>
                                     <segue destination="Kn4-gV-Fk1" kind="show" identifier="toAlbum" id="E5d-PJ-Bg7"/>
                                 </connections>
                             </collectionViewCell>
@@ -68,16 +70,20 @@
                             <outlet property="delegate" destination="xQ7-Uc-Aet" id="FBf-3H-6rB"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="b1f-qK-VMO"/>
+                    <navigationItem key="navigationItem" title="Albums" id="TfA-ux-inK"/>
+                    <connections>
+                        <outlet property="AlbumsCollectionView" destination="es4-fn-18v" id="xdw-0q-SCn"/>
+                        <outlet property="albumsCollectionView" destination="es4-fn-18v" id="xuZ-N2-wNq"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJ2-XB-kdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="181.59999999999999" y="17.541229385307346"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Photo CollectionVC-->
         <scene sceneID="w4H-Cy-upp">
             <objects>
-                <collectionViewController id="Kn4-gV-Fk1" sceneMemberID="viewController">
+                <collectionViewController id="Kn4-gV-Fk1" customClass="PhotoCollectionVC" customModule="GeekBrainsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="nzW-TA-rQ6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +95,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nx7-xv-Pbt">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="nx7-xv-Pbt" customClass="PhotoCell" customModule="GeekBrainsApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -117,6 +123,10 @@
                                     <constraint firstItem="8pn-v6-4yr" firstAttribute="top" secondItem="nx7-xv-Pbt" secondAttribute="topMargin" constant="5" id="b7A-hb-fp9"/>
                                 </constraints>
                                 <size key="customSize" width="100" height="100"/>
+                                <connections>
+                                    <outlet property="photoImageView" destination="8pn-v6-4yr" id="GMo-Y4-dD2"/>
+                                    <outlet property="titleLabel" destination="1EZ-bc-WbH" id="xcQ-K3-yYp"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -124,26 +134,13 @@
                             <outlet property="delegate" destination="Kn4-gV-Fk1" id="Zu2-O1-J4f"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="photoAlbumCollectionView" destination="nzW-TA-rQ6" id="wpa-n3-Ts0"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UNf-rL-frA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="14.842578710644679"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="8kz-Em-xUg">
-            <objects>
-                <navigationController id="039-UA-yTW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sGs-po-MqO">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="xQ7-Uc-Aet" kind="relationship" relationship="rootViewController" id="kbI-MH-TBn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JzE-sD-YC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-943" y="18"/>
         </scene>
     </scenes>
 </document>

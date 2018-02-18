@@ -12,12 +12,12 @@ import Alamofire
 
 struct VKAccessor {
     
-    class   UserInfo {
+    class   CurrentUser {
         var  fio =  ""
         var  id =  ""
         var  token =  ""
         
-        static   let  instance =  UserInfo ()
+        static   let  instance =  CurrentUser ()
         private   init (){}
     }
     
@@ -61,7 +61,8 @@ struct VKAccessor {
             let authBaseUrl = URL(string: "https://oauth.vk.com")!
             let baseUrl = URL(string: "https://api.vk.com")!
             var clientId = "6292833"
-            var apiVersion = "5.68"
+            var apiVersion = "5.73"
+            var scope = 140374191
         }
         
     }

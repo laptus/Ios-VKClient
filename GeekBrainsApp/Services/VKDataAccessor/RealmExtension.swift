@@ -26,5 +26,12 @@ extension Realm{
         realm.beginWrite()
         realm.add(newObjects, update: true)
         try realm.commitWrite()
-    }    
+    }
+    
+    static func clearAll(){
+        let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
+        }
+    }
 }

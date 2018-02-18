@@ -85,7 +85,8 @@ extension AuthVC: WKNavigationDelegate {
         self.token = token
 
         decisionHandler(.cancel)
-        UserDefaults.standard.set(userId, forKey: "userId")
+        VKAccessor.CurrentUser.instance.id = userId
+        VKAccessor.CurrentUser.instance.token = token
         FireVaseAcessor.adduser(userId)
         performSegue(withIdentifier: "toApp", sender: nil)
     }

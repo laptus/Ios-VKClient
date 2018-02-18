@@ -11,24 +11,24 @@ extension VKAccessor  {
     class Photos{
         static let queue = DispatchQueue(label: "Photots", qos: .background, attributes:  DispatchQueue.Attributes.concurrent, autoreleaseFrequency: DispatchQueue . AutoreleaseFrequency .inherit, target: DispatchQueue .global(qos: DispatchQoS.QoSClass.background))
         
-        static func getAlbums(ownerId: String){
+        static func getAlbums(ownerId: Int, completion: @escaping ([AlbumInfo])-> Void){
             queue.async {
                 let service = PhototService()
-                service.getAlbums(ownerId: ownerId)
+                service.getAlbums(ownerId: ownerId, completion: completion)
             }
         }
         
-        static func getPhotos(ownerId: String, competion:@escaping ()-> Void){
+        static func getPhotos(ownerId: Int, competion:@escaping ()-> Void){
             queue.async {
                 let service = PhototService()
                 service.getPhotos(ownerId: ownerId)
             }
         }
         
-        static func getPhotos(ownerId: String, albumId: String){
+        static func getPhotos(ownerId: Int, albumId: Int, completion: @escaping ([PhotoInfo])-> Void){
             queue.async {
                 let service = PhototService()
-                service.getPhotos(ownerId: ownerId,albumId: albumId)
+                service.getPhotos(ownerId: ownerId, albumId: albumId, completion: completion)
             }
         }
     }
