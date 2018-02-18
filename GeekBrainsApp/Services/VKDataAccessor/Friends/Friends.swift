@@ -22,5 +22,12 @@ extension VKAccessor  {
                 service.getFriendsList()
             }
         }
+        
+        static func getAndSaveToRealm(){
+            queue.async {
+                let service = FriendsService()
+                service.getFriendsList()
+            }
+        }
     }
 }
