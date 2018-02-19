@@ -9,7 +9,15 @@
 import UIKit
 
 class NewsShortViewCell: UITableViewCell {
-
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var newsTextLabel: UILabel!
+    @IBOutlet weak var repostsCountLabel: UILabel!
+    @IBOutlet weak var viewsCountLabel: UILabel!
+    @IBOutlet weak var likesCountLabel: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    
+    @IBOutlet weak var attachedPhotosCollectionView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

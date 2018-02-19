@@ -41,9 +41,9 @@
 		DB61771F2034BD81004AA4E7 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61771E2034BD81004AA4E7 /* Photos.swift */; };
 		DB6177212034BD91004AA4E7 /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6177202034BD91004AA4E7 /* PhotosService.swift */; };
 		DB6177232034BDA1004AA4E7 /* PhotosRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6177222034BDA1004AA4E7 /* PhotosRequests.swift */; };
-		DB6177272034BDD1004AA4E7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6177262034BDD1004AA4E7 /* User.swift */; };
-		DB6177292034BDDF004AA4E7 /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6177282034BDDF004AA4E7 /* UserRequests.swift */; };
-		DB61772B2034BDEE004AA4E7 /* UserService1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61772A2034BDEE004AA4E7 /* UserService1.swift */; };
+		DB6177272034BDD1004AA4E7 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6177262034BDD1004AA4E7 /* Info.swift */; };
+		DB6177292034BDDF004AA4E7 /* InfoRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6177282034BDDF004AA4E7 /* InfoRequests.swift */; };
+		DB61772B2034BDEE004AA4E7 /* InfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61772A2034BDEE004AA4E7 /* InfoService.swift */; };
 		DB6177302034C8F3004AA4E7 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61772F2034C8F3004AA4E7 /* NewsFeed.swift */; };
 		DB6177322034C8FD004AA4E7 /* NewsFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6177312034C8FD004AA4E7 /* NewsFeedService.swift */; };
 		DB6177342034C90E004AA4E7 /* NewsFeedRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6177332034C90E004AA4E7 /* NewsFeedRequests.swift */; };
@@ -118,9 +118,9 @@
 		DB61771E2034BD81004AA4E7 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		DB6177202034BD91004AA4E7 /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
 		DB6177222034BDA1004AA4E7 /* PhotosRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRequests.swift; sourceTree = "<group>"; };
-		DB6177262034BDD1004AA4E7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		DB6177282034BDDF004AA4E7 /* UserRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequests.swift; sourceTree = "<group>"; };
-		DB61772A2034BDEE004AA4E7 /* UserService1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService1.swift; sourceTree = "<group>"; };
+		DB6177262034BDD1004AA4E7 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		DB6177282034BDDF004AA4E7 /* InfoRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRequests.swift; sourceTree = "<group>"; };
+		DB61772A2034BDEE004AA4E7 /* InfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoService.swift; sourceTree = "<group>"; };
 		DB61772F2034C8F3004AA4E7 /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 		DB6177312034C8FD004AA4E7 /* NewsFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedService.swift; sourceTree = "<group>"; };
 		DB6177332034C90E004AA4E7 /* NewsFeedRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedRequests.swift; sourceTree = "<group>"; };
@@ -318,14 +318,14 @@
 			path = AlamofireImage;
 			sourceTree = "<group>";
 		};
-		DB61771C2034BD5C004AA4E7 /* UserInfo */ = {
+		DB61771C2034BD5C004AA4E7 /* rInfo */ = {
 			isa = PBXGroup;
 			children = (
-				DB6177262034BDD1004AA4E7 /* User.swift */,
-				DB61772A2034BDEE004AA4E7 /* UserService1.swift */,
-				DB6177282034BDDF004AA4E7 /* UserRequests.swift */,
+				DB6177262034BDD1004AA4E7 /* Info.swift */,
+				DB61772A2034BDEE004AA4E7 /* InfoService.swift */,
+				DB6177282034BDDF004AA4E7 /* InfoRequests.swift */,
 			);
-			path = UserInfo;
+			path = rInfo;
 			sourceTree = "<group>";
 		};
 		DB61771D2034BD6A004AA4E7 /* Photos */ = {
@@ -420,7 +420,7 @@
 				DB5EC5C4203836C000920B8F /* Messages */,
 				DB61772E2034C8DF004AA4E7 /* NewsFeed */,
 				DB61771D2034BD6A004AA4E7 /* Photos */,
-				DB61771C2034BD5C004AA4E7 /* UserInfo */,
+				DB61771C2034BD5C004AA4E7 /* rInfo */,
 				DBCD542E2033670A00F169FA /* Friends */,
 				DBC8358A1FE69E64001FC8E5 /* RealmExtension.swift */,
 				DBC132EC1FDD4DE8004BB41A /* Enviroment.swift */,
@@ -671,9 +671,9 @@
 				DB92D4DB1FE1D554008AE7B5 /* UserRouter.swift in Sources */,
 				DBAABF411FDF118400A2088B /* RequestProtocol.swift in Sources */,
 				DB6177302034C8F3004AA4E7 /* NewsFeed.swift in Sources */,
-				DB61772B2034BDEE004AA4E7 /* UserService1.swift in Sources */,
+				DB6177322034C8FD004AA4E7 /* NewsFeedService.swift in Sources */,
+				DB6177342034C90E004AA4E7 /* NewsFeedRequests.swift in Sources */,
 				DBC132ED1FDD4DE8004BB41A /* Enviroment.swift in Sources */,
-				DB6177292034BDDF004AA4E7 /* UserRequests.swift in Sources */,
 				DBAABF391FDD8D8000A2088B /* AuthRouter.swift in Sources */,
 				DB6177212034BD91004AA4E7 /* PhotosService.swift in Sources */,
 				DB92D4D91FE1D40F008AE7B5 /* PhotoInfo.swift in Sources */,
@@ -689,7 +689,6 @@
 				DB560B151FD4A4720076B350 /* PhotoCell.swift in Sources */,
 				DBAABF471FDF232200A2088B /* GroupInfo.swift in Sources */,
 				DBCD54292030AAC500F169FA /* Friends.swift in Sources */,
-				DB6177342034C90E004AA4E7 /* NewsFeedRequests.swift in Sources */,
 				DB5B98052034A4F400A2497B /* SettingsVC.swift in Sources */,
 				DB42673120389C3B00E685B5 /* UserInfoVC.swift in Sources */,
 				DBAFD47D1FD4B2FF00807D63 /* SearchGroupsVC.swift in Sources */,
@@ -699,7 +698,6 @@
 				DB1D3BCF202618C200F26B72 /* SettingsNavController.swift in Sources */,
 				DBAABF3F1FDF112700A2088B /* GroupsRouter.swift in Sources */,
 				DB4267332038B1B000E685B5 /* AlbumsCollectionVC.swift in Sources */,
-				DB6177322034C8FD004AA4E7 /* NewsFeedService.swift in Sources */,
 				DB4267352038B4B600E685B5 /* AlbumInfo.swift in Sources */,
 				DB75B3381FD48FC6005B724C /* FriendsTablveVC.swift in Sources */,
 				DB42672E203878B800E685B5 /* BGService.swift in Sources */,
@@ -716,7 +714,9 @@
 				DBCD542B2030AB0700F169FA /* VKAccessor.swift in Sources */,
 				DBC8358B1FE69E64001FC8E5 /* RealmExtension.swift in Sources */,
 				DB5EC5C3203832F300920B8F /* NewsInfo.swift in Sources */,
-				DB6177272034BDD1004AA4E7 /* User.swift in Sources */,
+				DB6177272034BDD1004AA4E7 /* Info.swift in Sources */,
+				DB61772B2034BDEE004AA4E7 /* InfoService.swift in Sources */,
+				DB6177292034BDDF004AA4E7 /* InfoRequests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

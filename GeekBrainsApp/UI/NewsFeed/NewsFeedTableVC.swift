@@ -7,42 +7,89 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NewsFeedTableVC: UITableViewController {
-    let news: [NewsInfo] = []
+    var news: Results<NewsInfo>?
+    var realmToken: NotificationToken?
+    @IBOutlet var newsFeedTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNews()
+        pairWithRealm()
     }
 
     func loadNews(){
-//        VKAccessor.Ne
+        VKAccessor.News.saveNewsToRealm()
+    }
+    
+    func pairWithRealm(){
+        let realm = try! Realm()
+        news = realm.objects(NewsInfo.self)
+        realmToken = news!.observe {[weak self] (changes: RealmCollectionChange) in
+            guard let tableView = self?.tableView else {return}
+            switch changes{
+            case .initial:
+                tableView.reloadData()
+            case .update(_, let deletions, let insertions, let modifications):
+                tableView.beginUpdates()
+                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
+                                     with: .automatic)
+                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                tableView.endUpdates()
+            case .error(let error):
+                fatalError("\(error)")
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return news.count
+        return news?.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsShortViewCell", for: indexPath) as! NewsShortViewCell
+        if let post = news?[indexPath.row]{
+            if post.sourceId < 0{
+                VKAccessor.Info.getInfo(groupId: String(abs(post.sourceId))){[weak cell] gName,sName,pPath in
+                    DispatchQueue.main.async {
+                        cell?.firstNameLabel.text = gName
+                        cell?.lastNameLabel.text = sName
+                        ImageService.getImage(urlPath: pPath){[weak cell] result in
+                            cell?.avatarImageView.image = result
+                        }
+                    }
+                }
+                
+            }else{
+                VKAccessor.Info.getInfo(userId: String(post.sourceId)){[weak cell] gName,sName,pPath in
+                    DispatchQueue.main.async {
+                        cell?.firstNameLabel.text = gName
+                        cell?.lastNameLabel.text = sName
+                        ImageService.getImage(urlPath: pPath){[weak cell] result in
+                            cell?.avatarImageView.image = result
+                        }
+                    }
+                }
+            }
+            cell.textLabel?.text = post.text
+            cell.likesCountLabel.text = String(post.likes)
+            cell.repostsCountLabel.text = String(post.reposts)
+            cell.viewsCountLabel.text = String(post.views)
+            // добавить фоточки
+        }
         return cell
     }
-    */
 }
