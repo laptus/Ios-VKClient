@@ -19,7 +19,7 @@ class NewsFeedTableVC: UITableViewController {
         loadNews()
         pairWithRealm()
     }
-
+    
     func loadNews(){
         VKAccessor.News.saveNewsToRealm()
     }
@@ -54,11 +54,11 @@ class NewsFeedTableVC: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return news?.count ?? 0
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsShortViewCell", for: indexPath) as! NewsShortViewCell
         if let post = news?[indexPath.row]{
@@ -68,7 +68,9 @@ class NewsFeedTableVC: UITableViewController {
                         cell?.firstNameLabel.text = gName
                         cell?.lastNameLabel.text = sName
                         ImageService.getImage(urlPath: pPath){[weak cell] result in
-                            cell?.avatarImageView.image = result
+                            DispatchQueue.main.async {
+                                cell?.avatarImageView.image = result
+                            }
                         }
                     }
                 }
@@ -79,17 +81,27 @@ class NewsFeedTableVC: UITableViewController {
                         cell?.firstNameLabel.text = gName
                         cell?.lastNameLabel.text = sName
                         ImageService.getImage(urlPath: pPath){[weak cell] result in
-                            cell?.avatarImageView.image = result
+                            DispatchQueue.main.async {cell?.avatarImageView.image = result}
                         }
                     }
                 }
             }
-            cell.textLabel?.text = post.text
+            cell.newsTextLabel.text = post.text
             cell.likesCountLabel.text = String(post.likes)
             cell.repostsCountLabel.text = String(post.reposts)
             cell.viewsCountLabel.text = String(post.views)
-            // добавить фоточки
+            cell.photos = []
+            var k = 0
+            for i in 0..<post.photoList.count{
+                if k > 5{
+                    break
+                }
+                cell.photos.append(post.photoList[i])
+                k += 1
+            }
+            cell.attachedPhotosCollectionView.reloadData()
         }
         return cell
     }
 }
+

@@ -44,8 +44,8 @@ class NewsInfo: Object{
         likes = json["likes"]["count"].intValue
         reposts = json["reposts"]["count"].intValue
         views = json["views"]["count"].intValue
-        photoList = json["photos"]["items"].array?.flatMap{
-            $0["photo_130"].stringValue} ?? []
+        photoList = json["attachments"].array?.flatMap{
+            $0["photo"]["photo_130"].stringValue} ?? []
 //        photosList.append(objectsIn: json["photos"]["items"].array?.flatMap{
 //            $0["photo_130"].stringValue} ?? [])
     }

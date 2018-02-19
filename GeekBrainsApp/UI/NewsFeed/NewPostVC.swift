@@ -10,8 +10,20 @@ import UIKit
 
 class NewPostVC: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
+    var coordsString = ""
     
+    @IBAction func send(_ sender: Any) {
+        let message = newsTextView.text + coordsString
+        let id = VKAccessor.CurrentUser.instance.id
+        VKAccessor.Wall.postNews(userId: id, message: message, photosIds: [])
+        dismiss(animated: true)
+    }
+    
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true)
+    }
     @IBOutlet weak var newsTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         newsTextView.becomeFirstResponder()
@@ -84,6 +96,6 @@ extension NewPostVC: UIImagePickerControllerDelegate, UINavigationControllerDele
 
 extension NewPostVC: CoordinateUserDelegete{
     func printCoordinates(coordinates: String) {
-        newsTextView.text.append("\n"+coordinates)
+        coordsString = "\n"+coordinates
     }
 }

@@ -50,6 +50,10 @@
 		DB74CA081FE063D20001EFD6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB74CA071FE063D20001EFD6 /* UserService.swift */; };
 		DB75B3381FD48FC6005B724C /* FriendsTablveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75B3371FD48FC6005B724C /* FriendsTablveVC.swift */; };
 		DB75B33A1FD49054005B724C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75B3391FD49054005B724C /* UserCell.swift */; };
+		DB7A4A5E203ACD0A0097B0BB /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A5D203ACD0A0097B0BB /* Wall.swift */; };
+		DB7A4A60203ACD140097B0BB /* WallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A5F203ACD140097B0BB /* WallService.swift */; };
+		DB7A4A62203ACD230097B0BB /* WallRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A61203ACD230097B0BB /* WallRequests.swift */; };
+		DB7A4A64203AE6E80097B0BB /* AttachedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A63203AE6E80097B0BB /* AttachedPhotoCell.swift */; };
 		DB92D4D71FE1CAD6008AE7B5 /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92D4D61FE1CAD6008AE7B5 /* GroupService.swift */; };
 		DB92D4D91FE1D40F008AE7B5 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92D4D81FE1D40F008AE7B5 /* PhotoInfo.swift */; };
 		DB92D4DB1FE1D554008AE7B5 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92D4DA1FE1D554008AE7B5 /* UserRouter.swift */; };
@@ -127,6 +131,10 @@
 		DB74CA071FE063D20001EFD6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		DB75B3371FD48FC6005B724C /* FriendsTablveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTablveVC.swift; sourceTree = "<group>"; };
 		DB75B3391FD49054005B724C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		DB7A4A5D203ACD0A0097B0BB /* Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
+		DB7A4A5F203ACD140097B0BB /* WallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallService.swift; sourceTree = "<group>"; };
+		DB7A4A61203ACD230097B0BB /* WallRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallRequests.swift; sourceTree = "<group>"; };
+		DB7A4A63203AE6E80097B0BB /* AttachedPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachedPhotoCell.swift; sourceTree = "<group>"; };
 		DB92D4D61FE1CAD6008AE7B5 /* GroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupService.swift; sourceTree = "<group>"; };
 		DB92D4D81FE1D40F008AE7B5 /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
 		DB92D4DA1FE1D554008AE7B5 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
@@ -233,6 +241,7 @@
 				DB5EC5CD20383AC800920B8F /* NewsFeedTableVC.swift */,
 				DB5EC5CF20383C1800920B8F /* MapsVC.swift */,
 				DBB86C8C2039BA07008F062C /* NewPostVC.swift */,
+				DB7A4A63203AE6E80097B0BB /* AttachedPhotoCell.swift */,
 			);
 			path = NewsFeed;
 			sourceTree = "<group>";
@@ -348,6 +357,16 @@
 			path = NewsFeed;
 			sourceTree = "<group>";
 		};
+		DB7A4A5C203ACA310097B0BB /* Wall */ = {
+			isa = PBXGroup;
+			children = (
+				DB7A4A5D203ACD0A0097B0BB /* Wall.swift */,
+				DB7A4A5F203ACD140097B0BB /* WallService.swift */,
+				DB7A4A61203ACD230097B0BB /* WallRequests.swift */,
+			);
+			path = Wall;
+			sourceTree = "<group>";
+		};
 		DBAABF421FDF227700A2088B /* Routers */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				DBCD542A2030AB0700F169FA /* VKAccessor.swift */,
+				DB7A4A5C203ACA310097B0BB /* Wall */,
 				DB5EC5C4203836C000920B8F /* Messages */,
 				DB61772E2034C8DF004AA4E7 /* NewsFeed */,
 				DB61771D2034BD6A004AA4E7 /* Photos */,
@@ -670,6 +690,9 @@
 				DB5EC5CE20383AC800920B8F /* NewsFeedTableVC.swift in Sources */,
 				DB92D4DB1FE1D554008AE7B5 /* UserRouter.swift in Sources */,
 				DBAABF411FDF118400A2088B /* RequestProtocol.swift in Sources */,
+				DB7A4A5E203ACD0A0097B0BB /* Wall.swift in Sources */,
+				DB7A4A60203ACD140097B0BB /* WallService.swift in Sources */,
+				DB7A4A62203ACD230097B0BB /* WallRequests.swift in Sources */,
 				DB6177302034C8F3004AA4E7 /* NewsFeed.swift in Sources */,
 				DB6177322034C8FD004AA4E7 /* NewsFeedService.swift in Sources */,
 				DB6177342034C90E004AA4E7 /* NewsFeedRequests.swift in Sources */,
@@ -686,6 +709,7 @@
 				DB5EC5CA203836F400920B8F /* MessagesRequests.swift in Sources */,
 				DB23935D1FD4B0EC006FCFE5 /* GroupsListVC.swift in Sources */,
 				DBB86C872039A3CE008F062C /* ChatTableVC.swift in Sources */,
+				DB7A4A64203AE6E80097B0BB /* AttachedPhotoCell.swift in Sources */,
 				DB560B151FD4A4720076B350 /* PhotoCell.swift in Sources */,
 				DBAABF471FDF232200A2088B /* GroupInfo.swift in Sources */,
 				DBCD54292030AAC500F169FA /* Friends.swift in Sources */,
