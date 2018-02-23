@@ -61,46 +61,26 @@ class NewsFeedTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsShortViewCell", for: indexPath) as! NewsShortViewCell
-        if let post = news?[indexPath.row]{
-            if post.sourceId < 0{
-                VKAccessor.Info.getInfo(groupId: String(abs(post.sourceId))){[weak cell] gName,sName,pPath in
-                    DispatchQueue.main.async {
-                        cell?.firstNameLabel.text = gName
-                        cell?.lastNameLabel.text = sName
-                        ImageService.getImage(urlPath: pPath){[weak cell] result in
-                            DispatchQueue.main.async {
-                                cell?.avatarImageView.image = result
-                            }
-                        }
-                    }
-                }
-                
-            }else{
-                VKAccessor.Info.getInfo(userId: String(post.sourceId)){[weak cell] gName,sName,pPath in
-                    DispatchQueue.main.async {
-                        cell?.firstNameLabel.text = gName
-                        cell?.lastNameLabel.text = sName
-                        ImageService.getImage(urlPath: pPath){[weak cell] result in
-                            DispatchQueue.main.async {cell?.avatarImageView.image = result}
-                        }
-                    }
+        guard let post = news?[indexPath.row] else {return cell}
+        VKAccessor.Info.getInfo(id: post.sourceId){[weak cell] gName,sName,pPath in
+            DispatchQueue.main.async {
+                cell?.firstNameLabel.text = gName
+                cell?.lastNameLabel.text = sName
+                ImageService.getImage(urlPath: pPath){[weak cell] result in
+                    DispatchQueue.main.async {cell?.avatarImageView.image = result}
                 }
             }
-            cell.newsTextLabel.text = post.text
-            cell.likesCountLabel.text = String(post.likes)
-            cell.repostsCountLabel.text = String(post.reposts)
-            cell.viewsCountLabel.text = String(post.views)
-            cell.photos = []
-            var k = 0
-            for i in 0..<post.photoList.count{
-                if k > 5{
-                    break
-                }
-                cell.photos.append(post.photoList[i])
-                k += 1
-            }
-            cell.attachedPhotosCollectionView.reloadData()
         }
+        cell.newsTextLabel.text = post.text
+        cell.likesCountLabel.text = String(post.likes)
+        cell.repostsCountLabel.text = String(post.reposts)
+        cell.viewsCountLabel.text = String(post.views)
+        cell.photos = []
+        let maxPhotosCount = min(6,post.photoList.count)
+        for i in 0..<maxPhotosCount{
+            cell.photos.append(post.photoList[i])
+        }
+        cell.attachedPhotosCollectionView.reloadData()
         return cell
     }
 }

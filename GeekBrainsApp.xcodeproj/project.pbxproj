@@ -24,6 +24,7 @@
 		DB4267332038B1B000E685B5 /* AlbumsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4267322038B1B000E685B5 /* AlbumsCollectionVC.swift */; };
 		DB4267352038B4B600E685B5 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4267342038B4B600E685B5 /* AlbumInfo.swift */; };
 		DB4267372038C16A00E685B5 /* AlbumCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4267362038C16A00E685B5 /* AlbumCellVC.swift */; };
+		DB4B7131204027FC00A4D78F /* PostAttachedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4B7130204027FC00A4D78F /* PostAttachedPhotoCell.swift */; };
 		DB509A681FDD249900EACD15 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB509A671FDD249800EACD15 /* KeychainPasswordItem.swift */; };
 		DB560B131FD4A44E0076B350 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB560B121FD4A44E0076B350 /* PhotoCollectionVC.swift */; };
 		DB560B151FD4A4720076B350 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB560B141FD4A4720076B350 /* PhotoCell.swift */; };
@@ -47,6 +48,7 @@
 		DB6177302034C8F3004AA4E7 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61772F2034C8F3004AA4E7 /* NewsFeed.swift */; };
 		DB6177322034C8FD004AA4E7 /* NewsFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6177312034C8FD004AA4E7 /* NewsFeedService.swift */; };
 		DB6177342034C90E004AA4E7 /* NewsFeedRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6177332034C90E004AA4E7 /* NewsFeedRequests.swift */; };
+		DB74C23520401D8800EFAF7D /* UserPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB74C23420401D8800EFAF7D /* UserPostVC.swift */; };
 		DB74CA081FE063D20001EFD6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB74CA071FE063D20001EFD6 /* UserService.swift */; };
 		DB75B3381FD48FC6005B724C /* FriendsTablveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75B3371FD48FC6005B724C /* FriendsTablveVC.swift */; };
 		DB75B33A1FD49054005B724C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75B3391FD49054005B724C /* UserCell.swift */; };
@@ -105,6 +107,7 @@
 		DB4267322038B1B000E685B5 /* AlbumsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionVC.swift; sourceTree = "<group>"; };
 		DB4267342038B4B600E685B5 /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 		DB4267362038C16A00E685B5 /* AlbumCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellVC.swift; sourceTree = "<group>"; };
+		DB4B7130204027FC00A4D78F /* PostAttachedPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAttachedPhotoCell.swift; sourceTree = "<group>"; };
 		DB509A671FDD249800EACD15 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		DB560B121FD4A44E0076B350 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionVC.swift; sourceTree = "<group>"; };
 		DB560B141FD4A4720076B350 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 		DB61772F2034C8F3004AA4E7 /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 		DB6177312034C8FD004AA4E7 /* NewsFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedService.swift; sourceTree = "<group>"; };
 		DB6177332034C90E004AA4E7 /* NewsFeedRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedRequests.swift; sourceTree = "<group>"; };
+		DB74C23420401D8800EFAF7D /* UserPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostVC.swift; sourceTree = "<group>"; };
 		DB74CA071FE063D20001EFD6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		DB75B3371FD48FC6005B724C /* FriendsTablveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTablveVC.swift; sourceTree = "<group>"; };
 		DB75B3391FD49054005B724C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				DB42673020389C3B00E685B5 /* UserInfoVC.swift */,
+				DB74C23420401D8800EFAF7D /* UserPostVC.swift */,
+				DB4B7130204027FC00A4D78F /* PostAttachedPhotoCell.swift */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -687,6 +693,7 @@
 				DB509A681FDD249900EACD15 /* KeychainPasswordItem.swift in Sources */,
 				DBB86C8D2039BA07008F062C /* NewPostVC.swift in Sources */,
 				DB4267372038C16A00E685B5 /* AlbumCellVC.swift in Sources */,
+				DB74C23520401D8800EFAF7D /* UserPostVC.swift in Sources */,
 				DB5EC5CE20383AC800920B8F /* NewsFeedTableVC.swift in Sources */,
 				DB92D4DB1FE1D554008AE7B5 /* UserRouter.swift in Sources */,
 				DBAABF411FDF118400A2088B /* RequestProtocol.swift in Sources */,
@@ -727,6 +734,7 @@
 				DB42672E203878B800E685B5 /* BGService.swift in Sources */,
 				DB74CA081FE063D20001EFD6 /* UserService.swift in Sources */,
 				DB596032202A2D8000BF5943 /* FireBaseAccessor.swift in Sources */,
+				DB4B7131204027FC00A4D78F /* PostAttachedPhotoCell.swift in Sources */,
 				DB5EC5D020383C1800920B8F /* MapsVC.swift in Sources */,
 				DBCD54302033672A00F169FA /* FriendsRequests.swift in Sources */,
 				DB6177232034BDA1004AA4E7 /* PhotosRequests.swift in Sources */,
