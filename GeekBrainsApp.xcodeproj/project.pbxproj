@@ -25,6 +25,10 @@
 		DB4267352038B4B600E685B5 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4267342038B4B600E685B5 /* AlbumInfo.swift */; };
 		DB4267372038C16A00E685B5 /* AlbumCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4267362038C16A00E685B5 /* AlbumCellVC.swift */; };
 		DB4B7131204027FC00A4D78F /* PostAttachedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4B7130204027FC00A4D78F /* PostAttachedPhotoCell.swift */; };
+		DB4B71332040471A00A4D78F /* MessageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4B71322040471A00A4D78F /* MessageInfo.swift */; };
+		DB4B71352040482C00A4D78F /* MessagingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4B71342040482C00A4D78F /* MessagingVC.swift */; };
+		DB4B71372040486400A4D78F /* DefandantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4B71362040486400A4D78F /* DefandantCell.swift */; };
+		DB4B71392040487200A4D78F /* SenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4B71382040487200A4D78F /* SenderCell.swift */; };
 		DB509A681FDD249900EACD15 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB509A671FDD249800EACD15 /* KeychainPasswordItem.swift */; };
 		DB560B131FD4A44E0076B350 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB560B121FD4A44E0076B350 /* PhotoCollectionVC.swift */; };
 		DB560B151FD4A4720076B350 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB560B141FD4A4720076B350 /* PhotoCell.swift */; };
@@ -108,6 +112,10 @@
 		DB4267342038B4B600E685B5 /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 		DB4267362038C16A00E685B5 /* AlbumCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellVC.swift; sourceTree = "<group>"; };
 		DB4B7130204027FC00A4D78F /* PostAttachedPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAttachedPhotoCell.swift; sourceTree = "<group>"; };
+		DB4B71322040471A00A4D78F /* MessageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInfo.swift; sourceTree = "<group>"; };
+		DB4B71342040482C00A4D78F /* MessagingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingVC.swift; sourceTree = "<group>"; };
+		DB4B71362040486400A4D78F /* DefandantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefandantCell.swift; sourceTree = "<group>"; };
+		DB4B71382040487200A4D78F /* SenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderCell.swift; sourceTree = "<group>"; };
 		DB509A671FDD249800EACD15 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		DB560B121FD4A44E0076B350 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionVC.swift; sourceTree = "<group>"; };
 		DB560B141FD4A4720076B350 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -434,6 +442,9 @@
 			children = (
 				DBB86C862039A3CE008F062C /* ChatTableVC.swift */,
 				DBB86C882039A3E7008F062C /* ChatViewCell.swift */,
+				DB4B71342040482C00A4D78F /* MessagingVC.swift */,
+				DB4B71362040486400A4D78F /* DefandantCell.swift */,
+				DB4B71382040487200A4D78F /* SenderCell.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -477,6 +488,7 @@
 				DB5EC5C2203832F300920B8F /* NewsInfo.swift */,
 				DB4267342038B4B600E685B5 /* AlbumInfo.swift */,
 				DBB86C8A2039A4AC008F062C /* ChatInfo.swift */,
+				DB4B71322040471A00A4D78F /* MessageInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -707,6 +719,7 @@
 				DBAABF391FDD8D8000A2088B /* AuthRouter.swift in Sources */,
 				DB6177212034BD91004AA4E7 /* PhotosService.swift in Sources */,
 				DB92D4D91FE1D40F008AE7B5 /* PhotoInfo.swift in Sources */,
+				DB4B71372040486400A4D78F /* DefandantCell.swift in Sources */,
 				DB560B131FD4A44E0076B350 /* PhotoCollectionVC.swift in Sources */,
 				DB92D4D71FE1CAD6008AE7B5 /* GroupService.swift in Sources */,
 				DBAFD47B1FD4B2E000807D63 /* GroupInfoCell.swift in Sources */,
@@ -734,9 +747,12 @@
 				DB42672E203878B800E685B5 /* BGService.swift in Sources */,
 				DB74CA081FE063D20001EFD6 /* UserService.swift in Sources */,
 				DB596032202A2D8000BF5943 /* FireBaseAccessor.swift in Sources */,
+				DB4B71352040482C00A4D78F /* MessagingVC.swift in Sources */,
 				DB4B7131204027FC00A4D78F /* PostAttachedPhotoCell.swift in Sources */,
 				DB5EC5D020383C1800920B8F /* MapsVC.swift in Sources */,
 				DBCD54302033672A00F169FA /* FriendsRequests.swift in Sources */,
+				DB4B71332040471A00A4D78F /* MessageInfo.swift in Sources */,
+				DB4B71392040487200A4D78F /* SenderCell.swift in Sources */,
 				DB6177232034BDA1004AA4E7 /* PhotosRequests.swift in Sources */,
 				DB3E8F601FCF4E3100CA82D9 /* tabsVC.swift in Sources */,
 				DB61771F2034BD81004AA4E7 /* Photos.swift in Sources */,
