@@ -52,6 +52,10 @@ class UserInfoVC: UIViewController {
             let ctrl = segue.destination as? AlbumsCollectionVC{
             ctrl.ownerId = userId
         }
+        if segue.identifier == "toAllPhotos",
+            let ctrl = segue.destination as? PhotoCollectionVC{
+            ctrl.userId = userId
+        }
     }
  
     @IBAction func close(_ sender: Any) {

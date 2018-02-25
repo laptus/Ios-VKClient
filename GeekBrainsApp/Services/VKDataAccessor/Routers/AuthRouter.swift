@@ -53,7 +53,7 @@ extension AuthRouter {
                 "client_id": environment.clientId,
                 "display": "mobile",
                 "redirect_uri": "https://oauth.vk.com/blank.html",
-                "scope": "140374191",
+                "scope": "270342",//"140374191",
                 "response_type": "token",
                 "v": environment.apiVersion
             ]

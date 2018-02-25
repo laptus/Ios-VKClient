@@ -46,7 +46,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-mX-sBr">
                                         <rect key="frame" x="266.5" y="0.0" width="88.5" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Photos"/>
                                     </button>
                                 </subviews>
                                 <constraints>

@@ -22,8 +22,23 @@ class UserInfo :Object{
         self.photoUrl = json["photo_100"].stringValue
     }
     
+    convenience init(id: Int, name: String, photoUrl: String){
+        self.init()
+        self.id = id
+        self.name = name
+        self.photoUrl = photoUrl
+    }
+    
     override static func primaryKey() -> String? {
         return String("id")
+    }
+    
+    var toAnyObject: Any{
+        return [
+            "id": id,
+            "name": name,
+            "photoUrl": photoUrl
+        ]
     }
 }
 

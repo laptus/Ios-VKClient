@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        try? FileManager.default.removeItem(at: Realm.Configuration.defaultConfiguration.fileURL!)
+        //try? FileManager.default.removeItem(at: Realm.Configuration.defaultConfiguration.fileURL!)
+
         return true
     }
     
@@ -29,6 +30,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
+//        do{
+//            let realm = try Realm()
+//            var friends: [UserInfo] = []
+//            let friednsRealm = realm.objects(UserInfo.self)
+//            let maxFriendsCountForExtension = 5
+//            for i in 0..<maxFriendsCountForExtension{
+//                let friend = friednsRealm[i]
+//                friends.append(friend)
+//            }
+//            let groupDefaults = UserDefaults(suiteName: "group.ALLaptevVK")
+//            groupDefaults?.set(friends, forKey: "friends")
+//        } catch{
+//            print(error)
+//        }
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
@@ -42,7 +57,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        do{
+//            let realm = try Realm()
+//            var friends: [UserInfo] = []
+//            let friednsRealm = realm.objects(UserInfo.self)
+//            let maxFriendsCountForExtension = 5
+//            for i in 0..<maxFriendsCountForExtension{
+//                let friend = friednsRealm[i]
+//                friends.append(friend)
+//            }
+//            let groupDefaults = UserDefaults(suiteName: "group.ALLaptevVK")
+//            let friendsArray = friends.flatMap{$0.toAnyObject}
+//            groupDefaults?.set(friendsArray, forKey: "friends")
+        } catch{
+            print(error)
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
