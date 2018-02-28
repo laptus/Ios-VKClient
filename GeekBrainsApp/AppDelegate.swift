@@ -9,16 +9,19 @@
 import UIKit
 import Firebase
 import RealmSwift
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var bgTask:  UIBackgroundTaskIdentifier!
     var window: UIWindow?
+    var watchSession: WCSessionService?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        try? FileManager.default.removeItem(at: Realm.Configuration.defaultConfiguration.fileURL!)
+        //try? FileManager.default.removeItem(at: Realm.Configuration.defaultConfiguration.fileURL!)
+        watchSession = WCSessionService()
         return true
     }
     
