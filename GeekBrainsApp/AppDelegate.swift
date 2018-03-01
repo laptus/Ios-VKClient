@@ -45,7 +45,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        do{
+            let realm = try Realm()
+            let friednsRealm = realm.objects(UserInfo.self)
+            var tempData : [String:Any] = [:]
+            let maxCount = min(10, friednsRealm.count)
+            for i in 0..<maxCount{
+                let friend = friednsRealm[i]
+                let imageData = try Data(contentsOf: URL(string: friend.photoUrl)!)
+                tempData[String(i)] = ["name": friend.name,"id": friend.id, "image": imageData]
+            }
+            tempData["count"] = maxCount
+            let groupDefaults = UserDefaults(suiteName: "group.ALLaptevVK")
+            groupDefaults?.set(tempData, forKey: "friends")
+        }catch{
+            print(error)
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

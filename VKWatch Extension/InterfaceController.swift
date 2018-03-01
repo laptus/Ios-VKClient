@@ -45,7 +45,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
                 row.nameLabel.setText(name)
             }
         }
-//        self.updateTable()
     }
     
     override func didDeactivate() {
