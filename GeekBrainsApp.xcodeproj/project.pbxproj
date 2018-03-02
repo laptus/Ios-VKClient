@@ -76,7 +76,7 @@
 		DBB173A31FCACAF100FC0479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB173A21FCACAF100FC0479 /* AppDelegate.swift */; };
 		DBB173A51FCACAF100FC0479 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB173A41FCACAF100FC0479 /* LoginViewController.swift */; };
 		DBB173A81FCACAF200FC0479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB173A61FCACAF200FC0479 /* Main.storyboard */; };
-		DBB173AA1FCACAF200FC0479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBB173A91FCACAF200FC0479 /* Assets.xcassets */; };
+		DBB173AA1FCACAF200FC0479 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBB173A91FCACAF200FC0479 /* Media.xcassets */; };
 		DBB173AD1FCACAF200FC0479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB173AB1FCACAF200FC0479 /* LaunchScreen.storyboard */; };
 		DBB86C872039A3CE008F062C /* ChatTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB86C862039A3CE008F062C /* ChatTableVC.swift */; };
 		DBB86C892039A3E7008F062C /* ChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB86C882039A3E7008F062C /* ChatViewCell.swift */; };
@@ -101,6 +101,12 @@
 		DBCD54302033672A00F169FA /* FriendsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD542F2033672A00F169FA /* FriendsRequests.swift */; };
 		DBCD54322033676200F169FA /* FriendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD54312033676200F169FA /* FriendsService.swift */; };
 		DBE7C8532047365500048B45 /* FriendsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE7C8522047365500048B45 /* FriendsRowController.swift */; };
+		DBE7C85B20488A8700048B45 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE7C85A20488A8700048B45 /* Messages.framework */; };
+		DBE7C85E20488A8700048B45 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE7C85D20488A8700048B45 /* MessagesViewController.swift */; };
+		DBE7C86120488A8700048B45 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE7C85F20488A8700048B45 /* MainInterface.storyboard */; };
+		DBE7C86320488A8700048B45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBE7C86220488A8700048B45 /* Assets.xcassets */; };
+		DBE7C86720488A8700048B45 /* VKMessage.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DBE7C85920488A8600048B45 /* VKMessage.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DBE7C86D20488B2700048B45 /* FriendsMessagesCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE7C86C20488B2700048B45 /* FriendsMessagesCellVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +123,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = DBBBB2472047191F0055EBE3;
 			remoteInfo = VKWatch;
+		};
+		DBE7C86520488A8700048B45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBB173971FCACAF100FC0479 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBE7C85820488A8600048B45;
+			remoteInfo = VKMessage;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -143,11 +156,23 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBE7C86B20488A8700048B45 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DBE7C86720488A8700048B45 /* VKMessage.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		159FC7F4C5F59098D9FE5D56 /* Pods-GeekBrainsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekBrainsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeekBrainsApp/Pods-GeekBrainsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		3EC302B6EA1BF9006ADCCA72 /* Pods_VKWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D1379AB32B5D4D8DF3E9572 /* Pods_VKMessage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKMessage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D424B0843C0933AA67B57D4 /* Pods-GeekBrainsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekBrainsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeekBrainsApp/Pods-GeekBrainsApp.release.xcconfig"; sourceTree = "<group>"; };
 		DB05DB271FFE80E500FBAAA1 /* Groups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 		DB05DB291FFE812900FBAAA1 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
@@ -218,9 +243,11 @@
 		DBB173A21FCACAF100FC0479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBB173A41FCACAF100FC0479 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DBB173A71FCACAF200FC0479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DBB173A91FCACAF200FC0479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBB173A91FCACAF200FC0479 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		DBB173AC1FCACAF200FC0479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBB173AE1FCACAF200FC0479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBB7244820489B4800493FE2 /* GeekBrainsApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeekBrainsApp.entitlements; sourceTree = "<group>"; };
+		DBB7244920489B5200493FE2 /* VKMessage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VKMessage.entitlements; sourceTree = "<group>"; };
 		DBB86C862039A3CE008F062C /* ChatTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableVC.swift; sourceTree = "<group>"; };
 		DBB86C882039A3E7008F062C /* ChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewCell.swift; sourceTree = "<group>"; };
 		DBB86C8A2039A4AC008F062C /* ChatInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInfo.swift; sourceTree = "<group>"; };
@@ -247,6 +274,13 @@
 		DBCD542F2033672A00F169FA /* FriendsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsRequests.swift; sourceTree = "<group>"; };
 		DBCD54312033676200F169FA /* FriendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsService.swift; sourceTree = "<group>"; };
 		DBE7C8522047365500048B45 /* FriendsRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsRowController.swift; sourceTree = "<group>"; };
+		DBE7C85920488A8600048B45 /* VKMessage.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VKMessage.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBE7C85A20488A8700048B45 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		DBE7C85D20488A8700048B45 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		DBE7C86020488A8700048B45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		DBE7C86220488A8700048B45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBE7C86420488A8700048B45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBE7C86C20488B2700048B45 /* FriendsMessagesCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsMessagesCellVC.swift; sourceTree = "<group>"; };
 		ED9DB3167C5E48453AF031E6 /* Pods_GeekBrainsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekBrainsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -274,6 +308,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBE7C85620488A8600048B45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBE7C85B20488A8700048B45 /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -283,6 +325,8 @@
 				DBB86C8E2039D920008F062C /* MapKit.framework */,
 				ED9DB3167C5E48453AF031E6 /* Pods_GeekBrainsApp.framework */,
 				3EC302B6EA1BF9006ADCCA72 /* Pods_VKWatch_Extension.framework */,
+				DBE7C85A20488A8700048B45 /* Messages.framework */,
+				4D1379AB32B5D4D8DF3E9572 /* Pods_VKMessage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -490,6 +534,7 @@
 				DBB173A11FCACAF100FC0479 /* GeekBrainsApp */,
 				DBBBB2492047191F0055EBE3 /* VKWatch */,
 				DBBBB2582047191F0055EBE3 /* VKWatch Extension */,
+				DBE7C85C20488A8700048B45 /* VKMessage */,
 				DBB173A01FCACAF100FC0479 /* Products */,
 				7D3D5CF5BA1520EAAD134531 /* Pods */,
 				4E36FAD68BBC2291B62DF066 /* Frameworks */,
@@ -502,6 +547,7 @@
 				DBB1739F1FCACAF100FC0479 /* GeekBrainsApp.app */,
 				DBBBB2482047191F0055EBE3 /* VKWatch.app */,
 				DBBBB2542047191F0055EBE3 /* VKWatch Extension.appex */,
+				DBE7C85920488A8600048B45 /* VKMessage.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -509,8 +555,9 @@
 		DBB173A11FCACAF100FC0479 /* GeekBrainsApp */ = {
 			isa = PBXGroup;
 			children = (
+				DBB7244820489B4800493FE2 /* GeekBrainsApp.entitlements */,
 				DBB173A21FCACAF100FC0479 /* AppDelegate.swift */,
-				DBB173A91FCACAF200FC0479 /* Assets.xcassets */,
+				DBB173A91FCACAF200FC0479 /* Media.xcassets */,
 				DBCD54262030A84900F169FA /* Models */,
 				DBCD54252030A81800F169FA /* Services */,
 				DBCD54272030A8B300F169FA /* UI */,
@@ -641,6 +688,19 @@
 			path = Friends;
 			sourceTree = "<group>";
 		};
+		DBE7C85C20488A8700048B45 /* VKMessage */ = {
+			isa = PBXGroup;
+			children = (
+				DBB7244920489B5200493FE2 /* VKMessage.entitlements */,
+				DBE7C85D20488A8700048B45 /* MessagesViewController.swift */,
+				DBE7C85F20488A8700048B45 /* MainInterface.storyboard */,
+				DBE7C86220488A8700048B45 /* Assets.xcassets */,
+				DBE7C86420488A8700048B45 /* Info.plist */,
+				DBE7C86C20488B2700048B45 /* FriendsMessagesCellVC.swift */,
+			);
+			path = VKMessage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -656,11 +716,13 @@
 				2C69069669A934035A88AF5D /* [CP] Copy Pods Resources */,
 				DB06E6972017B65F009A4F73 /* ShellScript */,
 				DBBBB26D204719200055EBE3 /* Embed Watch Content */,
+				DBE7C86B20488A8700048B45 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				DBBBB264204719200055EBE3 /* PBXTargetDependency */,
+				DBE7C86620488A8700048B45 /* PBXTargetDependency */,
 			);
 			name = GeekBrainsApp;
 			productName = GeekBrainsApp;
@@ -702,6 +764,23 @@
 			productReference = DBBBB2542047191F0055EBE3 /* VKWatch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		DBE7C85820488A8600048B45 /* VKMessage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBE7C86820488A8700048B45 /* Build configuration list for PBXNativeTarget "VKMessage" */;
+			buildPhases = (
+				DBE7C85520488A8600048B45 /* Sources */,
+				DBE7C85620488A8600048B45 /* Frameworks */,
+				DBE7C85720488A8600048B45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VKMessage;
+			productName = VKMessage;
+			productReference = DBE7C85920488A8600048B45 /* VKMessage.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -716,6 +795,9 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -731,6 +813,15 @@
 					DBBBB2532047191F0055EBE3 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					DBE7C85820488A8600048B45 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -750,6 +841,7 @@
 				DBB1739E1FCACAF100FC0479 /* GeekBrainsApp */,
 				DBBBB2472047191F0055EBE3 /* VKWatch */,
 				DBBBB2532047191F0055EBE3 /* VKWatch Extension */,
+				DBE7C85820488A8600048B45 /* VKMessage */,
 			);
 		};
 /* End PBXProject section */
@@ -766,7 +858,7 @@
 				DB1D3BD5202620B600F26B72 /* NewsFeed.storyboard in Resources */,
 				DB05DB2C1FFE815100FBAAA1 /* Settings.storyboard in Resources */,
 				DBCD542D20335F8600F169FA /* UserInfo.storyboard in Resources */,
-				DBB173AA1FCACAF200FC0479 /* Assets.xcassets in Resources */,
+				DBB173AA1FCACAF200FC0479 /* Media.xcassets in Resources */,
 				DB59602A202A263300BF5943 /* GoogleService-Info.plist in Resources */,
 				DBB173A81FCACAF200FC0479 /* Main.storyboard in Resources */,
 				DB1D3BD32026204500F26B72 /* PhotoAlbum.storyboard in Resources */,
@@ -788,6 +880,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBBBB2602047191F0055EBE3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBE7C85720488A8600048B45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBE7C86320488A8700048B45 /* Assets.xcassets in Resources */,
+				DBE7C86120488A8700048B45 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -966,6 +1067,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBE7C85520488A8600048B45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBE7C86D20488B2700048B45 /* FriendsMessagesCellVC.swift in Sources */,
+				DBE7C85E20488A8700048B45 /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -978,6 +1088,11 @@
 			isa = PBXTargetDependency;
 			target = DBBBB2472047191F0055EBE3 /* VKWatch */;
 			targetProxy = DBBBB263204719200055EBE3 /* PBXContainerItemProxy */;
+		};
+		DBE7C86620488A8700048B45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBE7C85820488A8600048B45 /* VKMessage */;
+			targetProxy = DBE7C86520488A8700048B45 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1004,6 +1119,14 @@
 				DBBBB24B2047191F0055EBE3 /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		DBE7C85F20488A8700048B45 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBE7C86020488A8700048B45 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1120,7 +1243,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 159FC7F4C5F59098D9FE5D56 /* Pods-GeekBrainsApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = GeekBrainsApp/GeekBrainsApp.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5V8ZBRT5M4;
@@ -1138,7 +1264,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D424B0843C0933AA67B57D4 /* Pods-GeekBrainsApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = GeekBrainsApp/GeekBrainsApp.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5V8ZBRT5M4;
@@ -1224,6 +1353,42 @@
 			};
 			name = Release;
 		};
+		DBE7C86920488A8700048B45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = VKMessage/VKMessage.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5V8ZBRT5M4;
+				INFOPLIST_FILE = VKMessage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = My.GeekBrainsApp.VKMessage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DBE7C86A20488A8700048B45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = VKMessage/VKMessage.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5V8ZBRT5M4;
+				INFOPLIST_FILE = VKMessage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = My.GeekBrainsApp.VKMessage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1259,6 +1424,15 @@
 			buildConfigurations = (
 				DBBBB266204719200055EBE3 /* Debug */,
 				DBBBB267204719200055EBE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBE7C86820488A8700048B45 /* Build configuration list for PBXNativeTarget "VKMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBE7C86920488A8700048B45 /* Debug */,
+				DBE7C86A20488A8700048B45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
