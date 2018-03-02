@@ -11,6 +11,13 @@ extension VKAccessor.Wall.WallService{
 //                "attachments":attachment]
             return VKAccessor.VKRequest(environment: environment, token: token, path: methodPath, additionalParams: requestParams, httpMethod: HTTPMethod.get)
         }
+        
+        static func getWallPostRequest(environment: Environment, token: String, ownerId: String)-> URLRequestConvertible{
+            let methodPath = "/method/wall.get"
+            let requestParams = ["owner_id": ownerId]
+            //                "attachments":attachment]
+            return VKAccessor.VKRequest(environment: environment, token: token, path: methodPath, additionalParams: requestParams, httpMethod: HTTPMethod.get)
+        }
     }
 }
 

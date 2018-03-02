@@ -9,7 +9,8 @@
 import UIKit
 
 class ChatTableVC: UITableViewController {
-    let chats: [ChatInfo] = []
+    var chats: [ChatInfo] = []
+    @IBOutlet var chatsListTV: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +18,12 @@ class ChatTableVC: UITableViewController {
     }
 
     func getDialogs(){
-        VKAccessor.Messages.getDialogs()
+        VKAccessor.Messages.getDialogs(){[weak self] result in
+            DispatchQueue.main.async {
+                self?.chats = result
+                self?.chatsListTV.reloadData()
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,15 +39,37 @@ class ChatTableVC: UITableViewController {
         return chats.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCell", for: indexPath) as! ChatViewCell
+        let chatInfo = chats[indexPath.row]
+        cell.lastMessageLabel.text = chatInfo.lastMessage
+        if let userId = chatInfo.userId{
+            VKAccessor.Info.getInfo(id: userId){[weak cell] fName,lName,avatarPath in
+                DispatchQueue.main.async {
+                    cell?.userNameLabel.text = fName+" "+lName
+                    ImageService.getImage(urlPath: avatarPath){[weak cell] result in
+                        DispatchQueue.main.async {
+                            cell?.userAvatarView.image = result
+                        }
+                    }
+                }
+                
+            }
+        }else{
+            guard let chatId = chatInfo.groupChatId else {return cell}
+            VKAccessor.Messages.getChatInfo(chatId: String(chatId)){[weak cell] title, photo in
+                DispatchQueue.main.async {
+                    cell?.userNameLabel.text = title
+                    ImageService.getImage(urlPath: photo){[weak cell] result in
+                        DispatchQueue.main.async {
+                            cell?.userAvatarView.image = result
+                        }
+                    }
+                }
+            }
+        }
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -78,14 +106,20 @@ class ChatTableVC: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toMessaging",
+            let ctrl = segue.destination as? MessagingVC,
+            let indexpath = chatsListTV.indexPathForSelectedRow,
+            let cell = chatsListTV.cellForRow(at: indexpath) as? ChatViewCell
+        {
+            let chatInfo = chats[indexpath.row]
+            ctrl.chatTitle = cell.userNameLabel.text!
+            ctrl.defandantAvatar = cell.userAvatarView.image == nil ? #imageLiteral(resourceName: "no_avatar") : cell.userAvatarView.image!
+            ctrl.defandantGroupId = chatInfo.groupChatId
+            ctrl.defandantUserId = chatInfo.userId
+        }
     }
-    */
+
 
 }

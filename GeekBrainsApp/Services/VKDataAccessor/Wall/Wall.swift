@@ -10,6 +10,12 @@ extension VKAccessor{
                 WallService().postNews(ownerId: userId, message: message, photosIds: photosIds)
             }
         }
+        
+        static func getPosts(userId: String, completion: @escaping ([NewsInfo])->Void){
+            queue.async{
+                WallService().getNews(ownerId: userId, completion: completion)
+            }
+        }
     }
 }
 

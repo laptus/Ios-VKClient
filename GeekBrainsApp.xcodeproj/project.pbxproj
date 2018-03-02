@@ -24,6 +24,11 @@
 		DB4267332038B1B000E685B5 /* AlbumsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4267322038B1B000E685B5 /* AlbumsCollectionVC.swift */; };
 		DB4267352038B4B600E685B5 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4267342038B4B600E685B5 /* AlbumInfo.swift */; };
 		DB4267372038C16A00E685B5 /* AlbumCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4267362038C16A00E685B5 /* AlbumCellVC.swift */; };
+		DB4B7131204027FC00A4D78F /* PostAttachedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4B7130204027FC00A4D78F /* PostAttachedPhotoCell.swift */; };
+		DB4B71332040471A00A4D78F /* MessageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4B71322040471A00A4D78F /* MessageInfo.swift */; };
+		DB4B71352040482C00A4D78F /* MessagingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4B71342040482C00A4D78F /* MessagingVC.swift */; };
+		DB4B71372040486400A4D78F /* DefandantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4B71362040486400A4D78F /* DefandantCell.swift */; };
+		DB4B71392040487200A4D78F /* SenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4B71382040487200A4D78F /* SenderCell.swift */; };
 		DB509A681FDD249900EACD15 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB509A671FDD249800EACD15 /* KeychainPasswordItem.swift */; };
 		DB560B131FD4A44E0076B350 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB560B121FD4A44E0076B350 /* PhotoCollectionVC.swift */; };
 		DB560B151FD4A4720076B350 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB560B141FD4A4720076B350 /* PhotoCell.swift */; };
@@ -47,6 +52,7 @@
 		DB6177302034C8F3004AA4E7 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61772F2034C8F3004AA4E7 /* NewsFeed.swift */; };
 		DB6177322034C8FD004AA4E7 /* NewsFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6177312034C8FD004AA4E7 /* NewsFeedService.swift */; };
 		DB6177342034C90E004AA4E7 /* NewsFeedRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6177332034C90E004AA4E7 /* NewsFeedRequests.swift */; };
+		DB74C23520401D8800EFAF7D /* UserPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB74C23420401D8800EFAF7D /* UserPostVC.swift */; };
 		DB74CA081FE063D20001EFD6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB74CA071FE063D20001EFD6 /* UserService.swift */; };
 		DB75B3381FD48FC6005B724C /* FriendsTablveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75B3371FD48FC6005B724C /* FriendsTablveVC.swift */; };
 		DB75B33A1FD49054005B724C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75B3391FD49054005B724C /* UserCell.swift */; };
@@ -77,6 +83,16 @@
 		DBB86C8B2039A4AC008F062C /* ChatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB86C8A2039A4AC008F062C /* ChatInfo.swift */; };
 		DBB86C8D2039BA07008F062C /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB86C8C2039BA07008F062C /* NewPostVC.swift */; };
 		DBB86C8F2039D920008F062C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB86C8E2039D920008F062C /* MapKit.framework */; };
+		DBBBB24C2047191F0055EBE3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBBB24A2047191F0055EBE3 /* Interface.storyboard */; };
+		DBBBB24E2047191F0055EBE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBBBB24D2047191F0055EBE3 /* Assets.xcassets */; };
+		DBBBB2552047191F0055EBE3 /* VKWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DBBBB2542047191F0055EBE3 /* VKWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DBBBB25A2047191F0055EBE3 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBB2592047191F0055EBE3 /* InterfaceController.swift */; };
+		DBBBB25C2047191F0055EBE3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBB25B2047191F0055EBE3 /* ExtensionDelegate.swift */; };
+		DBBBB25E2047191F0055EBE3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBB25D2047191F0055EBE3 /* NotificationController.swift */; };
+		DBBBB2602047191F0055EBE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBBBB25F2047191F0055EBE3 /* Assets.xcassets */; };
+		DBBBB265204719200055EBE3 /* VKWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DBBBB2482047191F0055EBE3 /* VKWatch.app */; };
+		DBBBB27120471CB00055EBE3 /* WatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBB27020471CB00055EBE3 /* WatchService.swift */; };
+		DBBBB27320472D150055EBE3 /* WKMessagesIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBB27220472D150055EBE3 /* WKMessagesIC.swift */; };
 		DBC132ED1FDD4DE8004BB41A /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC132EC1FDD4DE8004BB41A /* Enviroment.swift */; };
 		DBC8358B1FE69E64001FC8E5 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8358A1FE69E64001FC8E5 /* RealmExtension.swift */; };
 		DBCD54292030AAC500F169FA /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD54282030AAC500F169FA /* Friends.swift */; };
@@ -84,10 +100,54 @@
 		DBCD542D20335F8600F169FA /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCD542C20335F8600F169FA /* UserInfo.storyboard */; };
 		DBCD54302033672A00F169FA /* FriendsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD542F2033672A00F169FA /* FriendsRequests.swift */; };
 		DBCD54322033676200F169FA /* FriendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD54312033676200F169FA /* FriendsService.swift */; };
+		DBE7C8532047365500048B45 /* FriendsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE7C8522047365500048B45 /* FriendsRowController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBBBB2562047191F0055EBE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBB173971FCACAF100FC0479 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBBBB2532047191F0055EBE3;
+			remoteInfo = "VKWatch Extension";
+		};
+		DBBBB263204719200055EBE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBB173971FCACAF100FC0479 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBBBB2472047191F0055EBE3;
+			remoteInfo = VKWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DBBBB26B204719200055EBE3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DBBBB2552047191F0055EBE3 /* VKWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBBB26D204719200055EBE3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DBBBB265204719200055EBE3 /* VKWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		159FC7F4C5F59098D9FE5D56 /* Pods-GeekBrainsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekBrainsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeekBrainsApp/Pods-GeekBrainsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		3EC302B6EA1BF9006ADCCA72 /* Pods_VKWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D424B0843C0933AA67B57D4 /* Pods-GeekBrainsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekBrainsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeekBrainsApp/Pods-GeekBrainsApp.release.xcconfig"; sourceTree = "<group>"; };
 		DB05DB271FFE80E500FBAAA1 /* Groups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 		DB05DB291FFE812900FBAAA1 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
@@ -105,6 +165,11 @@
 		DB4267322038B1B000E685B5 /* AlbumsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionVC.swift; sourceTree = "<group>"; };
 		DB4267342038B4B600E685B5 /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 		DB4267362038C16A00E685B5 /* AlbumCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellVC.swift; sourceTree = "<group>"; };
+		DB4B7130204027FC00A4D78F /* PostAttachedPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAttachedPhotoCell.swift; sourceTree = "<group>"; };
+		DB4B71322040471A00A4D78F /* MessageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInfo.swift; sourceTree = "<group>"; };
+		DB4B71342040482C00A4D78F /* MessagingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingVC.swift; sourceTree = "<group>"; };
+		DB4B71362040486400A4D78F /* DefandantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefandantCell.swift; sourceTree = "<group>"; };
+		DB4B71382040487200A4D78F /* SenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderCell.swift; sourceTree = "<group>"; };
 		DB509A671FDD249800EACD15 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		DB560B121FD4A44E0076B350 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionVC.swift; sourceTree = "<group>"; };
 		DB560B141FD4A4720076B350 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -128,6 +193,7 @@
 		DB61772F2034C8F3004AA4E7 /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 		DB6177312034C8FD004AA4E7 /* NewsFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedService.swift; sourceTree = "<group>"; };
 		DB6177332034C90E004AA4E7 /* NewsFeedRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedRequests.swift; sourceTree = "<group>"; };
+		DB74C23420401D8800EFAF7D /* UserPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostVC.swift; sourceTree = "<group>"; };
 		DB74CA071FE063D20001EFD6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		DB75B3371FD48FC6005B724C /* FriendsTablveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTablveVC.swift; sourceTree = "<group>"; };
 		DB75B3391FD49054005B724C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -160,6 +226,19 @@
 		DBB86C8A2039A4AC008F062C /* ChatInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInfo.swift; sourceTree = "<group>"; };
 		DBB86C8C2039BA07008F062C /* NewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
 		DBB86C8E2039D920008F062C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DBBBB2482047191F0055EBE3 /* VKWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBBBB24B2047191F0055EBE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		DBBBB24D2047191F0055EBE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBBBB24F2047191F0055EBE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBBBB2542047191F0055EBE3 /* VKWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "VKWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBBBB2592047191F0055EBE3 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		DBBBB25B2047191F0055EBE3 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		DBBBB25D2047191F0055EBE3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		DBBBB25F2047191F0055EBE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBBBB2612047191F0055EBE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBBBB2622047191F0055EBE3 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		DBBBB27020471CB00055EBE3 /* WatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchService.swift; sourceTree = "<group>"; };
+		DBBBB27220472D150055EBE3 /* WKMessagesIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKMessagesIC.swift; sourceTree = "<group>"; };
 		DBC132EC1FDD4DE8004BB41A /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 		DBC8358A1FE69E64001FC8E5 /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		DBCD54282030AAC500F169FA /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
@@ -167,16 +246,31 @@
 		DBCD542C20335F8600F169FA /* UserInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfo.storyboard; sourceTree = "<group>"; };
 		DBCD542F2033672A00F169FA /* FriendsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsRequests.swift; sourceTree = "<group>"; };
 		DBCD54312033676200F169FA /* FriendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsService.swift; sourceTree = "<group>"; };
+		DBE7C8522047365500048B45 /* FriendsRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsRowController.swift; sourceTree = "<group>"; };
 		ED9DB3167C5E48453AF031E6 /* Pods_GeekBrainsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekBrainsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		61CBD0589589864A349A0550 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBB1739C1FCACAF100FC0479 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DBB86C8F2039D920008F062C /* MapKit.framework in Frameworks */,
 				73A89219DE465B74596D217C /* Pods_GeekBrainsApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBBB2512047191F0055EBE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +282,7 @@
 			children = (
 				DBB86C8E2039D920008F062C /* MapKit.framework */,
 				ED9DB3167C5E48453AF031E6 /* Pods_GeekBrainsApp.framework */,
+				3EC302B6EA1BF9006ADCCA72 /* Pods_VKWatch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -205,6 +300,8 @@
 			isa = PBXGroup;
 			children = (
 				DB42673020389C3B00E685B5 /* UserInfoVC.swift */,
+				DB74C23420401D8800EFAF7D /* UserPostVC.swift */,
+				DB4B7130204027FC00A4D78F /* PostAttachedPhotoCell.swift */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -391,6 +488,8 @@
 			isa = PBXGroup;
 			children = (
 				DBB173A11FCACAF100FC0479 /* GeekBrainsApp */,
+				DBBBB2492047191F0055EBE3 /* VKWatch */,
+				DBBBB2582047191F0055EBE3 /* VKWatch Extension */,
 				DBB173A01FCACAF100FC0479 /* Products */,
 				7D3D5CF5BA1520EAAD134531 /* Pods */,
 				4E36FAD68BBC2291B62DF066 /* Frameworks */,
@@ -401,6 +500,8 @@
 			isa = PBXGroup;
 			children = (
 				DBB1739F1FCACAF100FC0479 /* GeekBrainsApp.app */,
+				DBBBB2482047191F0055EBE3 /* VKWatch.app */,
+				DBBBB2542047191F0055EBE3 /* VKWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -428,8 +529,44 @@
 			children = (
 				DBB86C862039A3CE008F062C /* ChatTableVC.swift */,
 				DBB86C882039A3E7008F062C /* ChatViewCell.swift */,
+				DB4B71342040482C00A4D78F /* MessagingVC.swift */,
+				DB4B71362040486400A4D78F /* DefandantCell.swift */,
+				DB4B71382040487200A4D78F /* SenderCell.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		DBBBB2492047191F0055EBE3 /* VKWatch */ = {
+			isa = PBXGroup;
+			children = (
+				DBBBB24A2047191F0055EBE3 /* Interface.storyboard */,
+				DBBBB24D2047191F0055EBE3 /* Assets.xcassets */,
+				DBBBB24F2047191F0055EBE3 /* Info.plist */,
+			);
+			path = VKWatch;
+			sourceTree = "<group>";
+		};
+		DBBBB2582047191F0055EBE3 /* VKWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DBBBB2592047191F0055EBE3 /* InterfaceController.swift */,
+				DBBBB27220472D150055EBE3 /* WKMessagesIC.swift */,
+				DBBBB25B2047191F0055EBE3 /* ExtensionDelegate.swift */,
+				DBBBB25D2047191F0055EBE3 /* NotificationController.swift */,
+				DBBBB25F2047191F0055EBE3 /* Assets.xcassets */,
+				DBBBB2612047191F0055EBE3 /* Info.plist */,
+				DBBBB2622047191F0055EBE3 /* PushNotificationPayload.apns */,
+				DBE7C8522047365500048B45 /* FriendsRowController.swift */,
+			);
+			path = "VKWatch Extension";
+			sourceTree = "<group>";
+		};
+		DBBBB26F20471C9A0055EBE3 /* WatchService */ = {
+			isa = PBXGroup;
+			children = (
+				DBBBB27020471CB00055EBE3 /* WatchService.swift */,
+			);
+			path = WatchService;
 			sourceTree = "<group>";
 		};
 		DBC132EB1FDD4D94004BB41A /* VKDataAccessor */ = {
@@ -454,6 +591,7 @@
 		DBCD54252030A81800F169FA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DBBBB26F20471C9A0055EBE3 /* WatchService */,
 				DB42672C203878A400E685B5 /* BackGround */,
 				DB6177192034B095004AA4E7 /* AlamofireImage */,
 				DB596030202A2D4D00BF5943 /* FireBase */,
@@ -471,6 +609,7 @@
 				DB5EC5C2203832F300920B8F /* NewsInfo.swift */,
 				DB4267342038B4B600E685B5 /* AlbumInfo.swift */,
 				DBB86C8A2039A4AC008F062C /* ChatInfo.swift */,
+				DB4B71322040471A00A4D78F /* MessageInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -516,15 +655,52 @@
 				09B05895979073754C0A17FD /* [CP] Embed Pods Frameworks */,
 				2C69069669A934035A88AF5D /* [CP] Copy Pods Resources */,
 				DB06E6972017B65F009A4F73 /* ShellScript */,
+				DBBBB26D204719200055EBE3 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DBBBB264204719200055EBE3 /* PBXTargetDependency */,
 			);
 			name = GeekBrainsApp;
 			productName = GeekBrainsApp;
 			productReference = DBB1739F1FCACAF100FC0479 /* GeekBrainsApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DBBBB2472047191F0055EBE3 /* VKWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBBBB26C204719200055EBE3 /* Build configuration list for PBXNativeTarget "VKWatch" */;
+			buildPhases = (
+				DBBBB2462047191F0055EBE3 /* Resources */,
+				DBBBB26B204719200055EBE3 /* Embed App Extensions */,
+				61CBD0589589864A349A0550 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBBBB2572047191F0055EBE3 /* PBXTargetDependency */,
+			);
+			name = VKWatch;
+			productName = VKWatch;
+			productReference = DBBBB2482047191F0055EBE3 /* VKWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		DBBBB2532047191F0055EBE3 /* VKWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBBBB26A204719200055EBE3 /* Build configuration list for PBXNativeTarget "VKWatch Extension" */;
+			buildPhases = (
+				DBBBB2502047191F0055EBE3 /* Sources */,
+				DBBBB2512047191F0055EBE3 /* Frameworks */,
+				DBBBB2522047191F0055EBE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VKWatch Extension";
+			productName = "VKWatch Extension";
+			productReference = DBBBB2542047191F0055EBE3 /* VKWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -532,7 +708,7 @@
 		DBB173971FCACAF100FC0479 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Laptev Sasha";
 				TargetAttributes = {
@@ -547,6 +723,14 @@
 								enabled = 1;
 							};
 						};
+					};
+					DBBBB2472047191F0055EBE3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					DBBBB2532047191F0055EBE3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -564,6 +748,8 @@
 			projectRoot = "";
 			targets = (
 				DBB1739E1FCACAF100FC0479 /* GeekBrainsApp */,
+				DBBBB2472047191F0055EBE3 /* VKWatch */,
+				DBBBB2532047191F0055EBE3 /* VKWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -585,6 +771,23 @@
 				DBB173A81FCACAF200FC0479 /* Main.storyboard in Resources */,
 				DB1D3BD32026204500F26B72 /* PhotoAlbum.storyboard in Resources */,
 				DB5EC5D220383EAB00920B8F /* Map.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBBB2462047191F0055EBE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBBBB24E2047191F0055EBE3 /* Assets.xcassets in Resources */,
+				DBBBB24C2047191F0055EBE3 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBBB2522047191F0055EBE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBBBB2602047191F0055EBE3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +890,7 @@
 				DB509A681FDD249900EACD15 /* KeychainPasswordItem.swift in Sources */,
 				DBB86C8D2039BA07008F062C /* NewPostVC.swift in Sources */,
 				DB4267372038C16A00E685B5 /* AlbumCellVC.swift in Sources */,
+				DB74C23520401D8800EFAF7D /* UserPostVC.swift in Sources */,
 				DB5EC5CE20383AC800920B8F /* NewsFeedTableVC.swift in Sources */,
 				DB92D4DB1FE1D554008AE7B5 /* UserRouter.swift in Sources */,
 				DBAABF411FDF118400A2088B /* RequestProtocol.swift in Sources */,
@@ -700,6 +904,7 @@
 				DBAABF391FDD8D8000A2088B /* AuthRouter.swift in Sources */,
 				DB6177212034BD91004AA4E7 /* PhotosService.swift in Sources */,
 				DB92D4D91FE1D40F008AE7B5 /* PhotoInfo.swift in Sources */,
+				DB4B71372040486400A4D78F /* DefandantCell.swift in Sources */,
 				DB560B131FD4A44E0076B350 /* PhotoCollectionVC.swift in Sources */,
 				DB92D4D71FE1CAD6008AE7B5 /* GroupService.swift in Sources */,
 				DBAFD47B1FD4B2E000807D63 /* GroupInfoCell.swift in Sources */,
@@ -721,14 +926,19 @@
 				DBCD54322033676200F169FA /* FriendsService.swift in Sources */,
 				DB1D3BCF202618C200F26B72 /* SettingsNavController.swift in Sources */,
 				DBAABF3F1FDF112700A2088B /* GroupsRouter.swift in Sources */,
+				DBBBB27120471CB00055EBE3 /* WatchService.swift in Sources */,
 				DB4267332038B1B000E685B5 /* AlbumsCollectionVC.swift in Sources */,
 				DB4267352038B4B600E685B5 /* AlbumInfo.swift in Sources */,
 				DB75B3381FD48FC6005B724C /* FriendsTablveVC.swift in Sources */,
 				DB42672E203878B800E685B5 /* BGService.swift in Sources */,
 				DB74CA081FE063D20001EFD6 /* UserService.swift in Sources */,
 				DB596032202A2D8000BF5943 /* FireBaseAccessor.swift in Sources */,
+				DB4B71352040482C00A4D78F /* MessagingVC.swift in Sources */,
+				DB4B7131204027FC00A4D78F /* PostAttachedPhotoCell.swift in Sources */,
 				DB5EC5D020383C1800920B8F /* MapsVC.swift in Sources */,
 				DBCD54302033672A00F169FA /* FriendsRequests.swift in Sources */,
+				DB4B71332040471A00A4D78F /* MessageInfo.swift in Sources */,
+				DB4B71392040487200A4D78F /* SenderCell.swift in Sources */,
 				DB6177232034BDA1004AA4E7 /* PhotosRequests.swift in Sources */,
 				DB3E8F601FCF4E3100CA82D9 /* tabsVC.swift in Sources */,
 				DB61771F2034BD81004AA4E7 /* Photos.swift in Sources */,
@@ -744,7 +954,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBBBB2502047191F0055EBE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBBBB25E2047191F0055EBE3 /* NotificationController.swift in Sources */,
+				DBBBB25C2047191F0055EBE3 /* ExtensionDelegate.swift in Sources */,
+				DBBBB25A2047191F0055EBE3 /* InterfaceController.swift in Sources */,
+				DBE7C8532047365500048B45 /* FriendsRowController.swift in Sources */,
+				DBBBB27320472D150055EBE3 /* WKMessagesIC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBBBB2572047191F0055EBE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBBBB2532047191F0055EBE3 /* VKWatch Extension */;
+			targetProxy = DBBBB2562047191F0055EBE3 /* PBXContainerItemProxy */;
+		};
+		DBBBB264204719200055EBE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBBBB2472047191F0055EBE3 /* VKWatch */;
+			targetProxy = DBBBB263204719200055EBE3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DBB173A61FCACAF200FC0479 /* Main.storyboard */ = {
@@ -761,6 +996,14 @@
 				DBB173AC1FCACAF200FC0479 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DBBBB24A2047191F0055EBE3 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBBBB24B2047191F0055EBE3 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -909,6 +1152,78 @@
 			};
 			name = Release;
 		};
+		DBBBB266204719200055EBE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5V8ZBRT5M4;
+				IBSC_MODULE = VKWatch_Extension;
+				INFOPLIST_FILE = VKWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = My.GeekBrainsApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Debug;
+		};
+		DBBBB267204719200055EBE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5V8ZBRT5M4;
+				IBSC_MODULE = VKWatch_Extension;
+				INFOPLIST_FILE = VKWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = My.GeekBrainsApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Release;
+		};
+		DBBBB268204719200055EBE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "VKWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = My.GeekBrainsApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Debug;
+		};
+		DBBBB269204719200055EBE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "VKWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = My.GeekBrainsApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -926,6 +1241,24 @@
 			buildConfigurations = (
 				DBB173B21FCACAF200FC0479 /* Debug */,
 				DBB173B31FCACAF200FC0479 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBBBB26A204719200055EBE3 /* Build configuration list for PBXNativeTarget "VKWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBBBB268204719200055EBE3 /* Debug */,
+				DBBBB269204719200055EBE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBBBB26C204719200055EBE3 /* Build configuration list for PBXNativeTarget "VKWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBBBB266204719200055EBE3 /* Debug */,
+				DBBBB267204719200055EBE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

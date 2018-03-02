@@ -25,8 +25,12 @@ class BGService{
             completionHandler(.noData)
         }
         let request = VKAccessor.Messages.MessagesService.getUnreadDialogsCount { result in
-            UIApplication.shared.applicationIconBadgeNumber = result
-            self.lastUpdate = Date()
+            DispatchQueue.main.async {
+                UIApplication.shared.applicationIconBadgeNumber = result
+                self.lastUpdate = Date()
+                completionHandler(.newData)
+            }
+            
         }
         
         let timer  =  DispatchSource.makeTimerSource(queue: DispatchQueue.main)
