@@ -20,7 +20,9 @@ extension VKAccessor.Messages{
                 guard let data = response.value else { return }
                 let json = try! JSON(data:data)
                 let dialogs = json["response"]["items"].array?.flatMap { ChatInfo(json: $0) } ?? []
-                completion(dialogs)
+                DispatchQueue.main.async{
+                    completion(dialogs)
+                }
             }
         }
         
@@ -32,8 +34,9 @@ extension VKAccessor.Messages{
                 guard let data = response.value else { return }
                 let json = try! JSON(data:data)
                 let unreadDialogsCount = json["response"]["unread_dialogs"].intValue
-                print(json)
-                completion(unreadDialogsCount)
+                DispatchQueue.main.async{
+                    completion(unreadDialogsCount)
+                }
             }
         }
         
@@ -45,10 +48,11 @@ extension VKAccessor.Messages{
             Alamofire.request(request).responseData(queue: DispatchQueue.global()){ response in
                 guard let data = response.value else { return }
                 let json = try! JSON(data:data)
-                print(json)
                 let title = json["response"]["title"].stringValue
                 let photo = json["response"]["photo_50"].stringValue
-                completion(title,photo)
+                DispatchQueue.main.async{
+                    completion(title,photo)
+                }
             }
         }
         
@@ -59,9 +63,10 @@ extension VKAccessor.Messages{
             Alamofire.request(request).responseData(queue: DispatchQueue.global()){ response in
                 guard let data = response.value else { return }
                 let json = try! JSON(data:data)
-                print(json)
                 let messages = json["response"]["items"].array?.flatMap { MessageInfo(json: $0) } ?? []
-                completion(messages)
+                DispatchQueue.main.async{
+                    completion(messages)
+                }
             }
         }
         
@@ -74,7 +79,6 @@ extension VKAccessor.Messages{
             Alamofire.request(request).responseData(queue: DispatchQueue.global()){response in
                 guard let data = response.value else { return }
                 let json = try! JSON(data:data)
-                print(json)
             }
         }
     }

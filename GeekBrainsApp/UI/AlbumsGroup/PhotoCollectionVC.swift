@@ -31,10 +31,8 @@ class PhotoCollectionVC: UICollectionViewController {
     
     func loadAlbumPhotos(){
         VKAccessor.Photos.getPhotos(ownerId: ownerId, albumId: albumId){[weak self] result in
-            DispatchQueue.main.async {
-                self?.photoList = result
-                self?.photoAlbumCollectionView?.reloadData()
-            }
+            self?.photoList = result
+            self?.photoAlbumCollectionView?.reloadData()
         }
     }
     
@@ -59,9 +57,10 @@ class PhotoCollectionVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = photoAlbumCollectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         let photo = photoList[indexPath.row]
-        ImageService.getImage(urlPath: photo.url){[weak cell] result in
-            DispatchQueue.main.async {
-                cell?.photoImageView.image = result
+        ImageService.getImage(urlPath: photo.url){[weak cell,weak self] urlPath,image in
+            if (self?.photoList.count)! > indexPath.row,
+                self?.photoList[indexPath.row].url == urlPath{
+                cell?.photoImageView.image = image
             }
         }
         return cell

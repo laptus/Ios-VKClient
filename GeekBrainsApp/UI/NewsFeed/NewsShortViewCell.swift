@@ -42,10 +42,11 @@ extension NewsShortViewCell: UICollectionViewDataSource, UICollectionViewDelegat
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AttachedPhotoCell",
                                                       for: indexPath) as! AttachedPhotoCell
-        ImageService.getImage(urlPath: photos[indexPath.row]){[weak cell] result in
-            DispatchQueue.main.async {
-                cell?.image.image = result
-            }
+        ImageService.getImage(urlPath: photos[indexPath.row]){[weak self,weak cell] urlPath, image in
+                if indexPath.row < (self?.photos.count)!,
+                    self?.photos[indexPath.row] == urlPath{
+                    cell?.image.image = image
+                }
         }
         return cell
     }

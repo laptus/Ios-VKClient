@@ -24,7 +24,6 @@ class UserService{
             guard let data = response.value else { return }
             //            print(data)
             let json = try! JSON(data:data)
-            print(json)
             let friendsList = json["response"]["items"].array?.flatMap { UserInfo(json: $0) } ?? []
             do{
                 try Realm.replaceObject(newObjects: friendsList)

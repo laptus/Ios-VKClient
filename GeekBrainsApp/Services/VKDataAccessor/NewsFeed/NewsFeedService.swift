@@ -15,7 +15,6 @@ extension VKAccessor.News{
         private func saveToRealm(response: DataResponse<Data>){
             guard let data = response.value else { return }
             let json = try! JSON(data:data)
-            print(json)
             let newsList = json["response"]["items"].array?.flatMap { NewsInfo(json: $0) } ?? []
             do{
                 try Realm.replaceObject(newObjects: newsList)

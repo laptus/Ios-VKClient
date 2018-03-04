@@ -18,7 +18,21 @@ class ImageService{
         preferredMemoryUsageAfterPurge: 60_000_000
     )
     
-    static func getImage(urlPath: String, completion: @escaping(_ image: Image)-> Void){
+//    static func getImage(urlPath: String, completion: @escaping(_ image: Image)-> Void){
+//        ImageService.queue.async{
+//            guard let url = try? urlPath.asURL() else {return}
+//            if !exists(name: urlPath){
+//                downLoad(url: url,completion: completion)
+//            }else{
+//                get(url: url, completion: completion)
+//            }
+//        }
+//    }
+    
+    static func getImage(urlPath: String, completion: @escaping(_ urlPath: String,_ image: Image)-> Void){
+        if urlPath == ""{
+            completion(urlPath, #imageLiteral(resourceName: "no_avatar"))
+        }
         ImageService.queue.async{
             guard let url = try? urlPath.asURL() else {return}
             if !exists(name: urlPath){
@@ -37,27 +51,44 @@ class ImageService{
         return false
     }
     
-    static private func downLoad(url: URL, completion: @escaping(_ image: Image)-> Void){
-        //        ImageService.queue.sync{
+//    static private func downLoad(url: URL, completion: @escaping(_ image: Image)-> Void){
+//        Alamofire.request(url).responseData(queue: DispatchQueue.global(qos: .background)){ response in
+//            guard let resultData = response.result.value else {return}
+//            guard let image = Image(data: resultData) else {return}
+//            ImageService.imageCache.add(image, withIdentifier: String(url.path.hashValue))
+//            DispatchQueue.main.async{
+//                completion(image)
+//            }
+//        }
+//    }
+//
+//    static private func get(url: URL, completion: @escaping(_ image: Image)-> Void){
+//        let nameHash = String(url.path.hashValue)
+//        guard let result = ImageService.imageCache.image(withIdentifier: nameHash)
+//            else {return}
+//        DispatchQueue.main.async {
+//            completion(result)
+//        }
+//    }
+    
+    static private func downLoad(url: URL, completion: @escaping(_ urlPath: String,_ image: Image)-> Void){
         Alamofire.request(url).responseData(queue: DispatchQueue.global(qos: .background)){ response in
             guard let resultData = response.result.value else {return}
             guard let image = Image(data: resultData) else {return}
             ImageService.imageCache.add(image, withIdentifier: String(url.path.hashValue))
-            completion(image)
+            DispatchQueue.main.async{
+                completion(url.absoluteString,image)
+            }
         }
-        //        }
     }
     
-    static private func get(url: URL, completion: @escaping(_ image: Image)-> Void){
-        //        ImageService.queue.sync{
+    static private func get(url: URL, completion: @escaping(_ urlPath: String,_ image: Image)-> Void){
         let nameHash = String(url.path.hashValue)
         guard let result = ImageService.imageCache.image(withIdentifier: nameHash)
             else {return}
         DispatchQueue.main.async {
-            completion(result)
+            completion(url.absoluteString,result)
         }
-        //        }
-        
     }
 }
 

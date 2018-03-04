@@ -25,7 +25,6 @@ extension VKAccessor{
         private func saveToRealm(response: DataResponse<Data>){
             guard let data = response.value else { return }
             let json = try! JSON(data:data)
-            print(json)
             let friendsList = json["response"]["items"].array?.flatMap { UserInfo(json: $0) } ?? []
             do{
                 try Realm.replaceObject(newObjects: friendsList)
@@ -42,17 +41,6 @@ extension VKAccessor{
             Alamofire.request(request).responseData(queue: DispatchQueue.global()){response in
                 guard let data = response.value else { return }
                 let json = try! JSON(data:data)
-                print(json)
-                //            let friendsList = json["response"]["items"].array?.flatMap { UserInfo(json: $0) } ?? []
-                //            do{
-                //                try Realm.replaceObject(newObjects: friendsList)
-                //                //                DispatchQueue.main.async {
-                //                //                    completion()
-                //                //                }
-                //            }
-                //            catch{
-                //                print(error)
-                //            }
             }
         }
         

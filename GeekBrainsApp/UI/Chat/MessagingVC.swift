@@ -35,10 +35,7 @@ class MessagingVC: UIViewController {
         VKAccessor.Messages.getHistory(peerdId: String(peer)){[weak self] result in
             self?.messages = result
             self?.messages.reverse()
-            DispatchQueue.main.async {
-                self?.MessagesTableView.reloadData()
-            }
-            
+            self?.MessagesTableView.reloadData()
         }
     }
     

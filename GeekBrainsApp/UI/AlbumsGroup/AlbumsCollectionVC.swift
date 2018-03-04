@@ -23,11 +23,9 @@ class AlbumsCollectionVC: UICollectionViewController {
     
     func loadUserAlbums(){
         VKAccessor.Photos.getAlbums(ownerId: ownerId){[weak self] result in
-            DispatchQueue.main.async {
-                if let ctrl = self{
-                    ctrl.albumsList = result
-                    ctrl.albumsCollectionView.reloadData()
-                }
+            if let ctrl = self{
+                ctrl.albumsList = result
+                ctrl.albumsCollectionView.reloadData()
             }
         }
     }
@@ -49,11 +47,11 @@ class AlbumsCollectionVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = albumsCollectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCellVC", for: indexPath) as! AlbumCellVC
         cell.nameLabel.text = albumsList[indexPath.row].title
-        ImageService.getImage(urlPath: albumsList[indexPath.row].thumb_src){[weak cell] result in
-            DispatchQueue.main.async {
-                cell?.coverImageView.image = result
+        ImageService.getImage(urlPath: albumsList[indexPath.row].thumb_src){[weak cell,weak self] urlPath, image in
+            if (self?.albumsList.count)! > indexPath.row,
+                self?.albumsList[indexPath.row].thumb_src == urlPath{
+                cell?.coverImageView.image = image
             }
-            
         }
         return cell
     }

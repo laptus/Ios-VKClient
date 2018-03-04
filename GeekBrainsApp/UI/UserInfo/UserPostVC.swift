@@ -41,9 +41,10 @@ extension UserPostCellVC: UICollectionViewDataSource, UICollectionViewDelegate{
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostAttachedPhotoCell",
                                                       for: indexPath) as! PostAttachedPhotoCell
-        ImageService.getImage(urlPath: photos[indexPath.row]){[weak cell] result in
-            DispatchQueue.main.async {
-                cell?.image.image = result
+        ImageService.getImage(urlPath: photos[indexPath.row]){[weak cell, weak self] urlPath,image in
+            if (self?.photos.count)! > indexPath.row,
+                self?.photos[indexPath.row] == urlPath{
+                cell?.image.image = image
             }
         }
         return cell
