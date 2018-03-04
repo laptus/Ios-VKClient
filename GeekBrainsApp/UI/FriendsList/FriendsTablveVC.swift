@@ -19,8 +19,15 @@ class FriendsTablveVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadFriendsList()
-        
         pairWithRealm()
+        
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refreshTable), for: .primaryActionTriggered)
+    }
+    
+    @objc func refreshTable(){
+        loadFriendsList()
+        tableView.refreshControl?.endRefreshing()
     }
     
     var environment: Environment {

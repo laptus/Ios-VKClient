@@ -12,13 +12,13 @@ class AlbumsCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUserAlbums()
-        //self.albumsCollectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "AlbumCellVC")
-
-        // Do any additional setup after loading the view.
+        albumsCollectionView.refreshControl = UIRefreshControl()
+        albumsCollectionView.refreshControl?.addTarget(self, action: #selector(updateCollection), for: .primaryActionTriggered)
     }
     
-    var environment: Environment {
-        return VKAccessor.EnvironmentImp.VKEnvironment()
+    @objc func updateCollection(){
+        loadUserAlbums()
+        albumsCollectionView.refreshControl?.endRefreshing()
     }
     
     func loadUserAlbums(){
@@ -36,17 +36,13 @@ class AlbumsCollectionVC: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return albumsList.count
     }
 
@@ -59,12 +55,9 @@ class AlbumsCollectionVC: UICollectionViewController {
             }
             
         }
-        // Configure the cell
-    
         return cell
     }
 
-    // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }

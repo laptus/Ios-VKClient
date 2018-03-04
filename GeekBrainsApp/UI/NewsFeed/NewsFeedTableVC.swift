@@ -18,6 +18,13 @@ class NewsFeedTableVC: UITableViewController {
         super.viewDidLoad()
         loadNews()
         pairWithRealm()
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refreshTable), for: .primaryActionTriggered)
+    }
+    
+    @objc func refreshTable(){
+        loadNews()
+        tableView.refreshControl?.endRefreshing()
     }
     
     func loadNews(){
