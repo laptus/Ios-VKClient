@@ -20,7 +20,6 @@ extension VKAccessor.Wall{
             Alamofire.request(request).responseData(queue: DispatchQueue.global()){response in
                 guard let data = response.value else { return }
                 let json = try! JSON(data:data)
-                print(json)
             }
         }
         

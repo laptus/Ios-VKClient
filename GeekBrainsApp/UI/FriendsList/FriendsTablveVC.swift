@@ -76,18 +76,13 @@ class FriendsTablveVC: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCellView", for: indexPath) as! UserCell
-        if let friendInfo = friendsList?[indexPath.row]{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
+        guard let friendInfo = friendsList?[indexPath.row] else {return cell}
             cell.nameLabel.text = friendInfo.name
-            if let url = URL(string: friendInfo.photoUrl){
-                let data = try? Data(contentsOf: url)
-                cell.avatarImageView.image = UIImage(data: data!)}
-            else{
-                cell.avatarImageView.image = #imageLiteral(resourceName: "no_avatar")
+        ImageService.getImage(urlPath: friendInfo.photoUrl){[weak cell] result in
+            DispatchQueue.main.async {
+                cell?.avatarImageView.image = result
             }
-        }else{
-            cell.nameLabel.text = ""
-            cell.avatarImageView.image = #imageLiteral(resourceName: "no_avatar")
         }
         return cell
     }

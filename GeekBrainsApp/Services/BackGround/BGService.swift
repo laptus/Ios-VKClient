@@ -20,7 +20,6 @@ class BGService{
     }
     
     func updateAppInfo(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
-        print("Call")
         if lastUpdate != nil, abs(lastUpdate!.timeIntervalSinceNow ) < 30{
             completionHandler(.noData)
         }

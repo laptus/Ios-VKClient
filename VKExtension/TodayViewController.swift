@@ -8,28 +8,26 @@
 
 import UIKit
 import NotificationCenter
-import RealmSwift
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-    var friends: [UserInfo] = []
+    var friendsList: [String: Any] = [:]
+    var friendsCount: Int = 0
     
     @IBOutlet weak var friendsTablewView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        friends = []
+        friendsList = [:]
         let groupDefaults = UserDefaults(suiteName: "group.ALLaptevVK")
-        guard let friendsObjects = groupDefaults?.array(forKey: "friends") else{return}
-
-        let maxCount = min(5,friendsObjects.count)
-        for i in 0..<maxCount{
-            let fr = UserInfo(value: friendsObjects[i])
-            friends.append(fr)
+        friendsList = groupDefaults?.value(forKey: "friends") as! [String: Any]
+        guard let frCount = friendsList["count"] as? Int  else {
+            self.friendsCount = 0
+            return
         }
-        friendsTablewView.reloadData()
+        self.friendsCount = min(5,frCount)
         friendsTablewView.delegate = self
         friendsTablewView.dataSource = self
-        // Do any additional setup after loading the view from its nib.
+        friendsTablewView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,17 +53,33 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        return friendsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfoViewCell")  as! UserInfoViewCell
-        let info = friends[indexPath.row]
-        let data = try? Data(contentsOf: URL(string: info.photoUrl)!)
-        cell.avatarImage.image = UIImage(data: data!)
-        cell.nameLabel.text = info.name
+        if  let friendInfo = friendsList[String(indexPath.row)] as? [String: Any],
+            let name = friendInfo["name"] as? String,
+            let data = friendInfo["image"] as? Data{
+            cell.avatarImage.image = UIImage(data: data)
+            cell.nameLabel.text = name
+        }
         return cell
     }
     
-
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        if  let friendInfo = friendsList[String(indexPath.row)] as? [String: Any],
+            let id = friendInfo["id"] as? String{
+            let url = URL(string: "vkUrl://friend." + id)
+            self.extensionContext?.open(url!, completionHandler: nil)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if  let friendInfo = friendsList[String(indexPath.row)] as? [String: Any],
+            let id = friendInfo["id"] as? String{
+            let url = URL(string: "vkUrl://friend." + id)
+            self.extensionContext?.open(url!, completionHandler: nil)
+        }
+    }
 }

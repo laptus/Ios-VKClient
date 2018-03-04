@@ -15,7 +15,6 @@ extension VKAccessor{
                 guard let data = response.value else { return }
                 let json = try! JSON(data:data)
                 let albumsList = json["response"]["items"].array?.flatMap { AlbumInfo(json: $0) } ?? []
-                print(json)
                 completion(albumsList)
             }
         }
@@ -36,7 +35,6 @@ extension VKAccessor{
             Alamofire.request(request).responseData(queue: DispatchQueue.global()){response in
                 guard let data = response.value else { return }
                 let json = try! JSON(data:data)
-                print(json)
                 let albumsList = json["response"]["items"].array?.flatMap { PhotoInfo(json: $0) } ?? []
                 completion(albumsList)
             }

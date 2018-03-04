@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7237385799DF1C55AC79004D /* Pods_VKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF16FCD6B44C8067DDD65DF3 /* Pods_VKExtension.framework */; };
 		73A89219DE465B74596D217C /* Pods_GeekBrainsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9DB3167C5E48453AF031E6 /* Pods_GeekBrainsApp.framework */; };
 		DB05DB281FFE80E500FBAAA1 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB05DB271FFE80E500FBAAA1 /* Groups.storyboard */; };
 		DB05DB2A1FFE812900FBAAA1 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB05DB291FFE812900FBAAA1 /* Friends.storyboard */; };
@@ -61,6 +60,7 @@
 		DB7A4A60203ACD140097B0BB /* WallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A5F203ACD140097B0BB /* WallService.swift */; };
 		DB7A4A62203ACD230097B0BB /* WallRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A61203ACD230097B0BB /* WallRequests.swift */; };
 		DB7A4A64203AE6E80097B0BB /* AttachedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A63203AE6E80097B0BB /* AttachedPhotoCell.swift */; };
+		DB7C6124204C09FB0081E45C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBB173A91FCACAF200FC0479 /* Assets.xcassets */; };
 		DB92D4D71FE1CAD6008AE7B5 /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92D4D61FE1CAD6008AE7B5 /* GroupService.swift */; };
 		DB92D4D91FE1D40F008AE7B5 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92D4D81FE1D40F008AE7B5 /* PhotoInfo.swift */; };
 		DB92D4DB1FE1D554008AE7B5 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92D4DA1FE1D554008AE7B5 /* UserRouter.swift */; };
@@ -88,7 +88,6 @@
 		DBB86C8B2039A4AC008F062C /* ChatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB86C8A2039A4AC008F062C /* ChatInfo.swift */; };
 		DBB86C8D2039BA07008F062C /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB86C8C2039BA07008F062C /* NewPostVC.swift */; };
 		DBB86C8F2039D920008F062C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB86C8E2039D920008F062C /* MapKit.framework */; };
-		DBBBB24120431E150055EBE3 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAABF441FDF22AA00A2088B /* UserInfo.swift */; };
 		DBBBB243204322F50055EBE3 /* UserInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBBB242204322F50055EBE3 /* UserInfoViewCell.swift */; };
 		DBBBB24520432D1E0055EBE3 /* AllPhotos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBBB24420432D1E0055EBE3 /* AllPhotos.storyboard */; };
 		DBC132ED1FDD4DE8004BB41A /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC132EC1FDD4DE8004BB41A /* Enviroment.swift */; };
@@ -127,7 +126,6 @@
 /* Begin PBXFileReference section */
 		159FC7F4C5F59098D9FE5D56 /* Pods-GeekBrainsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekBrainsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeekBrainsApp/Pods-GeekBrainsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		3817A19998588B04723A9FA1 /* Pods-FriendsQuickAccessExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendsQuickAccessExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-FriendsQuickAccessExtension/Pods-FriendsQuickAccessExtension.release.xcconfig"; sourceTree = "<group>"; };
-		6CEA8C3F07ED754730D7830C /* Pods-VKExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKExtension/Pods-VKExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		6D424B0843C0933AA67B57D4 /* Pods-GeekBrainsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekBrainsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeekBrainsApp/Pods-GeekBrainsApp.release.xcconfig"; sourceTree = "<group>"; };
 		AF16FCD6B44C8067DDD65DF3 /* Pods_VKExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC6C38525E36C4556174219 /* Pods_FriendsQuickAccessExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FriendsQuickAccessExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,7 +223,6 @@
 		DBCD542F2033672A00F169FA /* FriendsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsRequests.swift; sourceTree = "<group>"; };
 		DBCD54312033676200F169FA /* FriendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsService.swift; sourceTree = "<group>"; };
 		ED9DB3167C5E48453AF031E6 /* Pods_GeekBrainsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekBrainsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2AD5710F8C2855E9E04CAAC /* Pods-VKExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKExtension/Pods-VKExtension.release.xcconfig"; sourceTree = "<group>"; };
 		F654186F8FE955755C3EEFEB /* Pods-FriendsQuickAccessExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendsQuickAccessExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FriendsQuickAccessExtension/Pods-FriendsQuickAccessExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,7 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB9D62B42043194A00AC9A85 /* NotificationCenter.framework in Frameworks */,
-				7237385799DF1C55AC79004D /* Pods_VKExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,8 +266,6 @@
 				6D424B0843C0933AA67B57D4 /* Pods-GeekBrainsApp.release.xcconfig */,
 				F654186F8FE955755C3EEFEB /* Pods-FriendsQuickAccessExtension.debug.xcconfig */,
 				3817A19998588B04723A9FA1 /* Pods-FriendsQuickAccessExtension.release.xcconfig */,
-				6CEA8C3F07ED754730D7830C /* Pods-VKExtension.debug.xcconfig */,
-				F2AD5710F8C2855E9E04CAAC /* Pods-VKExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -606,11 +600,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB9D62BF2043194A00AC9A85 /* Build configuration list for PBXNativeTarget "VKExtension" */;
 			buildPhases = (
-				9E61BCA61DC8E44E116C3953 /* [CP] Check Pods Manifest.lock */,
 				DB9D62AF2043194A00AC9A85 /* Sources */,
 				DB9D62B02043194A00AC9A85 /* Frameworks */,
 				DB9D62B12043194A00AC9A85 /* Resources */,
-				320A1DA300946D1902F01C85 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -704,6 +696,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB7C6124204C09FB0081E45C /* Assets.xcassets in Resources */,
 				DB9D62BA2043194A00AC9A85 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,36 +731,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GeekBrainsApp/Pods-GeekBrainsApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS11.1/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage-iOS11.1/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS11.1/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS11.1/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm-iOS11.1/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS11.1/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS11.1/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library-iOS11.1/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb-iOS11.1/nanopb.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS11.2/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage-iOS11.2/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS11.2/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS11.2/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm-iOS11.2/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS11.2/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS11.2/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library-iOS11.2/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb-iOS11.2/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -798,21 +773,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GeekBrainsApp/Pods-GeekBrainsApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		320A1DA300946D1902F01C85 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VKExtension/Pods-VKExtension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		900CD685D8797C6EE87E0482 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -825,24 +785,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-GeekBrainsApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9E61BCA61DC8E44E116C3953 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VKExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -869,7 +811,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBBBB24120431E150055EBE3 /* UserInfo.swift in Sources */,
 				DB9D62B72043194A00AC9A85 /* TodayViewController.swift in Sources */,
 				DBBBB243204322F50055EBE3 /* UserInfoViewCell.swift in Sources */,
 			);
@@ -991,7 +932,6 @@
 /* Begin XCBuildConfiguration section */
 		DB9D62C02043194A00AC9A85 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CEA8C3F07ED754730D7830C /* Pods-VKExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = VKExtension/VKExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1009,7 +949,6 @@
 		};
 		DB9D62C12043194A00AC9A85 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2AD5710F8C2855E9E04CAAC /* Pods-VKExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = VKExtension/VKExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;

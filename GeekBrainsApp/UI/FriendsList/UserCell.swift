@@ -14,11 +14,11 @@ class UserCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        avatarImageView.layer.borderWidth = 1
-        avatarImageView.layer.masksToBounds = false
-        avatarImageView.layer.borderColor = UIColor.black.cgColor
-        avatarImageView.layer.cornerRadius = avatarImageView.frame.height/2
-        avatarImageView.clipsToBounds = true
+//        avatarImageView.layer.borderWidth = 1
+//        avatarImageView.layer.masksToBounds = false
+//        avatarImageView.layer.borderColor = UIColor.black.cgColor
+//        avatarImageView.layer.cornerRadius = avatarImageView.frame.height/2
+//        avatarImageView.clipsToBounds = true
         // Initialization code
     }
 

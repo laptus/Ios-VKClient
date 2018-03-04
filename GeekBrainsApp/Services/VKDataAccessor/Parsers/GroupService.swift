@@ -25,7 +25,6 @@ struct GroupService{
         Alamofire.request(router.getGroupsById()).responseData(queue: .global(qos: .userInitiated)) { response in
             
             guard let data = response.value else { return }
-            print(data)
             let json = try! JSON(data:data)
             let groupsList = json["response"]["items"].array?.flatMap { GroupInfo(json: $0) } ?? []
             do{

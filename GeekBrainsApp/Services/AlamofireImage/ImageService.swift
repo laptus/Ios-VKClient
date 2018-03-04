@@ -19,6 +19,9 @@ class ImageService{
     )
     
     static func getImage(urlPath: String, completion: @escaping(_ image: Image)-> Void){
+        if urlPath == ""{
+            completion(#imageLiteral(resourceName: "no_avatar"))
+        }
         ImageService.queue.async{
             guard let url = try? urlPath.asURL() else {return}
             if !exists(name: urlPath){

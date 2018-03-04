@@ -24,28 +24,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print("Call bitch")
         let bgService = BGService()
         bgService.updateAppInfo(application, performFetchWithCompletionHandler: completionHandler)
     }
     
+    func application(_ app: UIApplication, open url: URL,
+                     options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool{
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = sb.instantiateViewController(withIdentifier: "UserPage")
+        app.keyWindow?.rootViewController?.show(viewController, sender: nil)
+        return true
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
-//        do{
-//            let realm = try Realm()
-//            var friends: [UserInfo] = []
-//            let friednsRealm = realm.objects(UserInfo.self)
-//            let maxFriendsCountForExtension = 5
-//            for i in 0..<maxFriendsCountForExtension{
-//                let friend = friednsRealm[i]
-//                friends.append(friend)
-//            }
-//            let groupDefaults = UserDefaults(suiteName: "group.ALLaptevVK")
-//            groupDefaults?.set(friends, forKey: "friends")
-//        } catch{
-//            print(error)
-//        }
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -58,20 +50,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         do{
-//            let realm = try Realm()
-//            var friends: [UserInfo] = []
-//            let friednsRealm = realm.objects(UserInfo.self)
-//            let maxFriendsCountForExtension = 5
-//            for i in 0..<maxFriendsCountForExtension{
-//                let friend = friednsRealm[i]
-//                friends.append(friend)
-//            }
-//            let groupDefaults = UserDefaults(suiteName: "group.ALLaptevVK")
-//            let friendsArray = friends.flatMap{$0.toAnyObject}
-//            groupDefaults?.set(friendsArray, forKey: "friends")
-        } catch{
+            let realm = try Realm()
+            let friednsRealm = realm.objects(UserInfo.self)
+            var tempData : [String:Any] = [:]
+            let maxCount = min(10, friednsRealm.count)
+            for i in 0..<maxCount{
+                let friend = friednsRealm[i]
+                let imageData = try Data(contentsOf: URL(string: friend.photoUrl)!)
+                tempData[String(i)] = ["name": friend.name,"id": friend.id, "image": imageData]
+            }
+            tempData["count"] = maxCount
+            let groupDefaults = UserDefaults(suiteName: "group.ALLaptevVK")
+            groupDefaults?.set(tempData, forKey: "friends")
+        }catch{
             print(error)
         }
+
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

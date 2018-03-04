@@ -19,7 +19,6 @@ extension VKAccessor.Info{
             Alamofire.request(request).responseData(queue: DispatchQueue.global()){response in
                 guard let data = response.value else { return }
                 let json = try! JSON(data:data)
-                print(json)
                 let res = json["response"][0]
                 let fName = res["first_name"].stringValue
                 let lName = json["response"][0]["last_name"].stringValue
@@ -35,7 +34,6 @@ extension VKAccessor.Info{
             Alamofire.request(request).responseData(queue: DispatchQueue.global()){response in
                 guard let data = response.value else { return }
                 let json = try! JSON(data:data)
-                print(json)
                 let fName = json["response"].array?[0]["name"].stringValue ?? ""
                 let lName = json["response"].array?[0]["screen_name"].stringValue ?? ""
                 let pPath = json["response"].array?[0]["photo_100"].stringValue ?? ""
