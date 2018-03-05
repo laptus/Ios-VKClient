@@ -15,8 +15,18 @@ class ChatTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getDialogs()
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refreshTable), for: .primaryActionTriggered)
     }
 
+    @objc func refreshTable(){
+        VKAccessor.Messages.getDialogs(){[weak self] result in
+            self?.chats = result
+            self?.chatsListTV.reloadData()
+            self?.tableView.refreshControl?.endRefreshing()
+        }
+    }
+    
     func getDialogs(){
         VKAccessor.Messages.getDialogs(){[weak self] result in
                 self?.chats = result

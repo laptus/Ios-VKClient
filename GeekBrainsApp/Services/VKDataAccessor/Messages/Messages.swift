@@ -22,9 +22,10 @@ extension VKAccessor{
             }
         }
         
-        static func postMessage(userId: String, peerId: String, chatId: String, message: String,
+        static func postMessage(peerId: String, message: String,
                                 completion: @escaping (_ isSuccessful: Bool)-> Void){
             queue.async {
+                MessagesService.postMessage(peerId: peerId, message: message, completion: completion).self
             }
         }
     }

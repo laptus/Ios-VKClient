@@ -3,10 +3,6 @@ import SwiftyJSON
 import RealmSwift
 
 class ChatInfo {
-//    @objc dynamic var id = 0
-//    @objc dynamic var thumb_src = ""
-//    @objc dynamic var title = ""
-//    @objc dynamic var isReaded = ""
     var userId: Int?
     var lastMessage: String
     var groupChatId: Int?

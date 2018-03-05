@@ -30,15 +30,13 @@ extension VKAccessor.Messages.MessagesService{
             return VKAccessor.VKRequest.init(environment: environment, token: token, path: methodPath, additionalParams: additionalParams, httpMethod: HTTPMethod.get)
         }
         
-        static func postMessage(environment: Environment, token: String,userId: String, peerId: String, chatId: String, message: String)-> URLRequestConvertible{
+        static func postMessage(environment: Environment, token: String,peerId: String, message: String)-> URLRequestConvertible{
             let methodPath = "/method/messages.send"
             let additionalParams = ["access_token":token,
                                     "v": environment.apiVersion,
-                                    "user_id": userId,
                                     "peer_id": peerId,
-                                    "chat_id": chatId,
                                     "message": message]
-            return VKAccessor.VKRequest.init(environment: environment, token: token, path: methodPath, additionalParams: additionalParams, httpMethod: HTTPMethod.get)
+            return VKAccessor.VKRequest.init(environment: environment, token: token, path: methodPath, additionalParams: additionalParams, httpMethod: HTTPMethod.post)
         }
     }
 }

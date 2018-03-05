@@ -71,14 +71,18 @@ extension VKAccessor.Messages{
         }
         
         
-        func postMessage(userId: String, peerId: String, chatId: String, message: String,
+        static func postMessage(peerId: String, message: String,
                          completion: @escaping (_ isSuccessful: Bool)-> Void){
             let token = VKAccessor.CurrentUser.instance.token
             let env = VKAccessor.EnvironmentImp.VKEnvironment()
-            let request = MessagesRequests.postMessage(environment: env, token: token,userId: userId, peerId: peerId, chatId: chatId, message: message)
+            let request = MessagesRequests.postMessage(environment: env, token: token,peerId: peerId, message: message)
             Alamofire.request(request).responseData(queue: DispatchQueue.global()){response in
                 guard let data = response.value else { return }
                 let json = try! JSON(data:data)
+                let wasNotSuccessful = json["error"].exists()
+                DispatchQueue.main.async{
+                    completion(!wasNotSuccessful)
+                }
             }
         }
     }

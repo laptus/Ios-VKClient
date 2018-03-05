@@ -1,11 +1,3 @@
-//
-//  NewsInfo.swift
-//  GeekBrainsApp
-//
-//  Created by Laptev Sasha on 17/02/2018.
-//  Copyright © 2018 Laptev Sasha. All rights reserved.
-//
-
 import Foundation
 import SwiftyJSON
 import RealmSwift
@@ -49,20 +41,5 @@ class NewsInfo: Object{
                 $0["album"]["thumb"]["photo_130"].stringValue:
                 $0["photo"]["photo_130"].stringValue}
             ?? []
-//        photosList.append(objectsIn: json["photos"]["items"].array?.flatMap{
-//            $0["photo_130"].stringValue} ?? [])
     }
-    
-//    var toAnyObject: Any{
-//        return [
-//            "id": id,
-//            "postType": postType,
-//            "sourceId": sourceId,
-//            "text": text,
-//            "likes": likes,
-//            "reposts": postType,
-//            "postType": views,
-//            "photos": ""//photosList.map{$0.stringValue}.array
-//        ]
-//    }
 }

@@ -1,11 +1,3 @@
-//
-//  MessageInfo.swift
-//  GeekBrainsApp
-//
-//  Created by Laptev Sasha on 23/02/2018.
-//  Copyright © 2018 Laptev Sasha. All rights reserved.
-//
-
 import Foundation
 import SwiftyJSON
 
@@ -18,5 +10,11 @@ struct MessageInfo{
         userId = json["from_id"].intValue
         text = json["body"].stringValue
         photos = []
+    }
+    
+    init(id: Int, message: String, photosPaths: [String]){
+        userId = id
+        text = message
+        photos = photosPaths
     }
 }
