@@ -50,7 +50,6 @@ class AuthVC: UIViewController {
             for record in records {
                 if record.displayName == "vk.com" {
                     dataStore.removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), for: [record], completionHandler: {
-                        //print("Deleted: " + record.displayName);
                     })
                 }
             }

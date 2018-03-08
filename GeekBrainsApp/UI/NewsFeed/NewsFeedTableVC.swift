@@ -18,6 +18,13 @@ class NewsFeedTableVC: UITableViewController {
         super.viewDidLoad()
         loadNews()
         pairWithRealm()
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refreshTable), for: .primaryActionTriggered)
+    }
+    
+    @objc func refreshTable(){
+        loadNews()
+        tableView.refreshControl?.endRefreshing()
     }
     
     func loadNews(){
@@ -62,12 +69,16 @@ class NewsFeedTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsShortViewCell", for: indexPath) as! NewsShortViewCell
         guard let post = news?[indexPath.row] else {return cell}
-        VKAccessor.Info.getInfo(id: post.sourceId){[weak cell] gName,sName,pPath in
-            DispatchQueue.main.async {
+        VKAccessor.Info.getInfo(id: post.sourceId){[weak cell, weak self] id, gName,sName,pPath in
+            if indexPath.row < (self?.news?.count)!,
+                let sourceId = self?.news?[indexPath.row].sourceId,
+                id == String(describing: abs(sourceId)){
                 cell?.firstNameLabel.text = gName
                 cell?.lastNameLabel.text = sName
-                ImageService.getImage(urlPath: pPath){[weak cell] result in
-                    DispatchQueue.main.async {cell?.avatarImageView.image = result}
+                ImageService.getImage(urlPath: pPath){[weak cell] urlPath, image in
+                    if urlPath == pPath{
+                        cell?.avatarImageView.image = image
+                    }
                 }
             }
         }
@@ -76,10 +87,12 @@ class NewsFeedTableVC: UITableViewController {
         cell.repostsCountLabel.text = String(post.reposts)
         cell.viewsCountLabel.text = String(post.views)
         cell.photos = []
+        cell.attachedPhotosCollectionView.reloadData()
         let maxPhotosCount = min(6,post.photoList.count)
         for i in 0..<maxPhotosCount{
             cell.photos.append(post.photoList[i])
         }
+        
         cell.attachedPhotosCollectionView.reloadData()
         return cell
     }

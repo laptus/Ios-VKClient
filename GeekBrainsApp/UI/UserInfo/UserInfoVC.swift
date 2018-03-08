@@ -20,17 +20,13 @@ class UserInfoVC: UIViewController {
         postTableView.delegate = self
         postTableView.dataSource = self
         
-        ImageService.getImage(urlPath: avatarURL){[weak self] result in
-            DispatchQueue.main.async {
-                guard let imView = self?.avatarImageView else {return}
-                imView.image = result
-            }
+        ImageService.getImage(urlPath: avatarURL){[weak self] urlPath,result in
+            guard let imView = self?.avatarImageView else {return}
+            imView.image = result
         }
         VKAccessor.Wall.getPosts(userId: String(userId)){[weak self] result in
-            DispatchQueue.main.async {
-                self?.posts = result
-                self?.postTableView.reloadData()
-            }
+            self?.posts = result
+            self?.postTableView.reloadData()
         }
     }
     

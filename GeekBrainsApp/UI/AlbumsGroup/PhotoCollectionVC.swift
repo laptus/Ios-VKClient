@@ -15,7 +15,14 @@ class PhotoCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadAlbumPhotos()
+        photoAlbumCollectionView.refreshControl = UIRefreshControl()
+        photoAlbumCollectionView.refreshControl?.addTarget(self, action: #selector(updateCollection), for: .primaryActionTriggered)
         
+    }
+    
+    @objc func updateCollection(){
+        loadAlbumPhotos()
+        photoAlbumCollectionView.refreshControl?.endRefreshing()
     }
     
     var environment: Environment {
@@ -24,10 +31,8 @@ class PhotoCollectionVC: UICollectionViewController {
     
     func loadAlbumPhotos(){
         VKAccessor.Photos.getPhotos(ownerId: ownerId, albumId: albumId){[weak self] result in
-            DispatchQueue.main.async {
-                self?.photoList = result
-                self?.photoAlbumCollectionView?.reloadData()
-            }
+            self?.photoList = result
+            self?.photoAlbumCollectionView?.reloadData()
         }
     }
     
@@ -35,21 +40,11 @@ class PhotoCollectionVC: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
     }
- 
-
-    // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -62,9 +57,10 @@ class PhotoCollectionVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = photoAlbumCollectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         let photo = photoList[indexPath.row]
-        ImageService.getImage(urlPath: photo.url){[weak cell] result in
-            DispatchQueue.main.async {
-                cell?.photoImageView.image = result
+        ImageService.getImage(urlPath: photo.url){[weak cell,weak self] urlPath,image in
+            if (self?.photoList.count)! > indexPath.row,
+                self?.photoList[indexPath.row].url == urlPath{
+                cell?.photoImageView.image = image
             }
         }
         return cell

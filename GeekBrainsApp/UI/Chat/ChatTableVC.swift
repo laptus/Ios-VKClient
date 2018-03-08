@@ -15,14 +15,22 @@ class ChatTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getDialogs()
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refreshTable), for: .primaryActionTriggered)
     }
 
+    @objc func refreshTable(){
+        VKAccessor.Messages.getDialogs(){[weak self] result in
+            self?.chats = result
+            self?.chatsListTV.reloadData()
+            self?.tableView.refreshControl?.endRefreshing()
+        }
+    }
+    
     func getDialogs(){
         VKAccessor.Messages.getDialogs(){[weak self] result in
-            DispatchQueue.main.async {
                 self?.chats = result
                 self?.chatsListTV.reloadData()
-            }
         }
     }
     
@@ -44,26 +52,21 @@ class ChatTableVC: UITableViewController {
         let chatInfo = chats[indexPath.row]
         cell.lastMessageLabel.text = chatInfo.lastMessage
         if let userId = chatInfo.userId{
-            VKAccessor.Info.getInfo(id: userId){[weak cell] fName,lName,avatarPath in
-                DispatchQueue.main.async {
-                    cell?.userNameLabel.text = fName+" "+lName
-                    ImageService.getImage(urlPath: avatarPath){[weak cell] result in
-                        DispatchQueue.main.async {
-                            cell?.userAvatarView.image = result
-                        }
+            VKAccessor.Info.getInfo(id: userId){[weak cell] id,fName,lName,avatarPath in
+                cell?.userNameLabel.text = fName+" "+lName
+                ImageService.getImage(urlPath: avatarPath){[weak cell] urlPath,image in
+                    if avatarPath == urlPath{
+                        cell?.userAvatarView.image = image
                     }
                 }
-                
             }
         }else{
             guard let chatId = chatInfo.groupChatId else {return cell}
             VKAccessor.Messages.getChatInfo(chatId: String(chatId)){[weak cell] title, photo in
-                DispatchQueue.main.async {
-                    cell?.userNameLabel.text = title
-                    ImageService.getImage(urlPath: photo){[weak cell] result in
-                        DispatchQueue.main.async {
-                            cell?.userAvatarView.image = result
-                        }
+                cell?.userNameLabel.text = title
+                ImageService.getImage(urlPath: photo){[weak cell] urlPath,image in
+                    if photo == urlPath {
+                        cell?.userAvatarView.image = image
                     }
                 }
             }

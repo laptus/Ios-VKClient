@@ -12,22 +12,20 @@ class AlbumsCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUserAlbums()
-        //self.albumsCollectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "AlbumCellVC")
-
-        // Do any additional setup after loading the view.
+        albumsCollectionView.refreshControl = UIRefreshControl()
+        albumsCollectionView.refreshControl?.addTarget(self, action: #selector(updateCollection), for: .primaryActionTriggered)
     }
     
-    var environment: Environment {
-        return VKAccessor.EnvironmentImp.VKEnvironment()
+    @objc func updateCollection(){
+        loadUserAlbums()
+        albumsCollectionView.refreshControl?.endRefreshing()
     }
     
     func loadUserAlbums(){
         VKAccessor.Photos.getAlbums(ownerId: ownerId){[weak self] result in
-            DispatchQueue.main.async {
-                if let ctrl = self{
-                    ctrl.albumsList = result
-                    ctrl.albumsCollectionView.reloadData()
-                }
+            if let ctrl = self{
+                ctrl.albumsList = result
+                ctrl.albumsCollectionView.reloadData()
             }
         }
     }
@@ -36,35 +34,28 @@ class AlbumsCollectionVC: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return albumsList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = albumsCollectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCellVC", for: indexPath) as! AlbumCellVC
         cell.nameLabel.text = albumsList[indexPath.row].title
-        ImageService.getImage(urlPath: albumsList[indexPath.row].thumb_src){[weak cell] result in
-            DispatchQueue.main.async {
-                cell?.coverImageView.image = result
+        ImageService.getImage(urlPath: albumsList[indexPath.row].thumb_src){[weak cell,weak self] urlPath, image in
+            if (self?.albumsList.count)! > indexPath.row,
+                self?.albumsList[indexPath.row].thumb_src == urlPath{
+                cell?.coverImageView.image = image
             }
-            
         }
-        // Configure the cell
-    
         return cell
     }
 
-    // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
