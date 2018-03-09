@@ -245,22 +245,27 @@
                                                     <constraint firstAttribute="height" constant="44" id="TV5-IP-x85"/>
                                                 </constraints>
                                                 <items>
-                                                    <barButtonItem title="Item" image="location" id="UrK-PS-p8U">
+                                                    <barButtonItem title="Maps" image="location" id="UrK-PS-p8U">
                                                         <connections>
                                                             <segue destination="rHG-L1-nX7" kind="presentation" identifier="toMap" id="zwd-fe-25j"/>
                                                         </connections>
                                                     </barButtonItem>
-                                                    <barButtonItem title="Item" image="attach" id="Ox2-fK-WqW">
+                                                    <barButtonItem title="PhotoLibrary" image="collage" id="Ox2-fK-WqW">
                                                         <connections>
-                                                            <action selector="openPhoto:" destination="ljV-NM-fUB" id="ukg-1s-Zsz"/>
+                                                            <action selector="openPhotoLibraryButtonWithSender:" destination="ljV-NM-fUB" id="OPk-rX-9nb"/>
                                                         </connections>
                                                     </barButtonItem>
-                                                    <barButtonItem title="Item" image="new post" id="Upl-Td-SVx">
+                                                    <barButtonItem title="Camera" image="camera" id="MKO-bA-Q9y">
+                                                        <connections>
+                                                            <action selector="openCameraButtonWithSender:" destination="ljV-NM-fUB" id="KEV-2i-Ren"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                    <barButtonItem title="SendPost" image="new post" id="Upl-Td-SVx">
                                                         <connections>
                                                             <action selector="send:" destination="ljV-NM-fUB" id="Vi4-hZ-HAe"/>
                                                         </connections>
                                                     </barButtonItem>
-                                                    <barButtonItem title="Item" image="delete" id="kUJ-Ag-4aZ">
+                                                    <barButtonItem title="CloseView" image="delete" id="kUJ-Ag-4aZ">
                                                         <connections>
                                                             <action selector="close:" destination="ljV-NM-fUB" id="ga7-iY-nH9"/>
                                                         </connections>
@@ -334,7 +339,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="attach" width="25" height="25"/>
+        <image name="camera" width="25" height="25"/>
+        <image name="collage" width="25" height="25"/>
         <image name="comments" width="26" height="26"/>
         <image name="delete" width="25" height="25"/>
         <image name="eye" width="25" height="25"/>
