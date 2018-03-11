@@ -39,7 +39,7 @@ extension VKAccessor  {
             }
         }
         
-        static func uploadPhotoToMessage(peerId: String,image: Data, completion: @escaping (_ isSuccessful: Bool)-> Void){
+        static func uploadPhotoToMessage(peerId: String,image: Data, completion: @escaping (_ isSuccessful: Bool, _ imageUrl: String)-> Void){
             queue.async {
                 let service = PhototService()
                 service.uploadPhotoToMesssage(image: image, peerId: peerId, completion: completion)

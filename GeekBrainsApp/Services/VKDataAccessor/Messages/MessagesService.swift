@@ -86,8 +86,8 @@ extension VKAccessor.Messages{
             }
         }
         
-        static func postImage(peerId: String,ownerId:String, imageId: String,
-                              completion: @escaping (_ isSuccessful: Bool)-> Void){
+        static func postImage(peerId: String,ownerId:String, imageId: String, imageUrl: String,
+                              completion: @escaping (_ isSuccessful: Bool,_ imageUrl: String)-> Void){
             let token = VKAccessor.CurrentUser.instance.token
             let env = VKAccessor.EnvironmentImp.VKEnvironment()
             let request = MessagesRequests.postImage(environment: env, token: token,peerId: peerId, ownerId: ownerId, imageId:imageId)
@@ -96,7 +96,7 @@ extension VKAccessor.Messages{
                 let json = try! JSON(data:data)
                 let wasNotSuccessful = json["error"].exists()
                 DispatchQueue.main.async{
-                    completion(!wasNotSuccessful)
+                    completion(!wasNotSuccessful, imageUrl)
                 }
             }
         }

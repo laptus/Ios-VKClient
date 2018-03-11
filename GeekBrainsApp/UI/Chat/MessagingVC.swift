@@ -181,21 +181,25 @@ extension MessagingVC: UIImagePickerControllerDelegate, UINavigationControllerDe
     }
     
     func postImage(image: UIImage){
-        messages.append(MessageInfo(id: Int(VKAccessor.CurrentUser.instance.id)!,message: "",photosPaths: []))
+        messages.append(MessageInfo(id: Int(VKAccessor.CurrentUser.instance.id)!,message: "",photosPaths: [""]))
         MessagesTableView.reloadData()
         let ipath = IndexPath(row: messages.count-1, section: MessagesTableView.numberOfSections - 1)
         MessagesTableView.scrollToRow(at: ipath, at: UITableViewScrollPosition.top, animated: true)
         let imageData = UIImagePNGRepresentation(image)!
         let peer = defandantGroupId == nil ? defandantUserId! : 2000000000 + defandantGroupId!
-        VKAccessor.Photos.uploadPhotoToMessage(peerId: String(peer),image: imageData){[weak self] wasSuccessful in
+        VKAccessor.Photos.uploadPhotoToMessage(peerId: String(peer),image: imageData){[weak self] wasSuccessful, imageUrl in
             guard let cell = self?.MessagesTableView.cellForRow(at: ipath) as? SenderCell else {return}
             cell.statusImageView.isHidden = false
             if wasSuccessful{
+                cell.photoPaths = []
+                cell.photoPaths.append(imageUrl)
+                cell.attachedPhotoCollection.reloadData()
                 cell.statusImageView.image = #imageLiteral(resourceName: "checked")
             }else{
                 cell.statusImageView.image = #imageLiteral(resourceName: "cancel")
             }
         }
+        sleep(2)
     }
     
     func imagePickerControllerDidCancel(_ picker:  UIImagePickerController) {

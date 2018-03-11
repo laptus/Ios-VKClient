@@ -103,7 +103,7 @@ extension VKAccessor{
             }
         }
         
-        func uploadPhotoToMesssage(image: Data,peerId: String, completion: @escaping (_ isSuccessful: Bool)-> Void){
+        func uploadPhotoToMesssage(image: Data,peerId: String, completion: @escaping (_ isSuccessful: Bool,_ imageUrl: String)-> Void){
             let token = VKAccessor.CurrentUser.instance.token
             let env = VKAccessor.EnvironmentImp.VKEnvironment()
             let request =  PhotosRequests.getMessagesUploadServer(environment: env, token: token)
@@ -113,7 +113,7 @@ extension VKAccessor{
                 let uploadUrl = uploadResponseJson["response"]["upload_url"].stringValue
                 if uploadUrl == ""{
                     DispatchQueue.main.async {
-                        completion(false)
+                        completion(false,"")
                     }
                 }
                 let urlRequest = try! URLRequest(url: uploadUrl, method: HTTPMethod.post)
@@ -145,13 +145,13 @@ extension VKAccessor{
                         }
                         return
                     case .failure( _):
-                        completion(false)
+                        completion(false,"")
                     }
                 })
             }
         }
         
-        func saveMessagePhoto(peerId: String,ownerId: String, server: String, photo: String,hash: String, completion: @escaping (_ isSuccessful: Bool)-> Void){
+        func saveMessagePhoto(peerId: String,ownerId: String, server: String, photo: String,hash: String, completion: @escaping (_ isSuccessful: Bool,_ imageUrl: String)-> Void){
             let token = VKAccessor.CurrentUser.instance.token
             let env = VKAccessor.EnvironmentImp.VKEnvironment()
             let request =  PhotosRequests.saveMessagePhoto(environment: env,
@@ -163,7 +163,8 @@ extension VKAccessor{
                 guard let saveResponseData = saveResponse.value else { return }
                 let saveResponseJson = try! JSON(data: saveResponseData)
                 let photoId = saveResponseJson["response"][0]["id"].stringValue
-                VKAccessor.Messages.postImage(peerId: peerId, ownerId: ownerId, imageId: photoId, completion: completion)
+                let photoUrl = saveResponseJson["response"][0]["photo_130"].stringValue
+                VKAccessor.Messages.postImage(peerId: peerId, ownerId: ownerId, imageId: photoId, imageUrl: photoUrl,completion: completion)
             }
         }
     }

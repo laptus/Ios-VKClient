@@ -29,10 +29,10 @@ extension VKAccessor{
             }
         }
         
-        static func postImage(peerId: String,ownerId:String, imageId: String,
-                                completion: @escaping (_ isSuccessful: Bool)-> Void){
+        static func postImage(peerId: String,ownerId:String, imageId: String,imageUrl: String,
+                                completion: @escaping (_ isSuccessful: Bool,_ imageUrl: String)-> Void){
             queue.async {
-                MessagesService.postImage(peerId: peerId, ownerId: ownerId, imageId: imageId, completion: completion)
+                MessagesService.postImage(peerId: peerId, ownerId: ownerId, imageId: imageId, imageUrl: imageUrl, completion: completion)
             }
         }
     }
