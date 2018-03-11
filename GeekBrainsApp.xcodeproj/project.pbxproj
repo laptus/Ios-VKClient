@@ -59,6 +59,7 @@
 		DB75B3381FD48FC6005B724C /* FriendsTablveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75B3371FD48FC6005B724C /* FriendsTablveVC.swift */; };
 		DB75B33A1FD49054005B724C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75B3391FD49054005B724C /* UserCell.swift */; };
 		DB7609B520556E9B00B1A520 /* DefandantPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7609B420556E9B00B1A520 /* DefandantPhotoViewCell.swift */; };
+		DB7609B7205576BE00B1A520 /* SenderPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7609B6205576BE00B1A520 /* SenderPhotoViewCell.swift */; };
 		DB7A4A5E203ACD0A0097B0BB /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A5D203ACD0A0097B0BB /* Wall.swift */; };
 		DB7A4A60203ACD140097B0BB /* WallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A5F203ACD140097B0BB /* WallService.swift */; };
 		DB7A4A62203ACD230097B0BB /* WallRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A61203ACD230097B0BB /* WallRequests.swift */; };
@@ -228,6 +229,7 @@
 		DB75B3371FD48FC6005B724C /* FriendsTablveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTablveVC.swift; sourceTree = "<group>"; };
 		DB75B3391FD49054005B724C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		DB7609B420556E9B00B1A520 /* DefandantPhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefandantPhotoViewCell.swift; sourceTree = "<group>"; };
+		DB7609B6205576BE00B1A520 /* SenderPhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderPhotoViewCell.swift; sourceTree = "<group>"; };
 		DB7A4A5D203ACD0A0097B0BB /* Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
 		DB7A4A5F203ACD140097B0BB /* WallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallService.swift; sourceTree = "<group>"; };
 		DB7A4A61203ACD230097B0BB /* WallRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallRequests.swift; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 				DB4B71362040486400A4D78F /* DefandantCell.swift */,
 				DB4B71382040487200A4D78F /* SenderCell.swift */,
 				DB7609B420556E9B00B1A520 /* DefandantPhotoViewCell.swift */,
+				DB7609B6205576BE00B1A520 /* SenderPhotoViewCell.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1065,6 +1068,7 @@
 				DB61771F2034BD81004AA4E7 /* Photos.swift in Sources */,
 				DB75B33A1FD49054005B724C /* UserCell.swift in Sources */,
 				DBB86C892039A3E7008F062C /* ChatViewCell.swift in Sources */,
+				DB7609B7205576BE00B1A520 /* SenderPhotoViewCell.swift in Sources */,
 				DBAABF451FDF22AA00A2088B /* UserInfo.swift in Sources */,
 				DBCD542B2030AB0700F169FA /* VKAccessor.swift in Sources */,
 				DBC8358B1FE69E64001FC8E5 /* RealmExtension.swift in Sources */,

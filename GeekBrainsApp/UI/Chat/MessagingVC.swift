@@ -113,16 +113,23 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (String(messages[indexPath.row].userId) == VKAccessor.CurrentUser.instance.id){
             let cell = tableView.dequeueReusableCell(withIdentifier: "SenderCell", for: indexPath) as! SenderCell
-            cell.messageText.text = messages[indexPath.row].text
+            let messageInfo = messages[indexPath.row]
+            cell.messageText.text = messageInfo.text
             cell.statusImageView.isHidden = true
             cell.messageText.backgroundColor = UIColor(named: "red")
+            cell.photoPaths = []
+            let minCount = min(5,messageInfo.photos.count)
+            for i in 0 ..< minCount{
+                cell.photoPaths.append(messageInfo.photos[i])
+            }
+            cell.attachedPhotoCollection.reloadData()
             cell.backgroundColor = UIColor.clear
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DefandantCell", for: indexPath) as! DefandantCell
             let messageInfo = messages[indexPath.row]
             cell.messageText.text = messageInfo.text
-            messages[indexPath.row].photos = []
+            cell.photoPaths = []
             let minCount = min(5,messageInfo.photos.count)
             for i in 0 ..< minCount{
                 cell.photoPaths.append(messageInfo.photos[i])
