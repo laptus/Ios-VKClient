@@ -109,7 +109,12 @@ extension NewPostVC: UIImagePickerControllerDelegate, UINavigationControllerDele
     }
     
     func postImage(image: UIImage){
-        
+        let imageData = UIImagePNGRepresentation(image)!
+        VKAccessor.News.uploadPhotoToWall(image: imageData){[weak self] wasSuccessful in
+            if !wasSuccessful{
+                //attention please
+            }
+        }
     }
     
     func imagePickerControllerDidCancel(_ picker:  UIImagePickerController) {

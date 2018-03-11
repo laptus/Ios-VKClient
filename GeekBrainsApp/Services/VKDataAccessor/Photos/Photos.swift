@@ -31,5 +31,12 @@ extension VKAccessor  {
                 service.getPhotos(ownerId: ownerId, albumId: albumId, completion: completion)
             }
         }
+        
+        static func uploadPhotoToWall(image: Data, completion: @escaping (_ isSuccessful: Bool)-> Void){
+            queue.async {
+                let service = PhototService()
+                service.uploadPhotoToWall(image: image, completion: completion)
+            }
+        }
     }
 }

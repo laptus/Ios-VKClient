@@ -22,6 +22,12 @@ extension VKAccessor  {
             queue.async {
             }
         }
+        
+        static func uploadPhotoToWall(image: Data, completion: @escaping (_ isSuccessful: Bool)-> Void){
+            queue.async {
+                VKAccessor.Photos.uploadPhotoToWall(image: image, completion: completion)
+            }
+        }
     }
 }
 
