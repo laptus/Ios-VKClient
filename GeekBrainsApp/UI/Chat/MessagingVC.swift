@@ -122,7 +122,6 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource{
             cell.backgroundColor = UIColor.clear
             return cell
         }
-        
     }
 }
 

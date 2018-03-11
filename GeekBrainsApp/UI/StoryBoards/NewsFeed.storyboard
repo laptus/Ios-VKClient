@@ -188,6 +188,7 @@
                                     <outlet property="lastNameLabel" destination="41K-Dc-6EA" id="Tk7-xT-fCA"/>
                                     <outlet property="likesCountLabel" destination="Anr-KD-q1z" id="iye-OH-63U"/>
                                     <outlet property="newsTextLabel" destination="oDn-Y3-M2C" id="7Oz-73-HSa"/>
+                                    <outlet property="photoCollectionHeight" destination="8gE-69-2kL" id="GrE-fX-Wqf"/>
                                     <outlet property="repostsCountLabel" destination="QA0-tW-IzE" id="rey-z6-91d"/>
                                     <outlet property="viewsCountLabel" destination="orG-6h-kyE" id="O1b-ev-dqH"/>
                                 </connections>
