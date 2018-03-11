@@ -114,32 +114,75 @@
                                             <constraint firstAttribute="height" constant="300" id="XA1-mp-7wz"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefandantCell" rowHeight="84" id="Ctm-eM-ZIP" customClass="DefandantCell" customModule="GeekBrainsApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="84"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefandantCell" rowHeight="250" id="Ctm-eM-ZIP" customClass="DefandantCell" customModule="GeekBrainsApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="250"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ctm-eM-ZIP" id="R2g-eH-N7q">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVk-EU-RBn">
-                                                            <rect key="frame" x="15" y="31" width="245" height="21"/>
+                                                            <rect key="frame" x="15" y="11" width="245" height="95"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UAX-7V-DV8">
+                                                            <rect key="frame" x="15" y="109" width="245" height="130"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="130" id="v8u-td-cpb"/>
+                                                            </constraints>
+                                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0cT-e5-lB8">
+                                                                <size key="itemSize" width="130" height="50"/>
+                                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            </collectionViewFlowLayout>
+                                                            <cells>
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DefandantPhotoViewCell" id="yCA-RB-yVx" customClass="DefandantPhotoViewCell" customModule="GeekBrainsApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="57.5" y="0.0" width="130" height="130"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QIe-lz-BsI">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                    </view>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="QIe-lz-BsI" secondAttribute="bottom" id="4PY-bT-9sZ"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="QIe-lz-BsI" secondAttribute="trailing" id="8oK-0f-5I1"/>
+                                                                        <constraint firstItem="QIe-lz-BsI" firstAttribute="leading" secondItem="yCA-RB-yVx" secondAttribute="leading" id="90T-3h-J6e"/>
+                                                                        <constraint firstItem="QIe-lz-BsI" firstAttribute="top" secondItem="yCA-RB-yVx" secondAttribute="top" id="E3I-hP-l40"/>
+                                                                    </constraints>
+                                                                    <size key="customSize" width="130" height="130"/>
+                                                                    <connections>
+                                                                        <outlet property="image" destination="QIe-lz-BsI" id="nOB-Rn-Is3"/>
+                                                                    </connections>
+                                                                </collectionViewCell>
+                                                            </cells>
+                                                        </collectionView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="oVk-EU-RBn" firstAttribute="leading" secondItem="R2g-eH-N7q" secondAttribute="leadingMargin" id="ia5-tW-g3T"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="oVk-EU-RBn" secondAttribute="trailing" constant="100" id="oAF-Pl-Ti4"/>
-                                                        <constraint firstItem="oVk-EU-RBn" firstAttribute="centerY" secondItem="R2g-eH-N7q" secondAttribute="centerY" id="uuC-zE-0vm"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="oVk-EU-RBn" secondAttribute="trailing" constant="100" id="HNF-Eh-QWN"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="UAX-7V-DV8" secondAttribute="trailing" constant="100" id="SHn-g5-jZM"/>
+                                                        <constraint firstItem="UAX-7V-DV8" firstAttribute="bottom" secondItem="R2g-eH-N7q" secondAttribute="bottomMargin" id="abw-Kc-QdU"/>
+                                                        <constraint firstItem="oVk-EU-RBn" firstAttribute="leading" secondItem="R2g-eH-N7q" secondAttribute="leadingMargin" id="j0o-SO-jko"/>
+                                                        <constraint firstItem="oVk-EU-RBn" firstAttribute="top" secondItem="R2g-eH-N7q" secondAttribute="topMargin" id="nMj-u8-spK"/>
+                                                        <constraint firstItem="UAX-7V-DV8" firstAttribute="leading" secondItem="R2g-eH-N7q" secondAttribute="leadingMargin" id="uIN-Kh-cIy"/>
+                                                        <constraint firstItem="UAX-7V-DV8" firstAttribute="top" secondItem="oVk-EU-RBn" secondAttribute="bottom" constant="3" id="zhR-UQ-87n"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="attachedPhotoCollection" destination="UAX-7V-DV8" id="hgK-jl-kyA"/>
                                                     <outlet property="messageText" destination="oVk-EU-RBn" id="Ieo-TL-E7D"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SenderCell" rowHeight="116" id="96d-A2-Ixg" customClass="SenderCell" customModule="GeekBrainsApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="112" width="375" height="116"/>
+                                                <rect key="frame" x="0.0" y="278" width="375" height="116"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="96d-A2-Ixg" id="cYU-Pm-fhf">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>

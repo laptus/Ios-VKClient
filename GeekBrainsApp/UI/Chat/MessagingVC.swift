@@ -120,7 +120,14 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource{
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DefandantCell", for: indexPath) as! DefandantCell
-            cell.messageText.text = messages[indexPath.row].text
+            let messageInfo = messages[indexPath.row]
+            cell.messageText.text = messageInfo.text
+            messages[indexPath.row].photos = []
+            let minCount = min(5,messageInfo.photos.count)
+            for i in 0 ..< minCount{
+                cell.photoPaths.append(messageInfo.photos[i])
+            }
+            cell.attachedPhotoCollection.reloadData()
             cell.backgroundColor = UIColor.clear
             return cell
         }

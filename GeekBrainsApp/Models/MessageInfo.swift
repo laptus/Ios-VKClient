@@ -9,7 +9,7 @@ struct MessageInfo{
     init(json: JSON){
         userId = json["from_id"].intValue
         text = json["body"].stringValue
-        photos = []
+        photos = json["attachments"].array?.flatMap{$0["photo"]["photo_130"].stringValue} ?? []
     }
     
     init(id: Int, message: String, photosPaths: [String]){
