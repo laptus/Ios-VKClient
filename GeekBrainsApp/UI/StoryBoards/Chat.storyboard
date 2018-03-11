@@ -173,10 +173,30 @@
                                                     <constraint firstAttribute="width" constant="50" id="DCw-fm-kTj"/>
                                                     <constraint firstAttribute="height" constant="50" id="gkM-se-DKQ"/>
                                                 </constraints>
-                                                <state key="normal" image="attach"/>
+                                                <state key="normal" image="collage"/>
+                                                <connections>
+                                                    <action selector="openPhotoLibraryButtonWithSender:" destination="Qpr-Yn-3Bm" eventType="touchUpInside" id="Bx6-sf-oRW"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WBB-ak-zyQ">
+                                                <rect key="frame" x="0.0" y="60" width="375" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a82-qp-VJt">
+                                                <rect key="frame" x="55" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="Rq2-tP-niJ"/>
+                                                    <constraint firstAttribute="height" constant="50" id="dmw-4c-Zcr"/>
+                                                </constraints>
+                                                <state key="normal" image="camera"/>
+                                                <connections>
+                                                    <action selector="openCameraButtonWithSender:" destination="Qpr-Yn-3Bm" eventType="touchUpInside" id="gcX-1a-pJt"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fev-a1-UEr">
-                                                <rect key="frame" x="55" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="110" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="WFB-hF-OCZ"/>
                                                     <constraint firstAttribute="width" constant="50" id="ltZ-lZ-bNk"/>
@@ -186,24 +206,20 @@
                                                     <action selector="sendMessage" destination="Qpr-Yn-3Bm" eventType="touchUpInside" id="rEU-Fd-v4t"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WBB-ak-zyQ">
-                                                <rect key="frame" x="0.0" y="60" width="375" height="102"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="WBB-ak-zyQ" secondAttribute="trailing" id="1yg-1R-opV"/>
                                             <constraint firstAttribute="height" constant="162" id="8fv-6c-MWo"/>
-                                            <constraint firstItem="Fev-a1-UEr" firstAttribute="leading" secondItem="t2b-MN-xeD" secondAttribute="trailing" constant="5" id="Evv-Ap-Nou"/>
                                             <constraint firstItem="t2b-MN-xeD" firstAttribute="top" secondItem="5Nw-Or-Cew" secondAttribute="top" id="GVK-LT-6v0"/>
                                             <constraint firstItem="WBB-ak-zyQ" firstAttribute="leading" secondItem="5Nw-Or-Cew" secondAttribute="leading" id="Ksk-Y5-gPW"/>
                                             <constraint firstItem="Fev-a1-UEr" firstAttribute="top" secondItem="5Nw-Or-Cew" secondAttribute="top" id="MQa-27-uTI"/>
+                                            <constraint firstItem="a82-qp-VJt" firstAttribute="leading" secondItem="t2b-MN-xeD" secondAttribute="trailing" constant="5" id="OQu-wU-5yU"/>
+                                            <constraint firstItem="Fev-a1-UEr" firstAttribute="leading" secondItem="a82-qp-VJt" secondAttribute="trailing" constant="5" id="P80-ds-Ugi"/>
                                             <constraint firstItem="t2b-MN-xeD" firstAttribute="leading" secondItem="5Nw-Or-Cew" secondAttribute="leading" id="adY-L8-h9n"/>
                                             <constraint firstAttribute="bottom" secondItem="WBB-ak-zyQ" secondAttribute="bottom" id="iLQ-6X-pMp"/>
                                             <constraint firstItem="WBB-ak-zyQ" firstAttribute="top" secondItem="t2b-MN-xeD" secondAttribute="bottom" constant="10" id="ibz-yq-Tdl"/>
+                                            <constraint firstItem="a82-qp-VJt" firstAttribute="top" secondItem="5Nw-Or-Cew" secondAttribute="top" id="x6O-kR-zpe"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -281,8 +297,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="attach" width="25" height="25"/>
+        <image name="camera" width="25" height="25"/>
         <image name="chat" width="25" height="25"/>
+        <image name="collage" width="25" height="25"/>
         <image name="sent" width="25" height="25"/>
     </resources>
 </document>

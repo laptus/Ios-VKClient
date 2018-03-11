@@ -106,7 +106,7 @@ extension VKAccessor{
         func uploadPhotoToMesssage(image: Data,peerId: String, completion: @escaping (_ isSuccessful: Bool)-> Void){
             let token = VKAccessor.CurrentUser.instance.token
             let env = VKAccessor.EnvironmentImp.VKEnvironment()
-            let request =  PhotosRequests.getMessagesUploadServer(peerId: peerId,environment: env, token: token)
+            let request =  PhotosRequests.getMessagesUploadServer(environment: env, token: token)
             Alamofire.request(request).responseData(queue: DispatchQueue.global()){uploadResponse in
                 guard let uploadResponseData = uploadResponse.value else { return }
                 let uploadResponseJson = try! JSON(data: uploadResponseData)

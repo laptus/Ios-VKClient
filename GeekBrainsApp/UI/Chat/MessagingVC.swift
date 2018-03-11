@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import MobileCoreServices
 
 class MessagingVC: UIViewController {
     var messages: [MessageInfo] = []
@@ -97,17 +98,6 @@ class MessagingVC: UIViewController {
         }
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension MessagingVC: UITableViewDelegate, UITableViewDataSource{
@@ -133,5 +123,59 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource{
             return cell
         }
         
+    }
+}
+
+extension MessagingVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    @IBAction func openCameraButton(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func openPhotoLibraryButton(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let mediaType = info[UIImagePickerControllerMediaType] as? String else{return}
+        var originalImage, editedImage, imageToSave:  UIImage?
+        if mediaType ==  kUTTypeImage as String {
+            editedImage = info[UIImagePickerControllerEditedImage]  as?  UIImage
+            originalImage = info[ UIImagePickerControllerOriginalImage]  as? UIImage
+            if editedImage != nil {
+                imageToSave = editedImage
+            } else {
+                imageToSave = originalImage
+            }
+            if let image = imageToSave {
+                postImage(image: image)
+            }
+        }
+        picker.dismiss( animated: true, completion: nil)
+    }
+    
+    func postImage(image: UIImage){
+        let imageData = UIImagePNGRepresentation(image)!
+        let peer = defandantGroupId == nil ? defandantUserId! : 2000000000 + defandantGroupId!
+        VKAccessor.Photos.uploadPhotoToMessage(peerId: String(peer),image: imageData){[weak self] wasSuccessful in
+            if !wasSuccessful{
+                //attention please
+            }
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker:  UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }
