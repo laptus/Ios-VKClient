@@ -12,6 +12,7 @@ class SenderCell: UITableViewCell {
 
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var messageText: UILabel!
+    @IBOutlet weak var statusImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

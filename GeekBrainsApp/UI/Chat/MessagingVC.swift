@@ -65,7 +65,7 @@ class MessagingVC: UIViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentSize.height - scrollView.bounds.height
         
-        if scrollView.contentOffset.y - offset > 200{
+        if scrollView.contentOffset.y - offset > 100{
             let peer = defandantGroupId == nil ? defandantUserId! : 2000000000 + defandantGroupId!
             VKAccessor.Messages.getHistory(peerdId: String(peer)){[weak self] result in
                 self?.messages = result
@@ -89,11 +89,12 @@ class MessagingVC: UIViewController {
         sleep(1)
         VKAccessor.Messages.postMessage(peerId: String(peer), message: text!){[weak self] result in
             
-            let cell = self?.MessagesTableView.cellForRow(at: ipath)
+            guard let cell = self?.MessagesTableView.cellForRow(at: ipath) as? SenderCell else {return}
+            cell.statusImageView.isHidden = false
             if result{
-                cell?.backgroundColor = UIColor.gray
+                cell.statusImageView.image = #imageLiteral(resourceName: "checked")
             }else{
-                cell?.backgroundColor = UIColor.red
+                cell.statusImageView.image = #imageLiteral(resourceName: "cancel")
             }
         }
     }
@@ -113,6 +114,7 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource{
         if (String(messages[indexPath.row].userId) == VKAccessor.CurrentUser.instance.id){
             let cell = tableView.dequeueReusableCell(withIdentifier: "SenderCell", for: indexPath) as! SenderCell
             cell.messageText.text = messages[indexPath.row].text
+            cell.statusImageView.isHidden = true
             cell.messageText.backgroundColor = UIColor(named: "red")
             cell.backgroundColor = UIColor.clear
             return cell
@@ -165,11 +167,19 @@ extension MessagingVC: UIImagePickerControllerDelegate, UINavigationControllerDe
     }
     
     func postImage(image: UIImage){
+        messages.append(MessageInfo(id: Int(VKAccessor.CurrentUser.instance.id)!,message: "",photosPaths: []))
+        MessagesTableView.reloadData()
+        let ipath = IndexPath(row: messages.count-1, section: MessagesTableView.numberOfSections - 1)
+        MessagesTableView.scrollToRow(at: ipath, at: UITableViewScrollPosition.top, animated: true)
         let imageData = UIImagePNGRepresentation(image)!
         let peer = defandantGroupId == nil ? defandantUserId! : 2000000000 + defandantGroupId!
         VKAccessor.Photos.uploadPhotoToMessage(peerId: String(peer),image: imageData){[weak self] wasSuccessful in
-            if !wasSuccessful{
-                //attention please
+            guard let cell = self?.MessagesTableView.cellForRow(at: ipath) as? SenderCell else {return}
+            cell.statusImageView.isHidden = false
+            if wasSuccessful{
+                cell.statusImageView.image = #imageLiteral(resourceName: "checked")
+            }else{
+                cell.statusImageView.image = #imageLiteral(resourceName: "cancel")
             }
         }
     }

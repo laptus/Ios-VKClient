@@ -151,15 +151,25 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A9e-Of-Rdr">
+                                                            <rect key="frame" x="20" y="42" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="FhN-re-2BW"/>
+                                                                <constraint firstAttribute="width" constant="30" id="wUw-cX-vQe"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="V2y-Md-YD1" firstAttribute="centerY" secondItem="cYU-Pm-fhf" secondAttribute="centerY" id="AkE-v1-4AH"/>
+                                                        <constraint firstItem="A9e-Of-Rdr" firstAttribute="centerY" secondItem="cYU-Pm-fhf" secondAttribute="centerY" id="Dif-Xf-ge0"/>
+                                                        <constraint firstItem="A9e-Of-Rdr" firstAttribute="leading" secondItem="cYU-Pm-fhf" secondAttribute="leadingMargin" constant="5" id="Vrx-gm-riP"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="V2y-Md-YD1" secondAttribute="trailing" id="phM-hb-hBq"/>
                                                         <constraint firstItem="V2y-Md-YD1" firstAttribute="leading" secondItem="cYU-Pm-fhf" secondAttribute="leadingMargin" constant="100" id="zbl-2e-9ZI"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="messageText" destination="V2y-Md-YD1" id="JSi-D9-YfR"/>
+                                                    <outlet property="statusImageView" destination="A9e-Of-Rdr" id="TPe-Oh-mhS"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

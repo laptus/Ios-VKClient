@@ -18,8 +18,8 @@ class NewsShortViewCell: UITableViewCell {
     @IBOutlet weak var likesCountLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var attachedPhotosCollectionView: UICollectionView!
-    
     @IBOutlet weak var photoCollectionHeight: NSLayoutConstraint!
+    
     var photos : [String] = []{
         didSet{
             if photos.contains(where: {$0 != ""}){
