@@ -39,7 +39,7 @@ extension VKAccessor  {
             return VKRequest.init(environment: environment, token: token, path: methodPath, additionalParams: additionalParams, httpMethod: HTTPMethod.get)
         }
         
-        static func saveWallPhoto(environment: Environment, token: String, userId: String, server: String, photo: String,hash: String) -> URLRequestConvertible{
+        static func saveWallPhoto(environment: Environment, token: String, server: String, photo: String,hash: String) -> URLRequestConvertible{
             let methodPath = "/method/photos.saveWallPhoto"
             let additionalParams = ["access_token":token,
                                     "server": server,
@@ -49,11 +49,22 @@ extension VKAccessor  {
             return VKRequest.init(environment: environment, token: token, path: methodPath, additionalParams: additionalParams as! [String : String], httpMethod: HTTPMethod.get)
         }
         
-        static func getMessagesUploadServer(environment: Environment, token: String) -> URLRequestConvertible{
+        static func getMessagesUploadServer(peerId: String,environment: Environment, token: String) -> URLRequestConvertible{
             let methodPath = "/method/photos.getMessagesUploadServer"
             let additionalParams = ["access_token":token,
+                                    "peerId":peerId,
                                     "v": environment.apiVersion]
             return VKRequest.init(environment: environment, token: token, path: methodPath, additionalParams: additionalParams, httpMethod: HTTPMethod.get)
+        }
+        
+        static func saveMessagePhoto(environment: Environment, token: String, server: String, photo: String,hash: String) -> URLRequestConvertible{
+            let methodPath = "/method/photos.saveWallPhoto"
+            let additionalParams = ["access_token":token,
+                                    "server": server,
+                                    "photo": photo,
+                                    "hash": hash,
+                                    "v": environment.apiVersion] as [String : Any]
+            return VKRequest.init(environment: environment, token: token, path: methodPath, additionalParams: additionalParams as! [String : String], httpMethod: HTTPMethod.get)
         }
     }
 }
