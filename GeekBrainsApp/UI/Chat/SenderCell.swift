@@ -12,16 +12,40 @@ class SenderCell: UITableViewCell {
 
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var messageText: UILabel!
-    
+    @IBOutlet weak var statusImageView: UIImageView!
+    var photoPaths: [String] = []
+    @IBOutlet weak var attachedPhotoCollection: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        attachedPhotoCollection.dataSource = self
+        attachedPhotoCollection.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
+}
+
+extension SenderCell: UICollectionViewDataSource, UICollectionViewDelegate{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photoPaths.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SenderPhotoViewCell", for: indexPath) as! SenderPhotoViewCell
+        let photoPath = photoPaths[indexPath.row]
+        ImageService.getImage(urlPath: photoPath){[weak cell] originalPath, result in
+            if originalPath == photoPath{
+                cell?.image.image = result
+            }
+        }
+        return cell
+    }
+    
+    
 }

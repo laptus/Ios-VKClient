@@ -23,6 +23,16 @@ extension VKAccessor.Wall{
             }
         }
         
+        func postNewsPhoto(ownerId: String, photoId: String, completion: @escaping (_ isSuccessful: Bool)-> Void){
+            let token = VKAccessor.CurrentUser.instance.token
+            let env = VKAccessor.EnvironmentImp.VKEnvironment()
+            let request = WallRequests.getPostNewsPhotoRequest(environment: env, token: token, ownerId: ownerId, photoId: photoId)
+            Alamofire.request(request).responseData(queue: DispatchQueue.global()){response in
+                guard let data = response.value else { return }
+                let json = try! JSON(data:data)
+            }
+        }
+        
         func getNews(ownerId: String, completion: @escaping ([NewsInfo])->Void){
             let token = VKAccessor.CurrentUser.instance.token
             let env = VKAccessor.EnvironmentImp.VKEnvironment()

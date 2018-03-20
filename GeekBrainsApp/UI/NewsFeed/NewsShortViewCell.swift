@@ -18,8 +18,17 @@ class NewsShortViewCell: UITableViewCell {
     @IBOutlet weak var likesCountLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var attachedPhotosCollectionView: UICollectionView!
+    @IBOutlet weak var photoCollectionHeight: NSLayoutConstraint!
     
-    var photos : [String] = []
+    var photos : [String] = []{
+        didSet{
+            if photos.contains(where: {$0 != ""}){
+                photoCollectionHeight.constant = 130
+            }else{
+                photoCollectionHeight.constant = 0
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

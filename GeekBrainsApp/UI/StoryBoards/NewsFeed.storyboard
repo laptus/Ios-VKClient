@@ -188,6 +188,7 @@
                                     <outlet property="lastNameLabel" destination="41K-Dc-6EA" id="Tk7-xT-fCA"/>
                                     <outlet property="likesCountLabel" destination="Anr-KD-q1z" id="iye-OH-63U"/>
                                     <outlet property="newsTextLabel" destination="oDn-Y3-M2C" id="7Oz-73-HSa"/>
+                                    <outlet property="photoCollectionHeight" destination="8gE-69-2kL" id="GrE-fX-Wqf"/>
                                     <outlet property="repostsCountLabel" destination="QA0-tW-IzE" id="rey-z6-91d"/>
                                     <outlet property="viewsCountLabel" destination="orG-6h-kyE" id="O1b-ev-dqH"/>
                                 </connections>
@@ -245,22 +246,27 @@
                                                     <constraint firstAttribute="height" constant="44" id="TV5-IP-x85"/>
                                                 </constraints>
                                                 <items>
-                                                    <barButtonItem title="Item" image="location" id="UrK-PS-p8U">
+                                                    <barButtonItem title="Maps" image="location" id="UrK-PS-p8U">
                                                         <connections>
                                                             <segue destination="rHG-L1-nX7" kind="presentation" identifier="toMap" id="zwd-fe-25j"/>
                                                         </connections>
                                                     </barButtonItem>
-                                                    <barButtonItem title="Item" image="attach" id="Ox2-fK-WqW">
+                                                    <barButtonItem title="PhotoLibrary" image="collage" id="Ox2-fK-WqW">
                                                         <connections>
-                                                            <action selector="openPhoto:" destination="ljV-NM-fUB" id="ukg-1s-Zsz"/>
+                                                            <action selector="openPhotoLibraryButtonWithSender:" destination="ljV-NM-fUB" id="OPk-rX-9nb"/>
                                                         </connections>
                                                     </barButtonItem>
-                                                    <barButtonItem title="Item" image="new post" id="Upl-Td-SVx">
+                                                    <barButtonItem title="Camera" image="camera" id="MKO-bA-Q9y">
+                                                        <connections>
+                                                            <action selector="openCameraButtonWithSender:" destination="ljV-NM-fUB" id="KEV-2i-Ren"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                    <barButtonItem title="SendPost" image="new post" id="Upl-Td-SVx">
                                                         <connections>
                                                             <action selector="send:" destination="ljV-NM-fUB" id="Vi4-hZ-HAe"/>
                                                         </connections>
                                                     </barButtonItem>
-                                                    <barButtonItem title="Item" image="delete" id="kUJ-Ag-4aZ">
+                                                    <barButtonItem title="CloseView" image="delete" id="kUJ-Ag-4aZ">
                                                         <connections>
                                                             <action selector="close:" destination="ljV-NM-fUB" id="ga7-iY-nH9"/>
                                                         </connections>
@@ -334,7 +340,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="attach" width="25" height="25"/>
+        <image name="camera" width="25" height="25"/>
+        <image name="collage" width="25" height="25"/>
         <image name="comments" width="26" height="26"/>
         <image name="delete" width="25" height="25"/>
         <image name="eye" width="25" height="25"/>

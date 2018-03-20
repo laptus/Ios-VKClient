@@ -38,6 +38,15 @@ extension VKAccessor.Messages.MessagesService{
                                     "message": message]
             return VKAccessor.VKRequest.init(environment: environment, token: token, path: methodPath, additionalParams: additionalParams, httpMethod: HTTPMethod.post)
         }
+        
+        static func postImage(environment: Environment, token: String,peerId: String, ownerId:String, imageId: String) -> URLRequestConvertible{
+            let methodPath = "/method/messages.send"
+            let additionalParams = ["access_token":token,
+                                    "v": environment.apiVersion,
+                                    "peer_id": peerId,
+                                    "attachment": "photo"+ownerId+"_"+imageId]
+            return VKAccessor.VKRequest.init(environment: environment, token: token, path: methodPath, additionalParams: additionalParams, httpMethod: HTTPMethod.post)
+        }
     }
 }
 

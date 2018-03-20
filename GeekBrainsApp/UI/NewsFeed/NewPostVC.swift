@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class NewPostVC: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
@@ -65,23 +66,13 @@ class NewPostVC: UIViewController {
             ctrl.coordUserDelegate = self
         }
     }
-    @IBOutlet weak var openPhotoLibrary: UIBarButtonItem!
-    
-    @IBAction func openPhoto(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            var imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary;
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-    }
+
 }
 
 extension NewPostVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @IBAction func openCameraButton(sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            var imagePicker = UIImagePickerController()
+            let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .camera;
             imagePicker.allowsEditing = false
@@ -90,7 +81,44 @@ extension NewPostVC: UIImagePickerControllerDelegate, UINavigationControllerDele
     }
     
     @IBAction func openPhotoLibraryButton(sender: AnyObject) {
-        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let mediaType = info[UIImagePickerControllerMediaType] as? String else{return}
+        var originalImage, editedImage, imageToSave:  UIImage?
+        if mediaType ==  kUTTypeImage as String {
+            editedImage = info[UIImagePickerControllerEditedImage]  as?  UIImage
+            originalImage = info[ UIImagePickerControllerOriginalImage]  as? UIImage
+            if editedImage != nil {
+                imageToSave = editedImage
+            } else {
+                imageToSave = originalImage
+            }
+            if let image = imageToSave {
+                postImage(image: image)
+            }
+        }
+        picker.dismiss( animated: true, completion: nil)
+    }
+    
+    func postImage(image: UIImage){
+        let imageData = UIImagePNGRepresentation(image)!
+        VKAccessor.News.uploadPhotoToWall(image: imageData){[weak self] wasSuccessful in
+            if !wasSuccessful{
+                //attention please
+            }
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker:  UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import MobileCoreServices
 
 class MessagingVC: UIViewController {
     var messages: [MessageInfo] = []
@@ -64,7 +65,7 @@ class MessagingVC: UIViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentSize.height - scrollView.bounds.height
         
-        if scrollView.contentOffset.y - offset > 200{
+        if scrollView.contentOffset.y - offset > 100{
             let peer = defandantGroupId == nil ? defandantUserId! : 2000000000 + defandantGroupId!
             VKAccessor.Messages.getHistory(peerdId: String(peer)){[weak self] result in
                 self?.messages = result
@@ -88,25 +89,15 @@ class MessagingVC: UIViewController {
         sleep(1)
         VKAccessor.Messages.postMessage(peerId: String(peer), message: text!){[weak self] result in
             
-            let cell = self?.MessagesTableView.cellForRow(at: ipath)
+            guard let cell = self?.MessagesTableView.cellForRow(at: ipath) as? SenderCell else {return}
+            cell.statusImageView.isHidden = false
             if result{
-                cell?.backgroundColor = UIColor.gray
+                cell.statusImageView.image = #imageLiteral(resourceName: "checked")
             }else{
-                cell?.backgroundColor = UIColor.red
+                cell.statusImageView.image = #imageLiteral(resourceName: "cancel")
             }
         }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -122,16 +113,96 @@ extension MessagingVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (String(messages[indexPath.row].userId) == VKAccessor.CurrentUser.instance.id){
             let cell = tableView.dequeueReusableCell(withIdentifier: "SenderCell", for: indexPath) as! SenderCell
-            cell.messageText.text = messages[indexPath.row].text
+            let messageInfo = messages[indexPath.row]
+            cell.messageText.text = messageInfo.text
+            cell.statusImageView.isHidden = true
             cell.messageText.backgroundColor = UIColor(named: "red")
+            cell.photoPaths = []
+            let minCount = min(5,messageInfo.photos.count)
+            for i in 0 ..< minCount{
+                cell.photoPaths.append(messageInfo.photos[i])
+            }
+            cell.attachedPhotoCollection.reloadData()
             cell.backgroundColor = UIColor.clear
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DefandantCell", for: indexPath) as! DefandantCell
-            cell.messageText.text = messages[indexPath.row].text
+            let messageInfo = messages[indexPath.row]
+            cell.messageText.text = messageInfo.text
+            cell.photoPaths = []
+            let minCount = min(5,messageInfo.photos.count)
+            for i in 0 ..< minCount{
+                cell.photoPaths.append(messageInfo.photos[i])
+            }
+            cell.attachedPhotoCollection.reloadData()
             cell.backgroundColor = UIColor.clear
             return cell
         }
-        
+    }
+}
+
+extension MessagingVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    @IBAction func openCameraButton(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func openPhotoLibraryButton(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let mediaType = info[UIImagePickerControllerMediaType] as? String else{return}
+        var originalImage, editedImage, imageToSave:  UIImage?
+        if mediaType ==  kUTTypeImage as String {
+            editedImage = info[UIImagePickerControllerEditedImage]  as?  UIImage
+            originalImage = info[ UIImagePickerControllerOriginalImage]  as? UIImage
+            if editedImage != nil {
+                imageToSave = editedImage
+            } else {
+                imageToSave = originalImage
+            }
+            if let image = imageToSave {
+                postImage(image: image)
+            }
+        }
+        picker.dismiss( animated: true, completion: nil)
+    }
+    
+    func postImage(image: UIImage){
+        messages.append(MessageInfo(id: Int(VKAccessor.CurrentUser.instance.id)!,message: "",photosPaths: [""]))
+        MessagesTableView.reloadData()
+        let ipath = IndexPath(row: messages.count-1, section: MessagesTableView.numberOfSections - 1)
+        MessagesTableView.scrollToRow(at: ipath, at: UITableViewScrollPosition.top, animated: true)
+        let imageData = UIImagePNGRepresentation(image)!
+        let peer = defandantGroupId == nil ? defandantUserId! : 2000000000 + defandantGroupId!
+        VKAccessor.Photos.uploadPhotoToMessage(peerId: String(peer),image: imageData){[weak self] wasSuccessful, imageUrl in
+            guard let cell = self?.MessagesTableView.cellForRow(at: ipath) as? SenderCell else {return}
+            cell.statusImageView.isHidden = false
+            if wasSuccessful{
+                cell.photoPaths = []
+                cell.photoPaths.append(imageUrl)
+                cell.attachedPhotoCollection.reloadData()
+                cell.statusImageView.image = #imageLiteral(resourceName: "checked")
+            }else{
+                cell.statusImageView.image = #imageLiteral(resourceName: "cancel")
+            }
+        }
+        sleep(2)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker:  UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }

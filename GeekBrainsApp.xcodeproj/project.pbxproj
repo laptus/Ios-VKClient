@@ -18,6 +18,8 @@
 		DB1D3BD82026278400F26B72 /* NewsShortViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1D3BD72026278400F26B72 /* NewsShortViewCell.swift */; };
 		DB1D3BDA202627B300F26B72 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1D3BD9202627B300F26B72 /* NewsView.swift */; };
 		DB23935D1FD4B0EC006FCFE5 /* GroupsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB23935C1FD4B0EC006FCFE5 /* GroupsListVC.swift */; };
+		DB28D0FB2052C13D0024375E /* PhotoCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB28D0FA2052C13D0024375E /* PhotoCamera.storyboard */; };
+		DB28D0FE2052C39D0024375E /* PhotoCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB28D0FD2052C39D0024375E /* PhotoCameraController.swift */; };
 		DB3E8F601FCF4E3100CA82D9 /* tabsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3E8F5F1FCF4E3100CA82D9 /* tabsVC.swift */; };
 		DB42672E203878B800E685B5 /* BGService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42672D203878B800E685B5 /* BGService.swift */; };
 		DB42673120389C3B00E685B5 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42673020389C3B00E685B5 /* UserInfoVC.swift */; };
@@ -56,6 +58,8 @@
 		DB74CA081FE063D20001EFD6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB74CA071FE063D20001EFD6 /* UserService.swift */; };
 		DB75B3381FD48FC6005B724C /* FriendsTablveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75B3371FD48FC6005B724C /* FriendsTablveVC.swift */; };
 		DB75B33A1FD49054005B724C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75B3391FD49054005B724C /* UserCell.swift */; };
+		DB7609B520556E9B00B1A520 /* DefandantPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7609B420556E9B00B1A520 /* DefandantPhotoViewCell.swift */; };
+		DB7609B7205576BE00B1A520 /* SenderPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7609B6205576BE00B1A520 /* SenderPhotoViewCell.swift */; };
 		DB7A4A5E203ACD0A0097B0BB /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A5D203ACD0A0097B0BB /* Wall.swift */; };
 		DB7A4A60203ACD140097B0BB /* WallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A5F203ACD140097B0BB /* WallService.swift */; };
 		DB7A4A62203ACD230097B0BB /* WallRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7A4A61203ACD230097B0BB /* WallRequests.swift */; };
@@ -184,6 +188,8 @@
 		DB1D3BD72026278400F26B72 /* NewsShortViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsShortViewCell.swift; sourceTree = "<group>"; };
 		DB1D3BD9202627B300F26B72 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		DB23935C1FD4B0EC006FCFE5 /* GroupsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListVC.swift; sourceTree = "<group>"; };
+		DB28D0FA2052C13D0024375E /* PhotoCamera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoCamera.storyboard; sourceTree = "<group>"; };
+		DB28D0FD2052C39D0024375E /* PhotoCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCameraController.swift; sourceTree = "<group>"; };
 		DB3E8F5F1FCF4E3100CA82D9 /* tabsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabsVC.swift; sourceTree = "<group>"; };
 		DB42672D203878B800E685B5 /* BGService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGService.swift; sourceTree = "<group>"; };
 		DB42673020389C3B00E685B5 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
@@ -222,6 +228,8 @@
 		DB74CA071FE063D20001EFD6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		DB75B3371FD48FC6005B724C /* FriendsTablveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTablveVC.swift; sourceTree = "<group>"; };
 		DB75B3391FD49054005B724C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		DB7609B420556E9B00B1A520 /* DefandantPhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefandantPhotoViewCell.swift; sourceTree = "<group>"; };
+		DB7609B6205576BE00B1A520 /* SenderPhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderPhotoViewCell.swift; sourceTree = "<group>"; };
 		DB7A4A5D203ACD0A0097B0BB /* Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
 		DB7A4A5F203ACD140097B0BB /* WallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallService.swift; sourceTree = "<group>"; };
 		DB7A4A61203ACD230097B0BB /* WallRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallRequests.swift; sourceTree = "<group>"; };
@@ -362,6 +370,7 @@
 				DB1D3BD4202620B600F26B72 /* NewsFeed.storyboard */,
 				DBCD542C20335F8600F169FA /* UserInfo.storyboard */,
 				DB5EC5D120383EAB00920B8F /* Map.storyboard */,
+				DB28D0FA2052C13D0024375E /* PhotoCamera.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -385,6 +394,14 @@
 				DB7A4A63203AE6E80097B0BB /* AttachedPhotoCell.swift */,
 			);
 			path = NewsFeed;
+			sourceTree = "<group>";
+		};
+		DB28D0FC2052C1760024375E /* PhotoCamera */ = {
+			isa = PBXGroup;
+			children = (
+				DB28D0FD2052C39D0024375E /* PhotoCameraController.swift */,
+			);
+			path = PhotoCamera;
 			sourceTree = "<group>";
 		};
 		DB42672C203878A400E685B5 /* BackGround */ = {
@@ -579,6 +596,8 @@
 				DB4B71342040482C00A4D78F /* MessagingVC.swift */,
 				DB4B71362040486400A4D78F /* DefandantCell.swift */,
 				DB4B71382040487200A4D78F /* SenderCell.swift */,
+				DB7609B420556E9B00B1A520 /* DefandantPhotoViewCell.swift */,
+				DB7609B6205576BE00B1A520 /* SenderPhotoViewCell.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -664,15 +683,16 @@
 		DBCD54272030A8B300F169FA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DBAABF361FDD7EF500A2088B /* AuthVC.swift */,
 				DB05DB221FFE805700FBAAA1 /* StoryBoards */,
 				DB42672F20389BCC00E685B5 /* MainVIew */,
-				DBAABF361FDD7EF500A2088B /* AuthVC.swift */,
 				DB1D3BD6202626B500F26B72 /* NewsFeed */,
 				DBB86C812039A1C2008F062C /* Chat */,
 				DB05DB211FFE7F8800FBAAA1 /* UserInfo */,
 				DB560B0C1FD499DF0076B350 /* Groups */,
 				DB560B0D1FD499EF0076B350 /* FriendsList */,
 				DB509A691FDD2C4600EACD15 /* AlbumsGroup */,
+				DB28D0FC2052C1760024375E /* PhotoCamera */,
 				DB5B98062034A50200A2497B /* Settings */,
 			);
 			path = UI;
@@ -857,6 +877,7 @@
 				DBB173AD1FCACAF200FC0479 /* LaunchScreen.storyboard in Resources */,
 				DB1D3BD5202620B600F26B72 /* NewsFeed.storyboard in Resources */,
 				DB05DB2C1FFE815100FBAAA1 /* Settings.storyboard in Resources */,
+				DB28D0FB2052C13D0024375E /* PhotoCamera.storyboard in Resources */,
 				DBCD542D20335F8600F169FA /* UserInfo.storyboard in Resources */,
 				DBB173AA1FCACAF200FC0479 /* Media.xcassets in Resources */,
 				DB59602A202A263300BF5943 /* GoogleService-Info.plist in Resources */,
@@ -1023,6 +1044,7 @@
 				DB42673120389C3B00E685B5 /* UserInfoVC.swift in Sources */,
 				DBAFD47D1FD4B2FF00807D63 /* SearchGroupsVC.swift in Sources */,
 				DB1D3BDA202627B300F26B72 /* NewsView.swift in Sources */,
+				DB7609B520556E9B00B1A520 /* DefandantPhotoViewCell.swift in Sources */,
 				DBB86C8B2039A4AC008F062C /* ChatInfo.swift in Sources */,
 				DBCD54322033676200F169FA /* FriendsService.swift in Sources */,
 				DB1D3BCF202618C200F26B72 /* SettingsNavController.swift in Sources */,
@@ -1033,6 +1055,7 @@
 				DB75B3381FD48FC6005B724C /* FriendsTablveVC.swift in Sources */,
 				DB42672E203878B800E685B5 /* BGService.swift in Sources */,
 				DB74CA081FE063D20001EFD6 /* UserService.swift in Sources */,
+				DB28D0FE2052C39D0024375E /* PhotoCameraController.swift in Sources */,
 				DB596032202A2D8000BF5943 /* FireBaseAccessor.swift in Sources */,
 				DB4B71352040482C00A4D78F /* MessagingVC.swift in Sources */,
 				DB4B7131204027FC00A4D78F /* PostAttachedPhotoCell.swift in Sources */,
@@ -1045,6 +1068,7 @@
 				DB61771F2034BD81004AA4E7 /* Photos.swift in Sources */,
 				DB75B33A1FD49054005B724C /* UserCell.swift in Sources */,
 				DBB86C892039A3E7008F062C /* ChatViewCell.swift in Sources */,
+				DB7609B7205576BE00B1A520 /* SenderPhotoViewCell.swift in Sources */,
 				DBAABF451FDF22AA00A2088B /* UserInfo.swift in Sources */,
 				DBCD542B2030AB0700F169FA /* VKAccessor.swift in Sources */,
 				DBC8358B1FE69E64001FC8E5 /* RealmExtension.swift in Sources */,
@@ -1324,6 +1348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5V8ZBRT5M4;
 				INFOPLIST_FILE = "VKWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = My.GeekBrainsApp.watchkitapp.watchkitextension;
@@ -1341,6 +1366,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5V8ZBRT5M4;
 				INFOPLIST_FILE = "VKWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = My.GeekBrainsApp.watchkitapp.watchkitextension;
